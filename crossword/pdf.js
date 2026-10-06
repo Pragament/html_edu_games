@@ -17,6 +17,8 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     .replace(/[\u201c\u201d]/g, '"').replace(/\u2022/g, ' / ')
     .replace(/[^\x20-\x7e]/g, ' ');
   const escape = value => clean(value).replace(/[\\()]/g, '\\$&');
+  const watermark = options.watermark && clean(options.watermark.text || '').trim() ? options.watermark : null;
+  const watermarkOpacity = watermark ? Math.max(0, Math.min(1, Number(watermark.opacity ?? 0.12))) : 0;
   function text(value, x, top, size = fontSize, bold = false) {
     commands.push(`BT /${bold ? 'F2' : 'F1'} ${size} Tf 0 g 1 0 0 1 ${x.toFixed(2)} ${(height - top).toFixed(2)} Tm (${escape(value)}) Tj ET`);
   }
@@ -42,6 +44,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     const count = qr.getModuleCount(), size = 66;
     const module = size / (count + 8);
     const left = width - margin - size, top = margin;
+    commands.push(`q 1 g ${left} ${height - top - size} ${size} ${size} re f Q`);
     // Four-module white quiet zone is included in the reserved area.
     for (let r = 0; r < count; r++) for (let c = 0; c < count; c++) {
       if (qr.isDark(r, c)) commands.push(`0 g ${(left + (c + 4) * module).toFixed(3)} ${(height - top - (r + 5) * module).toFixed(3)} ${module.toFixed(3)} ${module.toFixed(3)} re f`);
@@ -50,13 +53,35 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   }
   function newPage(label, withQR = false) {
     commands = []; pages.push(commands); y = margin + 16;
+    if (watermark) {
+      let size = Math.max(12, Math.min(96, Number(watermark.size) || 48));
+      let lines = wrap(watermark.text, size);
+      // Fit long text inside the page without clipping it at large sizes.
+      while (size + (lines.length - 1) * size * 1.2 > height - margin * 2) {
+        size *= 0.95;
+        lines = wrap(watermark.text, size);
+      }
+      const lineSpacing = size * 1.2;
+      const blockHeight = size + (lines.length - 1) * lineSpacing;
+      const top = watermark.position === 'top' ? margin
+        : watermark.position === 'bottom' ? height - margin - blockHeight
+        : (height - blockHeight) / 2;
+      commands.push('q /WM gs');
+      lines.forEach((line, index) => {
+        const textWidth = line.length * size * 0.6;
+        const x = watermark.alignment === 'left' ? margin
+          : watermark.alignment === 'right' ? width - margin - textWidth
+          : (width - textWidth) / 2;
+        text(line, x, top + size + index * lineSpacing, size, true);
+      });
+      commands.push('Q');
+    }
     const headerWidth = contentWidth - (withQR ? 84 : 0);
     for (const line of wrap(label, 16, headerWidth)) { text(line, margin, y, 16, true); y += 20; }
     for (const line of wrap(puzzle.title, fontSize, headerWidth)) { text(line, margin, y); y += lineHeight; }
     if (withQR && options.puzzleUrl) qrCode(options.puzzleUrl);
     if (withQR) y = Math.max(y + 6, margin + 86);
     else y += 10;
-    text(`Page ${pages.length}`, margin, height - 16, 8);
   }
   function paragraph(value) {
     for (const line of wrap(value)) {
@@ -139,14 +164,22 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
       }
     }
   }
+  if (pages.length > 1) {
+    pages.forEach((page, index) => {
+      commands = page;
+      text(`Page ${index + 1}`, margin, height - 16, 8);
+    });
+  }
   const objects = [null, '<< /Type /Catalog /Pages 2 0 R >>', '',
     '<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>',
     '<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold >>'];
+  const watermarkId = watermark ? objects.length : null;
+  if (watermark) objects.push(`<< /Type /ExtGState /ca ${watermarkOpacity} /CA ${watermarkOpacity} >>`);
   const pageIds = [];
   for (const page of pages) {
     const pageId = objects.length, streamId = pageId + 1;
     pageIds.push(pageId);
-    objects.push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${width} ${height}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${streamId} 0 R >>`);
+    objects.push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${width} ${height}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> ${watermark ? `/ExtGState << /WM ${watermarkId} 0 R >>` : ''} >> /Contents ${streamId} 0 R >>`);
     const stream = page.join('\n') + '\n';
     objects.push(`<< /Length ${stream.length} >>\nstream\n${stream}endstream`);
   }

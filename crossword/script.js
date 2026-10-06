@@ -598,6 +598,15 @@ document.getElementById('pdf-text-size').addEventListener('input', event => {
   document.getElementById('pdf-text-size-value').textContent = `${event.target.value} pt`;
 });
 
+document.getElementById('pdf-watermark-enabled').addEventListener('change', event => {
+  document.getElementById('pdf-watermark-options').disabled = !event.target.checked;
+});
+for (const [name, suffix] of [['opacity', '%'], ['size', ' pt']]) {
+  document.getElementById(`pdf-watermark-${name}`).addEventListener('input', event => {
+    document.getElementById(`pdf-watermark-${name}-value`).textContent = `${event.target.value}${suffix}`;
+  });
+}
+
 document.getElementById('btn-pdf').addEventListener('click', () => {
   if (!PUZZLE) return;
   const status = document.getElementById('pdf-status');
@@ -605,7 +614,14 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
     const pdf = createCrosswordPDF(PUZZLE, cells, ROWS, COLS, {
       includeAnswers: document.getElementById('pdf-answers').checked,
       textSize: Number(document.getElementById('pdf-text-size').value),
-      puzzleUrl: new URL('/crossword', window.location.origin).href
+      puzzleUrl: new URL('/crossword', window.location.origin).href,
+      watermark: document.getElementById('pdf-watermark-enabled').checked ? {
+        text: document.getElementById('pdf-watermark-text').value.trim(),
+        opacity: Number(document.getElementById('pdf-watermark-opacity').value) / 100,
+        size: Number(document.getElementById('pdf-watermark-size').value),
+        position: document.getElementById('pdf-watermark-position').value,
+        alignment: document.getElementById('pdf-watermark-alignment').value
+      } : null
     });
     const url = URL.createObjectURL(pdf);
     const link = document.createElement('a');

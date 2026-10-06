@@ -106,6 +106,10 @@ button:disabled{opacity:.5;cursor:default;transform:none}
 .pdf-options label{display:block;margin-bottom:12px;font-size:14px}
 .pdf-options input[type="range"]{width:100%;accent-color:var(--accent)}
 .pdf-options input[type="checkbox"]{accent-color:var(--accent)}
+.watermark-options{margin-top:14px;padding:14px;border:1px solid var(--line2);border-radius:8px}
+.watermark-options:disabled{opacity:.5}
+.watermark-options input[type="text"],.watermark-options select{width:100%;font:inherit;font-size:16px;background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:6px;padding:8px;margin-bottom:14px}
+.watermark-options label{margin-top:8px}
 button.primary{
   background:linear-gradient(90deg,#2563eb,#7c3aed);color:#fff;border:none;
   padding:13px 26px;font-size:14px;border-radius:11px;
