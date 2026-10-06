@@ -1,0 +1,216 @@
+[
+  {
+    "title": "Value Education Crossword",
+    "subtitle": "Classes III – V  •  CBSE Value Education",
+    "instructions": "Read each clue carefully and write the answer in the crossword grid — one letter in each box. Every answer is a value or a good habit you have learnt about in your Value Education book.",
+    "words": [
+      {
+        "n": 1,
+        "dir": "down",
+        "row": 0,
+        "col": 1,
+        "answer": "TEAMWORK",
+        "chapter": "Team Work",
+        "clue": "The farmer shared his best corn seeds with all his neighbours so that everyone could grow the best corn. This shows the spirit of ______.",
+        "explain": "The farmer knew that the wind carries pollen from one field to another. If his neighbours grew inferior corn, his own crop would also lose quality. So he shared his best seeds. Together we stand strong, divided we fall."
+      },
+      {
+        "n": 2,
+        "dir": "across",
+        "row": 2,
+        "col": 0,
+        "answer": "PATIENCE",
+        "chapter": "Choose Your Role Model",
+        "clue": "The little ant fell six times but tried a seventh time and finally climbed the wall. Meera learnt ______ and never to give up.",
+        "explain": "The ant became Meera's role model because it did not give up. Being patient and trying again and again helps us reach our goals."
+      },
+      {
+        "n": 3,
+        "dir": "down",
+        "row": 4,
+        "col": 4,
+        "answer": "SAFETY",
+        "chapter": "Personal Safety",
+        "clue": "Reena remembered 'DROP! COVER! HOLD!' during an earthquake and saved many lives. She knew the rules of ______.",
+        "explain": "Knowing what to do when a disaster strikes saves lives. Remember the golden rule — Prevention is better than cure."
+      },
+      {
+        "n": 4,
+        "dir": "down",
+        "row": 4,
+        "col": 7,
+        "answer": "DIVERSITY",
+        "chapter": "Celebrating Diversity",
+        "clue": "In India, New Year is celebrated as Diwali, Paila Baisakh, Ugadi and Vishu. This shows our unity in ______.",
+        "explain": "We follow different customs, speak different languages and celebrate different festivals, yet we are one country. We must respect and learn from one another."
+      },
+      {
+        "n": 5,
+        "dir": "down",
+        "row": 4,
+        "col": 11,
+        "answer": "CARING",
+        "chapter": "Caring",
+        "clue": "Feeling and showing concern for your family, friends, neighbours, animals and the environment is called ______.",
+        "explain": "A caring person helps others without expecting a reward, is thankful for what others do, thinks of other people's feelings and is kind to animals and the environment."
+      },
+      {
+        "n": 6,
+        "dir": "across",
+        "row": 5,
+        "col": 0,
+        "answer": "COMPASSION",
+        "chapter": "Being Compassionate",
+        "clue": "Jai saved a wounded dog from rowdy boys and looked after it. His grandfather taught him this virtue — 'living is giving'.",
+        "explain": "Being kind, loving and helpful towards all living beings is compassion. Happiness never decreases when we share it with others."
+      },
+      {
+        "n": 7,
+        "dir": "down",
+        "row": 5,
+        "col": 9,
+        "answer": "NATURE",
+        "chapter": "Nurture the Nature",
+        "clue": "Forests, rivers, animals and air — it takes care of all our needs, so we must look after it.",
+        "explain": "Wild animals wander into cities when their forests are destroyed. We must protect forests, save wildlife, say no to polythene bags and keep our surroundings clean."
+      },
+      {
+        "n": 8,
+        "dir": "across",
+        "row": 7,
+        "col": 3,
+        "answer": "RESPECT",
+        "chapter": "Celebrating Diversity / Responsibility",
+        "clue": "To treat other people, their feelings, their culture and public property with honour is to ______ them.",
+        "explain": "We must respect diverse opinions and cultures, and take care of public property like parks, monuments, hospitals and railway stations."
+      },
+      {
+        "n": 9,
+        "dir": "down",
+        "row": 7,
+        "col": 13,
+        "answer": "DUTY",
+        "chapter": "Responsibility: Rights and Duties",
+        "clue": "Rinkoo threw a banana peel on the lawns of Qutub Minar. He forgot his ______ towards public property.",
+        "explain": "Every right brings a duty. We must obey law and order, care for public property and respect our national heritage."
+      },
+      {
+        "n": 10,
+        "dir": "across",
+        "row": 9,
+        "col": 9,
+        "answer": "RIGHTS",
+        "chapter": "Responsibility: Rights and Duties",
+        "clue": "As a citizen of India — and as a student in school — you enjoy these, but they come with duties too.",
+        "explain": "We have rights that ensure a better life, and duties that keep our country and our school good places to live and learn in. I have my rights and I have my duties."
+      },
+      {
+        "n": 11,
+        "dir": "across",
+        "row": 11,
+        "col": 2,
+        "answer": "HONESTY",
+        "chapter": "Honesty Pays",
+        "clue": "Raju told the referee that he had used his hand to score the goal. The Principal said, 'We are all proud of you.' ______ always pays.",
+        "explain": "It is often very difficult to be honest, but it is always the right thing to do. Honesty is the best policy and it wins the respect of others."
+      }
+    ],
+    "id": "value-education"
+  },
+  {
+    "id": "care-and-nature",
+    "title": "Caring for Others and Nature",
+    "subtitle": "Classes III – V  •  CBSE Value Education",
+    "instructions": "Read each clue carefully and write the answer in the crossword grid — one letter in each box. Every answer is a value or a good habit you have learnt about in your Value Education book.",
+    "words": [
+      {
+        "n": 1,
+        "dir": "down",
+        "row": 0,
+        "col": 11,
+        "answer": "CARING",
+        "chapter": "Caring",
+        "clue": "Feeling and showing concern for your family, friends, neighbours, animals and the environment is called ______.",
+        "explain": "A caring person helps others without expecting a reward, is thankful for what others do, thinks of other people's feelings and is kind to animals and the environment."
+      },
+      {
+        "n": 2,
+        "dir": "across",
+        "row": 1,
+        "col": 0,
+        "answer": "COMPASSION",
+        "chapter": "Being Compassionate",
+        "clue": "Jai saved a wounded dog from rowdy boys and looked after it. His grandfather taught him this virtue — 'living is giving'.",
+        "explain": "Being kind, loving and helpful towards all living beings is compassion. Happiness never decreases when we share it with others."
+      },
+      {
+        "n": 3,
+        "dir": "down",
+        "row": 1,
+        "col": 9,
+        "answer": "NATURE",
+        "chapter": "Nurture the Nature",
+        "clue": "Forests, rivers, animals and air — it takes care of all our needs, so we must look after it.",
+        "explain": "Wild animals wander into cities when their forests are destroyed. We must protect forests, save wildlife, say no to polythene bags and keep our surroundings clean."
+      },
+      {
+        "n": 4,
+        "dir": "across",
+        "row": 3,
+        "col": 3,
+        "answer": "RESPECT",
+        "chapter": "Celebrating Diversity / Responsibility",
+        "clue": "To treat other people, their feelings, their culture and public property with honour is to ______ them.",
+        "explain": "We must respect diverse opinions and cultures, and take care of public property like parks, monuments, hospitals and railway stations."
+      },
+      {
+        "n": 5,
+        "dir": "across",
+        "row": 5,
+        "col": 9,
+        "answer": "RIGHTS",
+        "chapter": "Responsibility: Rights and Duties",
+        "clue": "As a citizen of India — and as a student in school — you enjoy these, but they come with duties too.",
+        "explain": "We have rights that ensure a better life, and duties that keep our country and our school good places to live and learn in. I have my rights and I have my duties."
+      }
+    ]
+  },
+  {
+    "id": "teamwork-and-patience",
+    "title": "Teamwork and Patience",
+    "subtitle": "Classes III – V  •  CBSE Value Education",
+    "instructions": "Read each clue carefully and write the answer in the crossword grid — one letter in each box. Every answer is a value or a good habit you have learnt about in your Value Education book.",
+    "words": [
+      {
+        "n": 1,
+        "dir": "down",
+        "row": 0,
+        "col": 1,
+        "answer": "TEAMWORK",
+        "chapter": "Team Work",
+        "clue": "The farmer shared his best corn seeds with all his neighbours so that everyone could grow the best corn. This shows the spirit of ______.",
+        "explain": "The farmer knew that the wind carries pollen from one field to another. If his neighbours grew inferior corn, his own crop would also lose quality. So he shared his best seeds. Together we stand strong, divided we fall."
+      },
+      {
+        "n": 2,
+        "dir": "across",
+        "row": 2,
+        "col": 0,
+        "answer": "PATIENCE",
+        "chapter": "Choose Your Role Model",
+        "clue": "The little ant fell six times but tried a seventh time and finally climbed the wall. Meera learnt ______ and never to give up.",
+        "explain": "The ant became Meera's role model because it did not give up. Being patient and trying again and again helps us reach our goals."
+      },
+      {
+        "n": 3,
+        "dir": "across",
+        "row": 5,
+        "col": 0,
+        "answer": "COMPASSION",
+        "chapter": "Being Compassionate",
+        "clue": "Jai saved a wounded dog from rowdy boys and looked after it. His grandfather taught him this virtue — 'living is giving'.",
+        "explain": "Being kind, loving and helpful towards all living beings is compassion. Happiness never decreases when we share it with others."
+      }
+    ]
+  }
+]
