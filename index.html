@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Educational Games</title>
+  <style>
+    :root { color-scheme: dark; font-family: "Segoe UI", system-ui, sans-serif; color: #e2e8f0; background: #0b1220; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at top, #1e293b, #0b1220 65%); }
+    main { max-width: 1100px; margin: auto; padding: 56px 24px; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 44px); }
+    header p { margin: 0 0 32px; color: #94a3b8; line-height: 1.6; }
+    .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+    .game { display: block; max-width: 480px; overflow: hidden; color: inherit; text-decoration: none; background: #111c33; border: 1px solid #263754; border-radius: 16px; transition: transform .15s, border-color .15s; }
+    .game:hover { transform: translateY(-4px); border-color: #60a5fa; }
+    .game:focus-visible { outline: 3px solid #60a5fa; outline-offset: 5px; }
+    .game img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .details { padding: 24px; }
+    h2 { margin: 0 0 12px; font-size: 22px; }
+    .details p { margin: 0 0 20px; color: #b6c3d8; line-height: 1.6; }
+    .play { color: #93c5fd; font-weight: 600; }
+    #status { color: #b6c3d8; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Educational Games</h1>
+      <p>Discover, play, and learn at your own pace.</p>
+    </header>
+    <p id="status" role="status">Loading games…</p>
+    <div id="games" class="games"></div>
+    <noscript>Enable JavaScript to view the game list.</noscript>
+  </main>
+  <script>
+    async function loadGames() {
+      const status = document.getElementById('status');
+      const container = document.getElementById('games');
+      try {
+        const response = await fetch('./games.json');
+        if (!response.ok) throw new Error('Unable to load games');
+        const games = await response.json();
+        if (!Array.isArray(games)) throw new Error('Invalid game list');
+        const cards = document.createDocumentFragment();
+        for (const game of games) {
+          const card = document.createElement('a');
+          card.className = 'game';
+          card.href = game.url;
+          const thumbnail = document.createElement('img');
+          thumbnail.src = game.thumbnail;
+          thumbnail.alt = `${game.title} preview`;
+          thumbnail.loading = 'lazy';
+          thumbnail.width = 640;
+          thumbnail.height = 360;
+          const details = document.createElement('div');
+          details.className = 'details';
+          const title = document.createElement('h2');
+          title.textContent = game.title;
+          const description = document.createElement('p');
+          description.textContent = game.description;
+          const play = document.createElement('span');
+          play.className = 'play';
+          play.textContent = 'Play game →';
+          details.append(title, description, play);
+          card.append(thumbnail, details);
+          cards.append(card);
+        }
+        container.replaceChildren(cards);
+        status.textContent = games.length ? '' : 'More games are coming soon.';
+        status.hidden = games.length > 0;
+      } catch (error) {
+        status.textContent = 'The games could not be loaded. Please refresh and try again.';
+        console.error(error);
+      }
+    }
+    loadGames();
+  </script>
+</body>
+</html>
