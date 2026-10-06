@@ -29,8 +29,14 @@
       <div class="toolbar">
         <button id="btn-check">✔ Check</button>
         <button id="btn-letter">Reveal Letter</button>
+        <button id="btn-hint" disabled>Show next hint</button>
         <button id="btn-clear">Clear</button>
       </div>
+      <section class="word-hints" aria-labelledby="word-hints-title">
+        <h2 id="word-hints-title">Word hints</h2>
+        <p id="word-hints-status" role="status">Select a word to see its available hints.</p>
+        <ol id="word-hints-list"></ol>
+      </section>
       <p class="hint" id="typing-hint">Tap or click a box to type. Tap the same box again to switch between <b>Across</b> and <b>Down</b>. Use arrow keys to move, Tab for the next clue.</p>
       <div class="status" id="status"></div>
     </section>

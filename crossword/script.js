@@ -74,7 +74,8 @@ const state = {
   entries: {},          // "r,c" -> letter typed by the player
   sel: null,            // { row, col, dir }
   wrong: new Set(),     // keys marked wrong
-  revealed: new Set()   // keys revealed
+  revealed: new Set(),  // keys revealed
+  hintCounts: new Map() // word number -> hints already shown
 };
 
 const cellEls = {};
@@ -200,6 +201,7 @@ function buildClueLists() {
 }
 
 function highlightClue() {
+  updateWordHints();
   document.querySelectorAll('.clue-col li').forEach(li => li.classList.remove('active'));
   if (!state.sel) return;
   const w = wordAt(state.sel.row, state.sel.col, state.sel.dir);
@@ -209,6 +211,36 @@ function highlightClue() {
     li.classList.add('active');
     if (!window.matchMedia('(pointer: coarse)').matches) li.scrollIntoView({ block: 'nearest' });
   }
+}
+
+function updateWordHints() {
+  const word = state.sel && wordAt(state.sel.row, state.sel.col, state.sel.dir);
+  const hints = word && Array.isArray(word.hints) ? word.hints : [];
+  const shown = word ? state.hintCounts.get(word.n) || 0 : 0;
+  document.getElementById('word-hints-title').textContent = word
+    ? `Hints for ${word.display} ${word.dir === 'across' ? 'Across' : 'Down'}` : 'Word hints';
+  document.getElementById('word-hints-status').textContent = !word
+    ? 'Select a word to see its available hints.'
+    : hints.length ? `${shown} of ${hints.length} hints shown.` : 'No hints available for this word.';
+  const list = document.getElementById('word-hints-list');
+  list.replaceChildren();
+  for (const hint of hints.slice(0, shown)) {
+    const item = document.createElement('li');
+    item.textContent = hint;
+    list.appendChild(item);
+  }
+  const button = document.getElementById('btn-hint');
+  button.disabled = !word || shown >= hints.length;
+  button.textContent = hints.length && shown >= hints.length ? 'All hints shown' : 'Show next hint';
+}
+
+function showNextHint() {
+  if (!state.sel) return;
+  const word = wordAt(state.sel.row, state.sel.col, state.sel.dir);
+  if (!word || !Array.isArray(word.hints)) return;
+  const shown = state.hintCounts.get(word.n) || 0;
+  state.hintCounts.set(word.n, Math.min(shown + 1, word.hints.length));
+  updateWordHints();
 }
 
 /* =========================================================
@@ -365,6 +397,8 @@ function revealLetter() {
 }
 
 function clearAll() {
+  state.hintCounts.clear();
+  updateWordHints();
   state.entries = {};
   state.wrong.clear();
   state.revealed.clear();
@@ -488,6 +522,7 @@ function buildPrint() {
    11. INIT
    ========================================================= */
 function loadPuzzle(puzzle) {
+  state.hintCounts.clear();
   PUZZLE = structuredClone(puzzle);
   for (const key of Object.keys(cells)) delete cells[key];
   for (const key of Object.keys(cellEls)) delete cellEls[key];
@@ -534,6 +569,7 @@ async function loadPuzzles() {
     loadPuzzle(puzzles[0]);
     selector.disabled = false;
     buttons.forEach(button => button.disabled = false);
+    updateWordHints();
     status.textContent = 'Changing puzzles starts a new grid.';
   } catch (error) {
     status.textContent = 'Puzzles could not be loaded. Please refresh and try again.';
@@ -547,6 +583,7 @@ loadPuzzles();
 
 document.getElementById('btn-check').addEventListener('click', checkAll);
 document.getElementById('btn-letter').addEventListener('click', revealLetter);
+document.getElementById('btn-hint').addEventListener('click', showNextHint);
 document.getElementById('btn-clear').addEventListener('click', clearAll);
 
 document.getElementById('btn-print').addEventListener('click', () => {

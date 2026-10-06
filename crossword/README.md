@@ -4,6 +4,9 @@
 Each word includes an answer, clue, explanation, chapter, direction, and starting
 row and column. Rows and columns start at zero; answers use uppercase letters
 without spaces. Display numbering is generated from the starting positions.
+Each word also has a `hints` array ordered from a conceptual clue to progressively
+stronger letter hints. The interactive page reveals one hint at a time for the
+selected word and remembers progress until the puzzle changes or is cleared.
 
 ## Classes VI–VIII
 

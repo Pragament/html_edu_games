@@ -74,6 +74,13 @@ button:hover{background:#24385c;color:#fff;transform:translateY(-1px)}
 button:active{transform:translateY(0)}
 .hint{text-align:center;color:#7d8ba3;font-size:12px;margin:12px 0 0;line-height:1.5}
 .status{text-align:center;font-size:14px;font-weight:700;margin-top:10px;min-height:20px}
+.word-hints{margin-top:16px;padding:12px 14px;border:1px solid var(--line2);border-radius:10px}
+.word-hints h2{font-size:14px;margin:0 0 8px;color:var(--accent2)}
+.word-hints p,.word-hints li{font-size:13px;line-height:1.5;color:#b6c3d8}
+.word-hints p{margin:0}
+.word-hints ol{padding-left:20px;margin:8px 0 0}
+.word-hints li+li{margin-top:6px}
+button:disabled{opacity:.5;cursor:default;transform:none}
 
 /* ---------- Clues ---------- */
 .clues-card{display:grid;grid-template-columns:1fr 1fr;gap:16px}
