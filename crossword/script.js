@@ -440,7 +440,7 @@ function buildPrint() {
   head.innerHTML = `
     <h1>${PUZZLE.title}</h1>
     <p class="psub">${PUZZLE.subtitle}</p>
-    <p class="pinst">${PUZZLE.instructions}</p>
+    <p class="pinst">${getWorksheetInstructions(PUZZLE)}</p>
     <p class="pname">Name: ______________________________ &nbsp;&nbsp; Class: __________ &nbsp;&nbsp; Date: ______________</p>
   `;
   p1.appendChild(head);
@@ -464,14 +464,15 @@ function buildPrint() {
   // clues
   const clues = document.createElement('div');
   clues.className = 'p-clues';
+  const printClue = w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span>${(w.hints || []).map((hint, index) => `<span class="p-hint"><b>Hint ${index + 1}:</b> ${hint}</span>`).join('')}</p>`;
   clues.innerHTML = `
     <div>
       <h2>Across</h2>
-      ${acrossWords.map(w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span></p>`).join('')}
+      ${acrossWords.map(printClue).join('')}
     </div>
     <div>
       <h2>Down</h2>
-      ${downWords.map(w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span></p>`).join('')}
+      ${downWords.map(printClue).join('')}
     </div>
   `;
   p1.appendChild(clues);
@@ -566,7 +567,9 @@ async function loadPuzzles() {
     }
     selector.replaceChildren();
     puzzles.forEach((puzzle, index) => selector.add(new Option(puzzle.title, String(index))));
-    loadPuzzle(puzzles[0]);
+    const initialIndex = Math.floor(Math.random() * puzzles.length);
+    selector.value = String(initialIndex);
+    loadPuzzle(puzzles[initialIndex]);
     selector.disabled = false;
     buttons.forEach(button => button.disabled = false);
     updateWordHints();

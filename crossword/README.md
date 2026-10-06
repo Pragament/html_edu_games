@@ -7,6 +7,8 @@ without spaces. Display numbering is generated from the starting positions.
 Each word also has a `hints` array ordered from a conceptual clue to progressively
 stronger letter hints. The interactive page reveals one hint at a time for the
 selected word and remembers progress until the puzzle changes or is cleared.
+PDF downloads and printed worksheets include all hints beneath each clue and
+omit instructions that refer to selecting a word on the interactive page.
 
 ## Classes VI–VIII
 

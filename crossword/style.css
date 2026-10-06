@@ -145,6 +145,8 @@ button.primary:hover{filter:brightness(1.12)}
     border-bottom:.8pt solid #000;padding-bottom:1mm;
   }
   .p-clues p{font-size:8pt;line-height:1.4;margin:0 0 2mm;color:#000}
+  .p-clues p{break-inside:avoid}
+  .p-hint{display:block;margin-top:1mm}
   .p-len{color:#555;font-size:7pt}
 
   .p-explain p{

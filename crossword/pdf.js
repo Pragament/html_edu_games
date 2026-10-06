@@ -1,4 +1,8 @@
 /* Local A4 PDF export with vector text, grids, and QR code. */
+function getWorksheetInstructions(puzzle) {
+  return puzzle.instructions.replace(/\s*Select a word(?: for progressive hints| to reveal hints one at a time)\./gi, '').trim();
+}
+
 function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   const width = 595.28, height = 841.89, margin = 30;
   const contentWidth = width - margin * 2, gap = 18;
@@ -76,11 +80,17 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   }
   const ordered = direction => puzzle.words.filter(w => w.dir === direction).sort((a, b) => a.display - b.display);
   function clueBlocks(direction) {
-    return ordered(direction).map(word => wrap(`${word.display}. ${word.clue} (${word.answer.length})`, fontSize, columnWidth));
+    return ordered(direction).map(word => {
+      const lines = wrap(`${word.display}. ${word.clue} (${word.answer.length})`, fontSize, columnWidth);
+      for (const [index, hint] of (word.hints || []).entries()) {
+        lines.push(...wrap(`Hint ${index + 1}: ${hint}`, fontSize, columnWidth));
+      }
+      return lines;
+    });
   }
   newPage('Crossword Worksheet', true);
   paragraph(puzzle.subtitle);
-  paragraph(puzzle.instructions);
+  paragraph(getWorksheetInstructions(puzzle));
   paragraph('Name: _______________________    Date: ______________');
   grid(false);
   const clues = [clueBlocks('across'), clueBlocks('down')];
