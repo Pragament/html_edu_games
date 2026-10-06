@@ -212,5 +212,1752 @@
         "explain": "Being kind, loving and helpful towards all living beings is compassion. Happiness never decreases when we share it with others."
       }
     ]
+  },
+  {
+    "id": "class-vi-working-together",
+    "title": "Class VI - Working Together",
+    "subtitle": "Class VI | Value Education",
+    "classLevel": "VI",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class VI - VIII - Web.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "Adapted from the shared Classes VI-VIII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "RESPECT",
+        "chapter": "Respect",
+        "sourcePages": [
+          5,
+          6
+        ],
+        "clue": "Listening to a classmate and valuing their ideas shows this attitude.",
+        "explain": "Respect includes taking other people and their views seriously.",
+        "row": 0,
+        "col": 1,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "PRIVACY",
+        "chapter": "Respect",
+        "sourcePages": [
+          6
+        ],
+        "clue": "Respecting someone's personal space and private matters protects their _____.",
+        "explain": "Giving others space is one way to show consideration.",
+        "row": 0,
+        "col": 4,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "TEAMWORK",
+        "chapter": "Collaboration",
+        "sourcePages": [
+          3,
+          4
+        ],
+        "clue": "What do we call people combining their efforts to complete a shared task?",
+        "explain": "A team shares tasks and helps its members reach a common goal.",
+        "row": 0,
+        "col": 7,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "GOAL",
+        "chapter": "Doing Your Best",
+        "sourcePages": [
+          1,
+          2
+        ],
+        "clue": "A result you aim to achieve through effort is a _____.",
+        "explain": "Knowing what you want to achieve helps you direct your effort.",
+        "row": 4,
+        "col": 2,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "UNITY",
+        "chapter": "Collaboration",
+        "sourcePages": [
+          4
+        ],
+        "clue": "The reflection says that this togetherness gives people strength.",
+        "explain": "People can achieve more when they work together and support one another.",
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "TRUST",
+        "chapter": "Collaboration",
+        "sourcePages": [
+          4
+        ],
+        "clue": "In the blindfolded walk, the walker relies on the guides. This reliance is called _____.",
+        "explain": "Trust grows when team members give dependable guidance and support.",
+        "row": 6,
+        "col": 3,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "GROUP",
+        "chapter": "Collaboration",
+        "sourcePages": [
+          4
+        ],
+        "clue": "Several students working on one radio show form a _____.",
+        "explain": "Group members can divide roles such as interviewer, reporter, and singer.",
+        "row": 8,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "LISTEN",
+        "chapter": "Respect",
+        "sourcePages": [
+          5
+        ],
+        "clue": "To understand a partner, first _____ carefully to what they say.",
+        "explain": "Listening helps us notice the needs and ideas of other people.",
+        "row": 10,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-vi-time-and-effort",
+    "title": "Class VI - Time and Effort",
+    "subtitle": "Class VI | Value Education",
+    "classLevel": "VI",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class VI - VIII - Web.pdf",
+      "pages": [
+        1,
+        2,
+        19,
+        20
+      ],
+      "note": "Adapted from the shared Classes VI-VIII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "SLEEP",
+        "chapter": "Time Management",
+        "sourcePages": [
+          19
+        ],
+        "clue": "Hassan stayed awake too late. He did not get enough _____.",
+        "explain": "Starting homework in time leaves room for rest and the next day's activities.",
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "PRACTICE",
+        "chapter": "Doing Your Best",
+        "sourcePages": [
+          1
+        ],
+        "clue": "Athletes repeat their training to improve. They _____ regularly.",
+        "explain": "Improvement takes repeated effort rather than one attempt.",
+        "row": 0,
+        "col": 4,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "PRIORITY",
+        "chapter": "Time Management",
+        "sourcePages": [
+          19
+        ],
+        "clue": "The task that needs attention before less important tasks has _____.",
+        "explain": "Deciding which task matters most helps you use your time well.",
+        "row": 1,
+        "col": 9,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "CHART",
+        "chapter": "Time Management",
+        "sourcePages": [
+          20
+        ],
+        "clue": "A table used to track daily activities over two weeks is a _____.",
+        "explain": "Recording activities helps you see where your time goes.",
+        "row": 2,
+        "col": 2,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "TIME",
+        "chapter": "Time Management",
+        "sourcePages": [
+          19,
+          20
+        ],
+        "clue": "This resource keeps passing, like the ticking of a clock.",
+        "explain": "Planning helps us use the hours available for work, rest, and enjoyment.",
+        "row": 2,
+        "col": 6,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "FOCUS",
+        "chapter": "Doing Your Best",
+        "sourcePages": [
+          1
+        ],
+        "clue": "Giving your full attention to a task means keeping your _____.",
+        "explain": "Attention and regular effort help you move towards a goal.",
+        "row": 4,
+        "col": 1,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "ROUTINE",
+        "chapter": "Time Management",
+        "sourcePages": [
+          19
+        ],
+        "clue": "A regular daily pattern for completing tasks is a _____.",
+        "explain": "A daily routine can help save time and make tasks easier to organise.",
+        "row": 5,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "EFFORT",
+        "chapter": "Doing Your Best",
+        "sourcePages": [
+          1,
+          2
+        ],
+        "clue": "The work you put into reaching a goal is your _____.",
+        "explain": "Recognising a classmate's effort encourages them to keep trying.",
+        "row": 7,
+        "col": 4,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-vii-freedom-and-community",
+    "title": "Class VII - Freedom and Community",
+    "subtitle": "Class VII | Value Education",
+    "classLevel": "VII",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class VI - VIII - Web.pdf",
+      "pages": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "note": "Adapted from the shared Classes VI-VIII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "FESTIVALS",
+        "chapter": "Celebrating the Nation",
+        "sourcePages": [
+          12
+        ],
+        "clue": "Celebrations that can help us learn about different traditions are called _____.",
+        "explain": "Finding out about celebrations beyond our own builds understanding.",
+        "row": 0,
+        "col": 2,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "HERITAGE",
+        "chapter": "Celebrating the Nation",
+        "sourcePages": [
+          11
+        ],
+        "clue": "The cultural traditions inherited from earlier generations form our _____.",
+        "explain": "Celebrations provide opportunities to understand and value our cultural inheritance.",
+        "row": 1,
+        "col": 1,
+        "dir": "across",
+        "n": 2
+      },
+      {
+        "answer": "FREEDOM",
+        "chapter": "Freedom",
+        "sourcePages": [
+          7,
+          8
+        ],
+        "clue": "The man releases the caged birds because he values the ability to live without confinement.",
+        "explain": "The story asks us to appreciate freedom and use it responsibly.",
+        "row": 4,
+        "col": 4,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "RIGHTS",
+        "chapter": "Rights and Responsibility",
+        "sourcePages": [
+          9,
+          10
+        ],
+        "clue": "These entitlements must be used with consideration for other people.",
+        "explain": "Using our rights responsibly also means respecting the rights of others.",
+        "row": 4,
+        "col": 6,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "DIVERSITY",
+        "chapter": "Celebrating the Nation",
+        "sourcePages": [
+          11,
+          12
+        ],
+        "clue": "India's many cultures and festivals are examples of its _____.",
+        "explain": "Learning about different traditions helps us appreciate our country.",
+        "row": 5,
+        "col": 0,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "DUTIES",
+        "chapter": "Rights and Responsibility",
+        "sourcePages": [
+          9,
+          10
+        ],
+        "clue": "Responsibilities that accompany our rights are also called _____.",
+        "explain": "Members of a community contribute by fulfilling their responsibilities.",
+        "row": 5,
+        "col": 0,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "RULES",
+        "chapter": "Rights and Responsibility",
+        "sourcePages": [
+          10
+        ],
+        "clue": "School guidelines that prevent disorder and help everyone share facilities are _____.",
+        "explain": "Following shared guidelines helps make school a safe and orderly place.",
+        "row": 6,
+        "col": 9,
+        "dir": "down",
+        "n": 7
+      },
+      {
+        "answer": "CONSUMER",
+        "chapter": "Rights and Responsibility",
+        "sourcePages": [
+          10
+        ],
+        "clue": "A person buying goods, who can check prices and expiry dates, is a _____.",
+        "explain": "The market survey activity encourages buyers to pay attention to product information.",
+        "row": 9,
+        "col": 3,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-vii-caring-for-earth",
+    "title": "Class VII - Caring for Earth",
+    "subtitle": "Class VII | Value Education",
+    "classLevel": "VII",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class VI - VIII - Web.pdf",
+      "pages": [
+        17,
+        18
+      ],
+      "note": "Adapted from the shared Classes VI-VIII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "CARPOOL",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          18
+        ],
+        "clue": "Sharing a car journey with others is to _____.",
+        "explain": "Shared transport is suggested as a way to reduce the impact of travel.",
+        "row": 0,
+        "col": 3,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "RESOURCES",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          17,
+          18
+        ],
+        "clue": "Water and electricity are useful supplies that we should avoid wasting.",
+        "explain": "Careful use of supplies helps preserve them for the future.",
+        "row": 0,
+        "col": 5,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "NOISE",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          18
+        ],
+        "clue": "Loud horns, music, and crackers contribute to _____ pollution.",
+        "explain": "Being considerate about sound helps reduce disturbance to other people.",
+        "row": 1,
+        "col": 1,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "COMPOST",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          18
+        ],
+        "clue": "Fallen leaves can be turned into this useful material for gardens instead of being burned.",
+        "explain": "Plant waste can be reused to support gardens while avoiding leaf burning.",
+        "row": 2,
+        "col": 0,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "CONSERVE",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          17
+        ],
+        "clue": "To protect water and electricity from unnecessary use is to _____ them.",
+        "explain": "Switching off unused appliances and closing taps helps save resources.",
+        "row": 3,
+        "col": 7,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "ENVIRONMENT",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          17
+        ],
+        "clue": "Our natural surroundings, which we should protect for future generations, are the _____.",
+        "explain": "Our choices today affect the world that other people will inherit.",
+        "row": 5,
+        "col": 1,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "AWARENESS",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          17,
+          18
+        ],
+        "clue": "Posters help build public _____ about saving water and reducing pollution.",
+        "explain": "Sharing information can encourage a community to care for the environment.",
+        "row": 7,
+        "col": 1,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "RAINWATER",
+        "chapter": "Sensitivity Towards Environment",
+        "sourcePages": [
+          18
+        ],
+        "clue": "Collecting this water from rainfall can reduce the use of fresh water for gardening.",
+        "explain": "Rainwater harvesting is one example of making better use of available resources.",
+        "row": 10,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-viii-peace-and-inclusion",
+    "title": "Class VIII - Peace and Inclusion",
+    "subtitle": "Class VIII | Value Education",
+    "classLevel": "VIII",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class VI - VIII - Web.pdf",
+      "pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "note": "Adapted from the shared Classes VI-VIII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "EMPATHY",
+        "chapter": "Acceptance of Others",
+        "sourcePages": [
+          15
+        ],
+        "clue": "Understanding another person's feelings and perspective is _____.",
+        "explain": "Trying to understand another person can strengthen acceptance and connection.",
+        "row": 0,
+        "col": 4,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "ACCEPTANCE",
+        "chapter": "Acceptance of Others",
+        "sourcePages": [
+          15,
+          16
+        ],
+        "clue": "Respecting people's beliefs and choices, even when different from ours, shows _____.",
+        "explain": "Recognising differences with respect helps people live together.",
+        "row": 0,
+        "col": 7,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "DOVE",
+        "chapter": "Peace",
+        "sourcePages": [
+          14
+        ],
+        "clue": "This bird is given as an example of a symbol of peace.",
+        "explain": "The poster activity asks students to explore symbols that represent peace.",
+        "row": 2,
+        "col": 1,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "JEALOUSY",
+        "chapter": "Acceptance of Others",
+        "sourcePages": [
+          16
+        ],
+        "clue": "The activity asks whether envy of a friend makes kindness difficult. What feeling is this?",
+        "explain": "Noticing envy can help us choose a kinder response towards a friend.",
+        "row": 2,
+        "col": 10,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "NONVIOLENCE",
+        "chapter": "Peace",
+        "sourcePages": [
+          13,
+          14
+        ],
+        "clue": "Resolving disagreements without using force follows the principle of _____.",
+        "explain": "Peaceful responses help prevent a disagreement from becoming harmful.",
+        "row": 3,
+        "col": 0,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "EQUALITY",
+        "chapter": "Acceptance of Others",
+        "sourcePages": [
+          15,
+          16
+        ],
+        "clue": "Treating people as equally worthy, rather than as superior or inferior, supports _____.",
+        "explain": "The activities encourage learners to notice and challenge unequal treatment.",
+        "row": 5,
+        "col": 1,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "HARMONY",
+        "chapter": "Peace",
+        "sourcePages": [
+          13
+        ],
+        "clue": "A state in which people live together peacefully and cooperate is _____.",
+        "explain": "Patience and peaceful responses support good relationships.",
+        "row": 7,
+        "col": 2,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "PATIENCE",
+        "chapter": "Peace",
+        "sourcePages": [
+          13
+        ],
+        "clue": "Remaining calm while waiting or facing a difficulty shows _____.",
+        "explain": "Patience helps us respond thoughtfully instead of reacting with anger.",
+        "row": 9,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-viii-purpose-and-care",
+    "title": "Class VIII - Purpose and Care",
+    "subtitle": "Class VIII | Value Education",
+    "classLevel": "VIII",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class VI - VIII - Web.pdf",
+      "pages": [
+        1,
+        3,
+        4,
+        21,
+        22
+      ],
+      "note": "Adapted from the shared Classes VI-VIII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "COLLABORATION",
+        "chapter": "Collaboration",
+        "sourcePages": [
+          3,
+          4
+        ],
+        "clue": "People combining different roles to realise a shared goal are practising _____.",
+        "explain": "Shared effort depends on communication, trust, and respect for others' contributions.",
+        "row": 0,
+        "col": 7,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "CONSIDERATION",
+        "chapter": "Caring",
+        "sourcePages": [
+          21
+        ],
+        "clue": "Thinking carefully about another person's needs and point of view shows _____.",
+        "explain": "Respectful care takes other people's feelings and circumstances into account.",
+        "row": 0,
+        "col": 9,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "CONSISTENCY",
+        "chapter": "Caring",
+        "sourcePages": [
+          21
+        ],
+        "clue": "When a person's actions match their stated principles over time, they show _____.",
+        "explain": "Ethical conduct requires agreement between what we say and what we do.",
+        "row": 2,
+        "col": 5,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "DETERMINATION",
+        "chapter": "Doing Your Best",
+        "sourcePages": [
+          1
+        ],
+        "clue": "The firm resolve to keep working towards a goal is _____.",
+        "explain": "Achieving a demanding goal requires commitment even when progress is difficult.",
+        "row": 2,
+        "col": 12,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "COMPASSION",
+        "chapter": "Caring",
+        "sourcePages": [
+          22
+        ],
+        "clue": "Concern for suffering animals, together with a wish to help, shows _____.",
+        "explain": "The caring activities invite learners to consider kinder treatment of animals.",
+        "row": 3,
+        "col": 3,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "ACCOUNTABILITY",
+        "chapter": "Caring",
+        "sourcePages": [
+          21
+        ],
+        "clue": "Being answerable for your actions and their effects demonstrates _____.",
+        "explain": "Caring includes recognising how our choices affect other people.",
+        "row": 4,
+        "col": 0,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "COMMUNITY",
+        "chapter": "Caring",
+        "sourcePages": [
+          21
+        ],
+        "clue": "The wider group of neighbours and citizens whose well-being we can support is our _____.",
+        "explain": "Care can extend beyond family and friends to the people around us.",
+        "row": 4,
+        "col": 1,
+        "dir": "down",
+        "n": 7
+      },
+      {
+        "answer": "CONCENTRATION",
+        "chapter": "Doing Your Best",
+        "sourcePages": [
+          1
+        ],
+        "clue": "Sustained attention to the task in front of you is _____.",
+        "explain": "Giving a task your attention helps you make effective use of your abilities.",
+        "row": 14,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-ix-courtesy-and-character",
+    "title": "Class IX - Courtesy and Character",
+    "subtitle": "Class IX | Value Education",
+    "classLevel": "IX",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        1,
+        2,
+        17,
+        18
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "ROLEMODEL",
+        "chapter": "Good Behaviour in Human Interaction",
+        "sourcePages": [
+          2
+        ],
+        "clue": "A person whose positive conduct you admire and seek to follow is a _____.",
+        "explain": "The interview activity separates admired behaviour from practical skills.",
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "RESPECT",
+        "chapter": "Good Behaviour in Human Interaction",
+        "sourcePages": [
+          1
+        ],
+        "clue": "Valuing another person while exercising authority demonstrates _____.",
+        "explain": "Good behaviour combines effective action with regard for other people.",
+        "row": 0,
+        "col": 0,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "LISTENING",
+        "chapter": "Courtesy",
+        "sourcePages": [
+          18
+        ],
+        "clue": "Before judging why a sibling arrived late, this attentive action helps us understand the situation.",
+        "explain": "Hearing an explanation before reacting avoids unfair assumptions.",
+        "row": 0,
+        "col": 8,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "COURTESY",
+        "chapter": "Courtesy",
+        "sourcePages": [
+          17,
+          18
+        ],
+        "clue": "Considerate manners that leave a positive impression on others are called _____.",
+        "explain": "Courtesy is expressed through respectful words and thoughtful behaviour.",
+        "row": 1,
+        "col": 10,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "HONESTY",
+        "chapter": "Good Behaviour in Human Interaction",
+        "sourcePages": [
+          2
+        ],
+        "clue": "Ashish refuses to lie to protect another prefect. Which value guides that decision?",
+        "explain": "Telling the truth can be difficult when a friend wants an unfair favour.",
+        "row": 2,
+        "col": 6,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "APOLOGY",
+        "chapter": "Courtesy",
+        "sourcePages": [
+          18
+        ],
+        "clue": "After scolding someone unfairly, a sincere expression of regret is an _____.",
+        "explain": "Acknowledging a mistaken judgement can help repair a relationship.",
+        "row": 3,
+        "col": 3,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "CONCERN",
+        "chapter": "Good Behaviour in Human Interaction",
+        "sourcePages": [
+          1
+        ],
+        "clue": "Taking an interest in another person's needs shows _____.",
+        "explain": "Concern encourages us to consider how our behaviour affects others.",
+        "row": 5,
+        "col": 2,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "POLITENESS",
+        "chapter": "Good Behaviour in Human Interaction",
+        "sourcePages": [
+          1
+        ],
+        "clue": "The bus conductors impress travellers by speaking respectfully. What quality do they show?",
+        "explain": "Polite interactions can make a shared journey more pleasant.",
+        "row": 7,
+        "col": 2,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-ix-discipline-and-duty",
+    "title": "Class IX - Discipline and Duty",
+    "subtitle": "Class IX | Value Education",
+    "classLevel": "IX",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "COURAGE",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          8
+        ],
+        "clue": "The willingness to admit a mistake even when doing so is difficult requires _____.",
+        "explain": "Owning up to a wrong action can be a step towards taking responsibility.",
+        "row": 0,
+        "col": 6,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "CHOICES",
+        "chapter": "Discipline",
+        "sourcePages": [
+          6
+        ],
+        "clue": "The decisions we make about our conduct are our _____.",
+        "explain": "Reflecting on decisions helps us understand whether we acted responsibly.",
+        "row": 0,
+        "col": 6,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "SELFCONTROL",
+        "chapter": "Discipline",
+        "sourcePages": [
+          6
+        ],
+        "clue": "Regulating an impulse so that you can choose a thoughtful response shows _____.",
+        "explain": "Discipline involves choosing appropriate actions rather than simply following an impulse.",
+        "row": 2,
+        "col": 1,
+        "dir": "across",
+        "n": 3
+      },
+      {
+        "answer": "FAIRNESS",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          7
+        ],
+        "clue": "Treating people without favouritism demonstrates _____.",
+        "explain": "Responsible decisions take other people into consideration rather than giving unfair advantages.",
+        "row": 3,
+        "col": 0,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "RESPONSIBILITY",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          7
+        ],
+        "clue": "Undertaking a task with purpose and fulfilling it carefully demonstrates _____.",
+        "explain": "Being responsible means making an effort to complete what you undertake.",
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "ORDER",
+        "chapter": "Discipline",
+        "sourcePages": [
+          5
+        ],
+        "clue": "A class in which shared expectations are followed has _____ rather than chaos.",
+        "explain": "Attention to responsibilities helps people work together without unnecessary disruption.",
+        "row": 6,
+        "col": 4,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "DISCIPLINE",
+        "chapter": "Discipline",
+        "sourcePages": [
+          5,
+          6
+        ],
+        "clue": "Structured behaviour that supports immediate tasks and long-term goals is _____.",
+        "explain": "Regular, responsible conduct helps people organise their work and relationships.",
+        "row": 8,
+        "col": 4,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "PROMISE",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          7
+        ],
+        "clue": "A commitment to help someone is a _____ that a responsible person tries to keep.",
+        "explain": "Other people rely on us when we give our word.",
+        "row": 10,
+        "col": 3,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-x-resolving-conflict",
+    "title": "Class X - Resolving Conflict",
+    "subtitle": "Class X | Value Education",
+    "classLevel": "X",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        11,
+        12
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "TOLERANCE",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          12
+        ],
+        "clue": "Allowing room for differences rather than responding with hostility shows _____.",
+        "explain": "Different views do not have to turn into angry or violent responses.",
+        "row": 0,
+        "col": 1,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "CONFLICT",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          11
+        ],
+        "clue": "A disagreement or clash that may need a peaceful solution is a _____.",
+        "explain": "Disagreements can arise between friends or family and deserve careful attention.",
+        "row": 1,
+        "col": 0,
+        "dir": "across",
+        "n": 2
+      },
+      {
+        "answer": "ANGER",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          11
+        ],
+        "clue": "The strong feeling examined by questions about what makes a person upset is _____.",
+        "explain": "Recognising this feeling can help us choose how to respond during a disagreement.",
+        "row": 2,
+        "col": 9,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "RESOLUTION",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          11,
+          12
+        ],
+        "clue": "Finding an acceptable way to settle a disagreement is conflict _____.",
+        "explain": "A useful solution considers the concerns of both sides.",
+        "row": 3,
+        "col": 0,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "APOLOGISE",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          12
+        ],
+        "clue": "To express regret to someone after a hurtful argument is to _____.",
+        "explain": "Acknowledging harm can help begin the repair of a relationship.",
+        "row": 5,
+        "col": 1,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "OUTCOME",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          11
+        ],
+        "clue": "The result of a disagreement, considered after its causes and course, is its _____.",
+        "explain": "Reviewing what happened afterwards helps us learn from an interaction.",
+        "row": 5,
+        "col": 5,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "REFLECTION",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          12
+        ],
+        "clue": "Taking time to examine how an argument started is an act of _____.",
+        "explain": "Thinking back can reveal how a different response might have helped.",
+        "row": 8,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "PEACEFUL",
+        "chapter": "Conflict Resolution",
+        "sourcePages": [
+          11
+        ],
+        "clue": "A solution reached without aggression can be described as _____.",
+        "explain": "The activities focus on settling disagreements without damaging relationships.",
+        "row": 11,
+        "col": 1,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-x-effective-teams",
+    "title": "Class X - Effective Teams",
+    "subtitle": "Class X | Value Education",
+    "classLevel": "X",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        13,
+        14
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "PERCEPTIONS",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          14
+        ],
+        "clue": "Different ways people interpret the same paper-folding instructions are their _____.",
+        "explain": "The activity shows why a team should clarify instructions and respect different interpretations.",
+        "row": 0,
+        "col": 2,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "COOPERATION",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          13
+        ],
+        "clue": "Willingly combining efforts and helping other team members demonstrates _____.",
+        "explain": "Working with others supports achievement of the common goal.",
+        "row": 0,
+        "col": 5,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "LEADERSHIP",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          13
+        ],
+        "clue": "Guiding a group towards a shared purpose calls for _____.",
+        "explain": "Responsible guidance supports the group and encourages useful contributions.",
+        "row": 1,
+        "col": 1,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "TEAMWORK",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          13,
+          14
+        ],
+        "clue": "Coordinated effort by people working for a common goal is _____.",
+        "explain": "A team considers the shared task as well as individual preferences.",
+        "row": 2,
+        "col": 0,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "CREATIVITY",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          14
+        ],
+        "clue": "Inventive thinking used to design a newsletter or a play demonstrates _____.",
+        "explain": "Shared projects give students opportunities to contribute original ideas.",
+        "row": 4,
+        "col": 3,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "GOALS",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          13
+        ],
+        "clue": "Realistic and achievable targets that give a team direction are its _____.",
+        "explain": "Clear targets help a group work systematically.",
+        "row": 8,
+        "col": 3,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "PLANNING",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          14
+        ],
+        "clue": "Deciding in advance how to organise and share tasks is _____.",
+        "explain": "Organising the work helps members understand how to contribute.",
+        "row": 10,
+        "col": 1,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "NEWSLETTER",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          14
+        ],
+        "clue": "The collaborative publication reporting four weeks of school activities is a _____.",
+        "explain": "Collecting and arranging school reports requires coordination across the group.",
+        "row": 12,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-xi-honesty-and-integrity",
+    "title": "Class XI - Honesty and Integrity",
+    "subtitle": "Class XI | Value Education",
+    "classLevel": "XI",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        8,
+        15,
+        16
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "ETHICAL",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          15
+        ],
+        "clue": "Conduct guided by moral principles can be described as _____.",
+        "explain": "Integrity requires considering what is right, not only what benefits us.",
+        "row": 0,
+        "col": 0,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "CHARACTER",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          16
+        ],
+        "clue": "The reflection links repeated thoughts, words, and actions to the formation of _____.",
+        "explain": "Our repeated decisions contribute to the kind of person we become.",
+        "row": 0,
+        "col": 9,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "TRUTHFUL",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          15
+        ],
+        "clue": "A person who gives an accurate account rather than a deliberate falsehood is _____.",
+        "explain": "Honesty involves being accurate and open in what we say.",
+        "row": 1,
+        "col": 0,
+        "dir": "across",
+        "n": 3
+      },
+      {
+        "answer": "HONESTY",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          15
+        ],
+        "clue": "Reporting an exam totalling error that gave you extra marks shows _____.",
+        "explain": "Truthfulness matters even when correcting an error reduces a personal advantage.",
+        "row": 1,
+        "col": 4,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "PRESSURE",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          16
+        ],
+        "clue": "Friends may try to influence you to ignore wrongdoing. This is peer _____.",
+        "explain": "Ethical choices can require resisting the influence of a group.",
+        "row": 1,
+        "col": 12,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "CONFESS",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          16
+        ],
+        "clue": "To admit that you changed your marks rather than hiding it is to _____.",
+        "explain": "Acknowledging a dishonest action is part of taking responsibility for it.",
+        "row": 4,
+        "col": 0,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "INTEGRITY",
+        "chapter": "Honesty and Integrity",
+        "sourcePages": [
+          15
+        ],
+        "clue": "Adhering to ethical principles even when a dishonest choice is easier demonstrates _____.",
+        "explain": "Integrity connects what we believe is right with how we act.",
+        "row": 6,
+        "col": 2,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "COURAGE",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          8
+        ],
+        "clue": "Standing up for truth despite possible criticism requires _____.",
+        "explain": "Responsible action can take strength when the easy choice would conceal a problem.",
+        "row": 8,
+        "col": 6,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-xi-respecting-differences",
+    "title": "Class XI - Respecting Differences",
+    "subtitle": "Class XI | Value Education",
+    "classLevel": "XI",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        3,
+        4,
+        14,
+        19,
+        20
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "TOLERANCE",
+        "chapter": "Fostering Respect for Differences",
+        "sourcePages": [
+          19,
+          20
+        ],
+        "clue": "Respectful acceptance of people with different customs or beliefs demonstrates _____.",
+        "explain": "The activities encourage getting along with people whose experiences differ from ours.",
+        "row": 0,
+        "col": 1,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "RESPECT",
+        "chapter": "Fostering Respect for Differences",
+        "sourcePages": [
+          19
+        ],
+        "clue": "Giving regard to another person despite differences shows _____.",
+        "explain": "People can differ in many ways while deserving equal consideration.",
+        "row": 0,
+        "col": 5,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "FESTIVALS",
+        "chapter": "Fostering Respect for Differences",
+        "sourcePages": [
+          20
+        ],
+        "clue": "Celebrations shared with friends from different religions are their _____.",
+        "explain": "Learning about celebrations can deepen mutual understanding.",
+        "row": 2,
+        "col": 3,
+        "dir": "across",
+        "n": 3
+      },
+      {
+        "answer": "INTOLERANCE",
+        "chapter": "Fostering Respect for Differences",
+        "sourcePages": [
+          20
+        ],
+        "clue": "Unwillingness to accept differences, identified as a source of conflict, is _____.",
+        "explain": "Hostility towards difference can harm relationships within and between communities.",
+        "row": 4,
+        "col": 0,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "EMPATHY",
+        "chapter": "Sharing, Compassion, Empathy",
+        "sourcePages": [
+          3,
+          4
+        ],
+        "clue": "Understanding the experiences and feelings of someone from a different background calls for _____.",
+        "explain": "Listening to other people can help us understand lives unlike our own.",
+        "row": 4,
+        "col": 10,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "HARMONY",
+        "chapter": "Team - Work",
+        "sourcePages": [
+          14
+        ],
+        "clue": "Peaceful relations between communities are described as communal _____.",
+        "explain": "The play activity explores living together with respect across differences.",
+        "row": 4,
+        "col": 12,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "DISCRIMINATION",
+        "chapter": "Fostering Respect for Differences",
+        "sourcePages": [
+          20
+        ],
+        "clue": "Unfair treatment based on a person's racial or social identity is _____.",
+        "explain": "The discussion asks students to recognise unfair treatment and consider ways to challenge it.",
+        "row": 8,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "DIVERSITY",
+        "chapter": "Fostering Respect for Differences",
+        "sourcePages": [
+          19,
+          20
+        ],
+        "clue": "The variety of appearances, behaviours, and cultural traditions in a group is its _____.",
+        "explain": "Differences give us opportunities to learn about other people.",
+        "row": 10,
+        "col": 2,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-xii-environmental-responsibility",
+    "title": "Class XII - Environmental Responsibility",
+    "subtitle": "Class XII | Value Education",
+    "classLevel": "XII",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        21,
+        22
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "PARTNERSHIP",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          21
+        ],
+        "clue": "Working with nature rather than seeking dominance expresses a relationship of _____.",
+        "explain": "The discussion encourages responsible coexistence with the natural world.",
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "RECYCLING",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          22
+        ],
+        "clue": "Processing discarded material so it can be used again is _____.",
+        "explain": "The activities explore reducing waste and making use of discarded materials.",
+        "row": 0,
+        "col": 6,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "ECOLOGY",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          22
+        ],
+        "clue": "The study of relationships between living things and their environment is _____.",
+        "explain": "Environmental decisions should consider living systems as well as human needs.",
+        "row": 2,
+        "col": 5,
+        "dir": "across",
+        "n": 3
+      },
+      {
+        "answer": "POLLUTION",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          21,
+          22
+        ],
+        "clue": "Contamination of air, water, or land that groups investigate is _____.",
+        "explain": "Students consider causes, effects, and possible solutions for damage to their surroundings.",
+        "row": 3,
+        "col": 1,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "HABITATS",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          21
+        ],
+        "clue": "The natural places where other species live are their _____.",
+        "explain": "Care for other species includes protecting the places they depend on.",
+        "row": 3,
+        "col": 3,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "EQUITY",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          22
+        ],
+        "clue": "Fairness in considering the needs of all communities is _____.",
+        "explain": "A sustainable future includes fair consideration of different communities.",
+        "row": 3,
+        "col": 12,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "SUSTAINABILITY",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          22
+        ],
+        "clue": "Making decisions that support the long-term well-being of people and nature promotes _____.",
+        "explain": "The activities connect environmental decisions with long-term ecological and social effects.",
+        "row": 7,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "CONSERVATION",
+        "chapter": "Sensitivity to Environment",
+        "sourcePages": [
+          21
+        ],
+        "clue": "Protecting natural resources and preventing their unnecessary loss is _____.",
+        "explain": "Environmental responsibility includes preserving resources and natural heritage.",
+        "row": 10,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "class-xii-social-responsibility",
+    "title": "Class XII - Social Responsibility",
+    "subtitle": "Class XII | Value Education",
+    "classLevel": "XII",
+    "instructions": "Read each clue and enter one letter per box. Answers have no spaces. Use the ideas from the value education activities to solve the puzzle.",
+    "source": {
+      "document": "Class IX - XII - Web.pdf",
+      "pages": [
+        3,
+        4,
+        7,
+        9,
+        10
+      ],
+      "note": "Adapted from the shared Classes IX-XII material; grade placement and clue difficulty are author adaptations."
+    },
+    "words": [
+      {
+        "answer": "COMPASSION",
+        "chapter": "Sharing, Compassion, Empathy",
+        "sourcePages": [
+          3,
+          4
+        ],
+        "clue": "Concern for people facing hardship, together with a desire to help, is _____.",
+        "explain": "Practical support can turn concern for others into useful action.",
+        "row": 0,
+        "col": 0,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "COMMUNITY",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          7
+        ],
+        "clue": "The wider group of people around us, beyond our own household, is our _____.",
+        "explain": "Helping can extend to school, local organisations, and the people around us.",
+        "row": 0,
+        "col": 4,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "CONSIDERATION",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          7
+        ],
+        "clue": "Thinking about other people's needs before deciding how to act shows _____.",
+        "explain": "Responsibility includes looking beyond our immediate personal preference.",
+        "row": 0,
+        "col": 11,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "CORRUPTION",
+        "chapter": "Respect for Law and Order",
+        "sourcePages": [
+          9,
+          10
+        ],
+        "clue": "Misusing entrusted power for improper benefit, discussed through bribery scenarios, is _____.",
+        "explain": "The activities ask learners to reflect on the harm caused by dishonest dealings.",
+        "row": 1,
+        "col": 3,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "ACCOUNTABILITY",
+        "chapter": "Responsibility",
+        "sourcePages": [
+          7
+        ],
+        "clue": "Accepting responsibility for your decisions and their consequences is _____.",
+        "explain": "Responsible people recognise that their actions have effects on others.",
+        "row": 4,
+        "col": 0,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "CHARITY",
+        "chapter": "Sharing, Compassion, Empathy",
+        "sourcePages": [
+          3
+        ],
+        "clue": "Organised support for people in need, such as a shelter project, is _____.",
+        "explain": "Students can plan helpful activities with a suitable community organisation.",
+        "row": 4,
+        "col": 2,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "SHARING",
+        "chapter": "Sharing, Compassion, Empathy",
+        "sourcePages": [
+          3,
+          4
+        ],
+        "clue": "Giving usable belongings or your time so others benefit is _____.",
+        "explain": "Generosity can involve practical supplies as well as companionship.",
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "EMPATHY",
+        "chapter": "Sharing, Compassion, Empathy",
+        "sourcePages": [
+          3,
+          4
+        ],
+        "clue": "Listening to an older person's experiences to understand their feelings calls for _____.",
+        "explain": "Spending time with others can help us appreciate their perspectives.",
+        "row": 9,
+        "col": 7,
+        "dir": "across",
+        "n": 8
+      }
+    ]
   }
 ]

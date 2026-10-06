@@ -320,30 +320,6 @@ function revealLetter() {
   updateStatus();
 }
 
-function revealWord() {
-  if (!state.sel) return;
-  const w = wordAt(state.sel.row, state.sel.col, state.sel.dir);
-  if (!w) return;
-  wordCells(w).forEach(({ r, c }) => {
-    const k = keyOf(r, c);
-    state.entries[k] = cells[k].letter;
-    state.wrong.delete(k);
-    state.revealed.add(k);
-    updateCell(k);
-  });
-  updateStatus();
-}
-
-function revealAll() {
-  Object.keys(cells).forEach(k => {
-    state.entries[k] = cells[k].letter;
-    state.wrong.delete(k);
-    state.revealed.add(k);
-    updateCell(k);
-  });
-  updateStatus();
-}
-
 function clearAll() {
   state.entries = {};
   state.wrong.clear();
@@ -527,8 +503,6 @@ loadPuzzles();
 
 document.getElementById('btn-check').addEventListener('click', checkAll);
 document.getElementById('btn-letter').addEventListener('click', revealLetter);
-document.getElementById('btn-word').addEventListener('click', revealWord);
-document.getElementById('btn-all').addEventListener('click', revealAll);
 document.getElementById('btn-clear').addEventListener('click', clearAll);
 
 document.getElementById('btn-print').addEventListener('click', () => {
