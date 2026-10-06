@@ -598,8 +598,8 @@ document.getElementById('pdf-text-size').addEventListener('input', event => {
   document.getElementById('pdf-text-size-value').textContent = `${event.target.value} pt`;
 });
 
-document.getElementById('pdf-watermark-enabled').addEventListener('change', event => {
-  document.getElementById('pdf-watermark-options').disabled = !event.target.checked;
+document.getElementById('pdf-watermark-text').addEventListener('input', event => {
+  document.getElementById('pdf-watermark-enabled').checked = event.target.value.trim().length > 0;
 });
 for (const [name, suffix] of [['opacity', '%'], ['size', ' pt']]) {
   document.getElementById(`pdf-watermark-${name}`).addEventListener('input', event => {

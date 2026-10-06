@@ -13,6 +13,8 @@ PDF options also support an optional text watermark on every page, with opacity
 (0–100%), size (12–96 pt), top/middle/bottom position, and left/center/right
 alignment. Long text wraps and fits inside the page. Watermarks are disabled
 by default and apply to downloaded PDFs.
+Watermark controls are always editable. Entering nonblank text enables inclusion;
+the checkbox can exclude the watermark while keeping its settings.
 
 ## Classes VI–VIII
 

@@ -107,7 +107,8 @@ button:disabled{opacity:.5;cursor:default;transform:none}
 .pdf-options input[type="range"]{width:100%;accent-color:var(--accent)}
 .pdf-options input[type="checkbox"]{accent-color:var(--accent)}
 .watermark-options{margin-top:14px;padding:14px;border:1px solid var(--line2);border-radius:8px}
-.watermark-options:disabled{opacity:.5}
+.pdf-options .watermark-toggle{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer}
+.watermark-toggle input{width:22px;height:22px;margin:0;flex-shrink:0}
 .watermark-options input[type="text"],.watermark-options select{width:100%;font:inherit;font-size:16px;background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:6px;padding:8px;margin-bottom:14px}
 .watermark-options label{margin-top:8px}
 button.primary{
