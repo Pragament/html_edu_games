@@ -492,6 +492,7 @@ function loadPuzzle(puzzle) {
   }
   document.getElementById('status').textContent = '';
   document.getElementById('print-area').replaceChildren();
+  document.getElementById('pdf-status').textContent = '';
   const first = acrossWords[0] || downWords[0];
   selectWord(first);
 }
@@ -499,7 +500,7 @@ function loadPuzzle(puzzle) {
 async function loadPuzzles() {
   const selector = document.getElementById('puzzle-select');
   const status = document.getElementById('puzzle-load-status');
-  const buttons = document.querySelectorAll('.toolbar button, #btn-print');
+  const buttons = document.querySelectorAll('.toolbar button, #btn-print, #btn-pdf');
   buttons.forEach(button => button.disabled = true);
   try {
     const response = await fetch('./puzzles.json');
@@ -533,4 +534,32 @@ document.getElementById('btn-clear').addEventListener('click', clearAll);
 document.getElementById('btn-print').addEventListener('click', () => {
   buildPrint();
   setTimeout(() => window.print(), 80);
+});
+
+document.getElementById('pdf-text-size').addEventListener('input', event => {
+  document.getElementById('pdf-text-size-value').textContent = `${event.target.value} pt`;
+});
+
+document.getElementById('btn-pdf').addEventListener('click', () => {
+  if (!PUZZLE) return;
+  const status = document.getElementById('pdf-status');
+  try {
+    const pdf = createCrosswordPDF(PUZZLE, cells, ROWS, COLS, {
+      includeAnswers: document.getElementById('pdf-answers').checked,
+      textSize: Number(document.getElementById('pdf-text-size').value),
+      puzzleUrl: new URL('/crossword', window.location.origin).href
+    });
+    const url = URL.createObjectURL(pdf);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${PUZZLE.id || 'crossword'}-worksheet.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+    status.textContent = 'PDF downloaded.';
+  } catch (error) {
+    status.textContent = 'PDF download failed. Please try again or use Print A4 Worksheet.';
+    console.error(error);
+  }
 });

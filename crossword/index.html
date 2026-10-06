@@ -48,13 +48,25 @@
   </div>
 
   <div class="print-bar">
-    <button id="btn-print" class="primary">🖨️ Download / Print A4 Worksheet (with Answers &amp; Explanations)</button>
+    <fieldset class="pdf-options">
+      <legend>PDF options</legend>
+      <label><input id="pdf-answers" type="checkbox" checked> Include answer key and explanations</label>
+      <label for="pdf-text-size">Text size: <output id="pdf-text-size-value" for="pdf-text-size">9 pt</output></label>
+      <input id="pdf-text-size" type="range" min="8" max="14" step="0.5" value="9">
+      <p class="hint">Smaller text uses fewer pages. Larger text is easier to read.</p>
+    </fieldset>
+    <button id="btn-pdf" class="primary" disabled>Download PDF</button>
+    <button id="btn-print" disabled>🖨️ Print A4 Worksheet</button>
+    <p class="hint">Download a worksheet for the selected puzzle using your PDF options.</p>
+    <p id="pdf-status" class="hint" role="status"></p>
   </div>
 </div>
 
 <!-- ============ PRINT AREA ============ -->
 <div id="print-area"></div>
 
+<script src="vendor/qrcode.js"></script>
+<script src="pdf.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
