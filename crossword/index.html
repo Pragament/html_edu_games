@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Value Education Crossword — Classes III–V</title>
+<style>
+:root{
+  --bg:#0b1220; --panel:#111c33; --line:#1f2f4d; --line2:#334155;
+  --ink:#e2e8f0; --muted:#94a3b8; --accent:#2563eb; --accent2:#60a5fa;
+  --good:#16a34a; --bad:#dc2626; --teal:#0d9488;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  background:radial-gradient(1200px 600px at 50% -10%,#1e293b 0%,#0b1220 60%);
+  color:var(--ink);
+  min-height:100vh;
+}
+.app{max-width:1180px;margin:0 auto;padding:22px 16px 70px}
+
+/* ---------- Header ---------- */
+header.top{text-align:center;margin-bottom:20px}
+header.top h1{
+  font-size:clamp(21px,3.6vw,34px);margin:0 0 6px;letter-spacing:.3px;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+header.top p{margin:2px 0;color:var(--muted);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
+.chip{
+  background:#16233c;border:1px solid #24365a;color:#b9c6dd;
+  font-size:11px;padding:3px 10px;border-radius:999px;white-space:nowrap;
+}
+
+/* ---------- Layout ---------- */
+.layout{display:grid;grid-template-columns:minmax(330px,1.05fr) minmax(310px,.95fr);gap:20px;align-items:start}
+@media (max-width:920px){.layout{grid-template-columns:1fr}}
+.card{
+  background:linear-gradient(180deg,#111c33,#0e1729);
+  border:1px solid var(--line);border-radius:16px;padding:16px;
+  box-shadow:0 14px 40px rgba(0,0,0,.45);
+}
+
+/* ---------- Grid ---------- */
+.grid-wrap{display:flex;justify-content:center}
+#grid{
+  display:grid;gap:2px;background:var(--line2);border:2px solid var(--line2);
+  border-radius:8px;padding:2px;width:100%;max-width:640px;outline:none;
+}
+.cell{
+  position:relative;aspect-ratio:1/1;background:#f8fafc;border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#0f172a;font-size:clamp(9px,1.55vw,18px);
+  cursor:pointer;user-select:none;transition:background .12s;
+}
+.cell.black{background:#0b1220;border-radius:3px;cursor:default}
+.cell .num{
+  position:absolute;top:1px;left:2px;line-height:1;
+  font-size:clamp(6px,.92vw,10px);font-weight:700;color:#64748b;
+}
+.cell .ltr{line-height:1;padding-top:2px}
+.cell.hl{background:#dbeafe}
+.cell.sel{background:#93c5fd;box-shadow:inset 0 0 0 2px var(--accent)}
+.cell.wrong{color:var(--bad)}
+.cell.revealed{color:var(--teal)}
+
+/* ---------- Toolbar ---------- */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
+button{
+  font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+  background:#1c2b47;color:#cbd5e1;border:1px solid #2a3d61;
+  padding:8px 14px;border-radius:9px;transition:.15s;
+}
+button:hover{background:#24385c;color:#fff;transform:translateY(-1px)}
+button:active{transform:translateY(0)}
+.hint{text-align:center;color:#7d8ba3;font-size:12px;margin:12px 0 0;line-height:1.5}
+.status{text-align:center;font-size:14px;font-weight:700;margin-top:10px;min-height:20px}
+
+/* ---------- Clues ---------- */
+.clues-card{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.clues-card{grid-template-columns:1fr}}
+.clue-col h3{
+  margin:0 0 10px;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--accent2);border-bottom:1px solid var(--line);padding-bottom:7px;
+}
+.clue-col ul{list-style:none;margin:0;padding:0}
+.clue-col li{
+  font-size:13px;line-height:1.5;color:#b6c3d8;padding:7px 9px;border-radius:8px;
+  cursor:pointer;transition:.12s;border:1px solid transparent;
+}
+.clue-col li:hover{background:#17253e}
+.clue-col li.active{background:#1d3663;border-color:var(--accent);color:#fff}
+.clue-col li b{color:var(--accent2);margin-right:4px}
+.len{color:#64748b;font-size:11px}
+
+/* ---------- Print bar ---------- */
+.print-bar{text-align:center;margin-top:26px}
+button.primary{
+  background:linear-gradient(90deg,#2563eb,#7c3aed);color:#fff;border:none;
+  padding:13px 26px;font-size:14px;border-radius:11px;
+  box-shadow:0 10px 26px rgba(37,99,235,.4);
+}
+button.primary:hover{filter:brightness(1.12)}
+
+/* ================= PRINT ================= */
+#print-area{display:none}
+
+@media print{
+  @page{size:A4 portrait;margin:11mm}
+  body{background:#fff !important;color:#000 !important}
+  .app{display:none !important}
+  #print-area{display:block !important}
+  .print-page{page-break-after:always}
+  .print-page:last-child{page-break-after:auto}
+
+  .print-page h1{font-size:17pt;margin:0 0 2mm;text-align:center;color:#000}
+  .psub{text-align:center;font-size:9pt;color:#444;margin:0 0 2mm}
+  .pinst{font-size:8.5pt;color:#333;margin:0 0 3mm;text-align:center;line-height:1.4}
+  .pname{font-size:9pt;color:#000;margin:0 0 4mm;text-align:center;letter-spacing:.4px}
+
+  .p-grid{display:grid;margin:0 auto 5mm;border:1.6pt solid #000;width:max-content}
+  .p-cell{
+    border:.6pt solid #555;position:relative;
+    display:flex;align-items:center;justify-content:center;
+    font-size:9pt;font-weight:700;color:#000;
+  }
+  .p-black{background:#000;border:.6pt solid #000}
+  .p-num{position:absolute;top:0;left:1px;font-size:5pt;font-weight:700;line-height:1;color:#000}
+  .p-ltr{font-size:9pt;font-weight:800;line-height:1}
+
+  .p-clues{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+  .p-clues h2{
+    font-size:9.5pt;margin:0 0 2mm;letter-spacing:1px;text-transform:uppercase;
+    border-bottom:.8pt solid #000;padding-bottom:1mm;
+  }
+  .p-clues p{font-size:8pt;line-height:1.4;margin:0 0 2mm;color:#000}
+  .p-len{color:#555;font-size:7pt}
+
+  .p-explain p{
+    font-size:7.6pt;line-height:1.42;margin:0 0 2.2mm;color:#000;
+    padding-bottom:1.6mm;border-bottom:.4pt dotted #999;
+  }
+  .p-explain b{font-size:8pt}
+  .p-explain i{color:#333}
+  .p-exp{display:block;margin-top:.6mm;color:#222}
+  .p-grid-answers .p-cell{font-size:6.6pt}
+  .p-grid-answers .p-ltr{font-size:6.6pt}
+  .p-grid-answers .p-num{font-size:4pt}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ INTERACTIVE APP ============ -->
+<div class="app">
+  <header class="top">
+    <h1>Value Education Crossword</h1>
+    <p>Classes III – V &nbsp;•&nbsp; CBSE Value Education</p>
+    <div class="chips">
+      <span class="chip">Honesty</span>
+      <span class="chip">Team Work</span>
+      <span class="chip">Celebrating Diversity</span>
+      <span class="chip">Nurture the Nature</span>
+      <span class="chip">Responsibility</span>
+      <span class="chip">Compassion</span>
+      <span class="chip">Personal Safety</span>
+      <span class="chip">Role Models</span>
+      <span class="chip">Caring</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <section class="card">
+      <div class="grid-wrap">
+        <div id="grid" tabindex="0"></div>
+      </div>
+      <div class="toolbar">
+        <button id="btn-check">✔ Check</button>
+        <button id="btn-letter">Reveal Letter</button>
+        <button id="btn-word">Reveal Word</button>
+        <button id="btn-all">Reveal All</button>
+        <button id="btn-clear">Clear</button>
+      </div>
+      <p class="hint">Click a box and type. Click the same box again to switch between <b>Across</b> and <b>Down</b>. Use arrow keys to move, Tab for the next clue.</p>
+      <div class="status" id="status"></div>
+    </section>
+
+    <section class="card clues-card">
+      <div class="clue-col">
+        <h3>Across</h3>
+        <ul id="across-list"></ul>
+      </div>
+      <div class="clue-col">
+        <h3>Down</h3>
+        <ul id="down-list"></ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="print-bar">
+    <button id="btn-print" class="primary">🖨️ Download / Print A4 Worksheet (with Answers &amp; Explanations)</button>
+  </div>
+</div>
+
+<!-- ============ PRINT AREA ============ -->
+<div id="print-area"></div>
+
+<script>
+/* =========================================================
+   1. CROSSWORD DATA  (single JSON object)
+   ========================================================= */
+const PUZZLE = {
+  title: "Value Education Crossword",
+  subtitle: "Classes III – V  •  CBSE Value Education",
+  instructions: "Read each clue carefully and write the answer in the crossword grid — one letter in each box. Every answer is a value or a good habit you have learnt about in your Value Education book.",
+  words: [
+    {
+      n: 1, dir: "down", row: 0, col: 1, answer: "TEAMWORK",
+      chapter: "Team Work",
+      clue: "The farmer shared his best corn seeds with all his neighbours so that everyone could grow the best corn. This shows the spirit of ______.",
+      explain: "The farmer knew that the wind carries pollen from one field to another. If his neighbours grew inferior corn, his own crop would also lose quality. So he shared his best seeds. Together we stand strong, divided we fall."
+    },
+    {
+      n: 2, dir: "across", row: 2, col: 0, answer: "PATIENCE",
+      chapter: "Choose Your Role Model",
+      clue: "The little ant fell six times but tried a seventh time and finally climbed the wall. Meera learnt ______ and never to give up.",
+      explain: "The ant became Meera's role model because it did not give up. Being patient and trying again and again helps us reach our goals."
+    },
+    {
+      n: 3, dir: "down", row: 4, col: 4, answer: "SAFETY",
+      chapter: "Personal Safety",
+      clue: "Reena remembered 'DROP! COVER! HOLD!' during an earthquake and saved many lives. She knew the rules of ______.",
+      explain: "Knowing what to do when a disaster strikes saves lives. Remember the golden rule — Prevention is better than cure."
+    },
+    {
+      n: 4, dir: "down", row: 4, col: 7, answer: "DIVERSITY",
+      chapter: "Celebrating Diversity",
+      clue: "In India, New Year is celebrated as Diwali, Paila Baisakh, Ugadi and Vishu. This shows our unity in ______.",
+      explain: "We follow different customs, speak different languages and celebrate different festivals, yet we are one country. We must respect and learn from one another."
+    },
+    {
+      n: 5, dir: "down", row: 4, col: 11, answer: "CARING",
+      chapter: "Caring",
+      clue: "Feeling and showing concern for your family, friends, neighbours, animals and the environment is called ______.",
+      explain: "A caring person helps others without expecting a reward, is thankful for what others do, thinks of other people's feelings and is kind to animals and the environment."
+    },
+    {
+      n: 6, dir: "across", row: 5, col: 0, answer: "COMPASSION",
+      chapter: "Being Compassionate",
+      clue: "Jai saved a wounded dog from rowdy boys and looked after it. His grandfather taught him this virtue — 'living is giving'.",
+      explain: "Being kind, loving and helpful towards all living beings is compassion. Happiness never decreases when we share it with others."
+    },
+    {
+      n: 7, dir: "down", row: 5, col: 9, answer: "NATURE",
+      chapter: "Nurture the Nature",
+      clue: "Forests, rivers, animals and air — it takes care of all our needs, so we must look after it.",
+      explain: "Wild animals wander into cities when their forests are destroyed. We must protect forests, save wildlife, say no to polythene bags and keep our surroundings clean."
+    },
+    {
+      n: 8, dir: "across", row: 7, col: 3, answer: "RESPECT",
+      chapter: "Celebrating Diversity / Responsibility",
+      clue: "To treat other people, their feelings, their culture and public property with honour is to ______ them.",
+      explain: "We must respect diverse opinions and cultures, and take care of public property like parks, monuments, hospitals and railway stations."
+    },
+    {
+      n: 9, dir: "down", row: 7, col: 13, answer: "DUTY",
+      chapter: "Responsibility: Rights and Duties",
+      clue: "Rinkoo threw a banana peel on the lawns of Qutub Minar. He forgot his ______ towards public property.",
+      explain: "Every right brings a duty. We must obey law and order, care for public property and respect our national heritage."
+    },
+    {
+      n: 10, dir: "across", row: 9, col: 9, answer: "RIGHTS",
+      chapter: "Responsibility: Rights and Duties",
+      clue: "As a citizen of India — and as a student in school — you enjoy these, but they come with duties too.",
+      explain: "We have rights that ensure a better life, and duties that keep our country and our school good places to live and learn in. I have my rights and I have my duties."
+    },
+    {
+      n: 11, dir: "across", row: 11, col: 2, answer: "HONESTY",
+      chapter: "Honesty Pays",
+      clue: "Raju told the referee that he had used his hand to score the goal. The Principal said, 'We are all proud of you.' ______ always pays.",
+      explain: "It is often very difficult to be honest, but it is always the right thing to do. Honesty is the best policy and it wins the respect of others."
+    }
+  ]
+};
+
+/* =========================================================
+   2. BUILD THE GRID MODEL
+   ========================================================= */
+const cells = {};          // "r,c" -> cell object
+let ROWS = 0, COLS = 0;
+
+PUZZLE.words.forEach(w => {
+  const letters = w.answer.split('');
+  letters.forEach((ch, i) => {
+    const r = w.dir === 'down'   ? w.row + i : w.row;
+    const c = w.dir === 'across' ? w.col + i : w.col;
+    const k = r + ',' + c;
+    if (!cells[k]) cells[k] = { r, c, letter: ch, across: null, down: null, number: 0 };
+    if (cells[k].letter !== ch) console.error('Letter conflict at', k, cells[k].letter, ch);
+    if (w.dir === 'across') cells[k].across = w.n; else cells[k].down = w.n;
+    ROWS = Math.max(ROWS, r + 1);
+    COLS = Math.max(COLS, c + 1);
+  });
+});
+
+/* --- numbering (left→right, top→bottom) --- */
+const startKeys = [...new Set(PUZZLE.words.map(w => w.row + ',' + w.col))]
+  .map(k => k.split(',').map(Number))
+  .sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+
+startKeys.forEach(([r, c], i) => { cells[r + ',' + c].number = i + 1; });
+PUZZLE.words.forEach(w => { w.display = cells[w.row + ',' + w.col].number; });
+
+const acrossWords = PUZZLE.words.filter(w => w.dir === 'across').sort((a, b) => a.display - b.display);
+const downWords   = PUZZLE.words.filter(w => w.dir === 'down'  ).sort((a, b) => a.display - b.display);
+
+/* =========================================================
+   3. HELPERS
+   ========================================================= */
+const keyOf = (r, c) => r + ',' + c;
+
+function wordCells(w) {
+  const out = [];
+  for (let i = 0; i < w.answer.length; i++) {
+    out.push({
+      r: w.dir === 'down'   ? w.row + i : w.row,
+      c: w.dir === 'across' ? w.col + i : w.col
+    });
+  }
+  return out;
+}
+
+function wordAt(r, c, dir) {
+  return PUZZLE.words.find(w => {
+    if (w.dir !== dir) return false;
+    for (let i = 0; i < w.answer.length; i++) {
+      const rr = w.dir === 'down'   ? w.row + i : w.row;
+      const cc = w.dir === 'across' ? w.col + i : w.col;
+      if (rr === r && cc === c) return true;
+    }
+    return false;
+  });
+}
+
+/* =========================================================
+   4. STATE
+   ========================================================= */
+const state = {
+  entries: {},          // "r,c" -> letter typed by the player
+  sel: null,            // { row, col, dir }
+  wrong: new Set(),     // keys marked wrong
+  revealed: new Set()   // keys revealed
+};
+
+const cellEls = {};
+
+/* =========================================================
+   5. RENDER THE INTERACTIVE GRID
+   ========================================================= */
+function buildGridDOM() {
+  const g = document.getElementById('grid');
+  g.innerHTML = '';
+  g.style.gridTemplateColumns = `repeat(${COLS}, 1fr)`;
+
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const k = keyOf(r, c);
+      const cell = cells[k];
+      const d = document.createElement('div');
+
+      if (!cell) { d.className = 'cell black'; g.appendChild(d); continue; }
+
+      d.className = 'cell';
+      d.dataset.key = k;
+
+      if (cell.number) {
+        const s = document.createElement('span');
+        s.className = 'num';
+        s.textContent = cell.number;
+        d.appendChild(s);
+      }
+
+      const l = document.createElement('span');
+      l.className = 'ltr';
+      d.appendChild(l);
+
+      d.addEventListener('click', () => onCellClick(r, c));
+      cellEls[k] = d;
+      g.appendChild(d);
+    }
+  }
+}
+
+function updateCell(k) {
+  const el = cellEls[k];
+  if (!el) return;
+  el.querySelector('.ltr').textContent = state.entries[k] || '';
+  el.classList.toggle('wrong', state.wrong.has(k));
+  el.classList.toggle('revealed', state.revealed.has(k));
+}
+
+function paint() {
+  Object.values(cellEls).forEach(el => el.classList.remove('sel', 'hl'));
+  if (!state.sel) return;
+
+  const { row, col, dir } = state.sel;
+  const w = wordAt(row, col, dir);
+  if (w) wordCells(w).forEach(({ r, c }) => {
+    const el = cellEls[keyOf(r, c)];
+    if (el) el.classList.add('hl');
+  });
+
+  const el = cellEls[keyOf(row, col)];
+  if (el) el.classList.add('sel');
+}
+
+/* =========================================================
+   6. CLUE LISTS
+   ========================================================= */
+function buildClueLists() {
+  const fill = (ulId, list) => {
+    const ul = document.getElementById(ulId);
+    ul.innerHTML = '';
+    list.forEach(w => {
+      const li = document.createElement('li');
+      li.dataset.n = w.display;
+      li.dataset.dir = w.dir;
+      li.innerHTML = `<b>${w.display}.</b> ${w.clue} <span class="len">(${w.answer.length})</span>`;
+      li.addEventListener('click', () => selectWord(w));
+      ul.appendChild(li);
+    });
+  };
+  fill('across-list', acrossWords);
+  fill('down-list', downWords);
+}
+
+function highlightClue() {
+  document.querySelectorAll('.clue-col li').forEach(li => li.classList.remove('active'));
+  if (!state.sel) return;
+  const w = wordAt(state.sel.row, state.sel.col, state.sel.dir);
+  if (!w) return;
+  const li = document.querySelector(`.clue-col li[data-n="${w.display}"][data-dir="${w.dir}"]`);
+  if (li) { li.classList.add('active'); li.scrollIntoView({ block: 'nearest' }); }
+}
+
+/* =========================================================
+   7. SELECTION + TYPING
+   ========================================================= */
+function selectCell(r, c, dir) {
+  const cell = cells[keyOf(r, c)];
+  if (!cell) return;
+
+  if (!dir) dir = cell.across ? 'across' : 'down';
+  if (dir === 'across' && !cell.across) dir = 'down';
+  if (dir === 'down'   && !cell.down)   dir = 'across';
+
+  state.sel = { row: r, col: c, dir };
+  paint();
+  highlightClue();
+}
+
+function selectWord(w) {
+  state.sel = { row: w.row, col: w.col, dir: w.dir };
+  paint();
+  highlightClue();
+}
+
+function onCellClick(r, c) {
+  const s = state.sel;
+  if (s && s.row === r && s.col === c) {
+    // toggle direction
+    const cell = cells[keyOf(r, c)];
+    const other = s.dir === 'across' ? 'down' : 'across';
+    if (cell[other]) { s.dir = other; paint(); highlightClue(); return; }
+  }
+  selectCell(r, c);
+}
+
+function typeLetter(ch) {
+  if (!state.sel) return;
+  const { row, col } = state.sel;
+  const k = keyOf(row, col);
+  if (!cells[k]) return;
+
+  state.entries[k] = ch;
+  state.wrong.delete(k);
+  state.revealed.delete(k);
+  updateCell(k);
+  advance();
+  updateStatus();
+}
+
+function advance() {
+  const { row, col, dir } = state.sel;
+  const w = wordAt(row, col, dir);
+  if (!w) return;
+  const wc = wordCells(w);
+  const idx = wc.findIndex(p => p.r === row && p.c === col);
+  if (idx > -1 && idx < wc.length - 1) {
+    selectCell(wc[idx + 1].r, wc[idx + 1].c, dir);
+  }
+}
+
+function backspace() {
+  if (!state.sel) return;
+  const { row, col, dir } = state.sel;
+  const k = keyOf(row, col);
+
+  if (state.entries[k]) {
+    delete state.entries[k];
+    state.wrong.delete(k);
+    state.revealed.delete(k);
+    updateCell(k);
+  } else {
+    const w = wordAt(row, col, dir);
+    if (!w) return;
+    const wc = wordCells(w);
+    const idx = wc.findIndex(p => p.r === row && p.c === col);
+    if (idx > 0) {
+      const p = wc[idx - 1];
+      const pk = keyOf(p.r, p.c);
+      delete state.entries[pk];
+      state.wrong.delete(pk);
+      state.revealed.delete(pk);
+      updateCell(pk);
+      selectCell(p.r, p.c, dir);
+    }
+  }
+  updateStatus();
+}
+
+function moveTo(r, c, dir) {
+  if (r < 0 || c < 0 || r >= ROWS || c >= COLS) return;
+  const cell = cells[keyOf(r, c)];
+  if (!cell) return;
+  selectCell(r, c, dir || state.sel.dir);
+}
+
+/* =========================================================
+   8. KEYBOARD
+   ========================================================= */
+document.addEventListener('keydown', e => {
+  if (!state.sel) return;
+  const { row, col, dir } = state.sel;
+
+  if (e.key === 'ArrowRight')      { e.preventDefault(); moveTo(row, col + 1, 'across'); }
+  else if (e.key === 'ArrowLeft')  { e.preventDefault(); moveTo(row, col - 1, 'across'); }
+  else if (e.key === 'ArrowDown')  { e.preventDefault(); moveTo(row + 1, col, 'down'); }
+  else if (e.key === 'ArrowUp')    { e.preventDefault(); moveTo(row - 1, col, 'down'); }
+  else if (e.key === 'Backspace')  { e.preventDefault(); backspace(); }
+  else if (e.key === ' ')          { e.preventDefault();
+      const cell = cells[keyOf(row, col)];
+      const other = dir === 'across' ? 'down' : 'across';
+      if (cell[other]) { state.sel.dir = other; paint(); highlightClue(); }
+  }
+  else if (e.key === 'Tab') {
+    e.preventDefault();
+    const all = [...acrossWords, ...downWords];
+    const cur = wordAt(row, col, dir);
+    let i = all.indexOf(cur);
+    i = e.shiftKey ? (i - 1 + all.length) % all.length : (i + 1) % all.length;
+    selectWord(all[i]);
+  }
+  else if (/^[a-zA-Z]$/.test(e.key)) { e.preventDefault(); typeLetter(e.key.toUpperCase()); }
+});
+
+/* =========================================================
+   9. TOOLBAR ACTIONS
+   ========================================================= */
+function checkAll() {
+  state.wrong.clear();
+  let filled = 0, correct = 0;
+  const total = Object.keys(cells).length;
+
+  Object.keys(cells).forEach(k => {
+    const v = state.entries[k];
+    if (v) filled++;
+    if (v && v === cells[k].letter) correct++;
+    if (v && v !== cells[k].letter) state.wrong.add(k);
+  });
+
+  Object.keys(cellEls).forEach(updateCell);
+  updateStatus(true, filled, correct, total);
+}
+
+function revealLetter() {
+  if (!state.sel) return;
+  const k = keyOf(state.sel.row, state.sel.col);
+  if (!cells[k]) return;
+  state.entries[k] = cells[k].letter;
+  state.wrong.delete(k);
+  state.revealed.add(k);
+  updateCell(k);
+  advance();
+  updateStatus();
+}
+
+function revealWord() {
+  if (!state.sel) return;
+  const w = wordAt(state.sel.row, state.sel.col, state.sel.dir);
+  if (!w) return;
+  wordCells(w).forEach(({ r, c }) => {
+    const k = keyOf(r, c);
+    state.entries[k] = cells[k].letter;
+    state.wrong.delete(k);
+    state.revealed.add(k);
+    updateCell(k);
+  });
+  updateStatus();
+}
+
+function revealAll() {
+  Object.keys(cells).forEach(k => {
+    state.entries[k] = cells[k].letter;
+    state.wrong.delete(k);
+    state.revealed.add(k);
+    updateCell(k);
+  });
+  updateStatus();
+}
+
+function clearAll() {
+  state.entries = {};
+  state.wrong.clear();
+  state.revealed.clear();
+  Object.keys(cellEls).forEach(updateCell);
+  document.getElementById('status').textContent = '';
+}
+
+function updateStatus(force, filled, correct, total) {
+  const el = document.getElementById('status');
+  const totalCells = Object.keys(cells).length;
+  const filledCount = Object.keys(cells).filter(k => state.entries[k]).length;
+  const correctCount = Object.keys(cells).filter(k => state.entries[k] === cells[k].letter).length;
+
+  if (correctCount === totalCells) {
+    el.textContent = '🎉 Excellent! All answers are correct.';
+    el.style.color = '#4ade80';
+    return;
+  }
+  if (force) {
+    el.textContent = `${correctCount} of ${totalCells} letters correct · ${filledCount} filled`;
+    el.style.color = correctCount === totalCells ? '#4ade80' : '#fbbf24';
+    return;
+  }
+  el.textContent = '';
+}
+
+/* =========================================================
+   10. PRINT / DOWNLOAD A4 WORKSHEET
+   ========================================================= */
+function buildPrint() {
+  const pa = document.getElementById('print-area');
+  pa.innerHTML = '';
+
+  /* ---------- PAGE 1 : the worksheet ---------- */
+  const p1 = document.createElement('div');
+  p1.className = 'print-page';
+
+  const head = document.createElement('div');
+  head.innerHTML = `
+    <h1>${PUZZLE.title}</h1>
+    <p class="psub">${PUZZLE.subtitle}</p>
+    <p class="pinst">${PUZZLE.instructions}</p>
+    <p class="pname">Name: ______________________________ &nbsp;&nbsp; Class: __________ &nbsp;&nbsp; Date: ______________</p>
+  `;
+  p1.appendChild(head);
+
+  // empty grid (9 mm cells)
+  const g1 = document.createElement('div');
+  g1.className = 'p-grid';
+  g1.style.gridTemplateColumns = `repeat(${COLS}, 9mm)`;
+  g1.style.gridAutoRows = '9mm';
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const cell = cells[keyOf(r, c)];
+      const d = document.createElement('div');
+      d.className = 'p-cell' + (cell ? '' : ' p-black');
+      if (cell && cell.number) d.innerHTML = `<span class="p-num">${cell.number}</span>`;
+      g1.appendChild(d);
+    }
+  }
+  p1.appendChild(g1);
+
+  // clues
+  const clues = document.createElement('div');
+  clues.className = 'p-clues';
+  clues.innerHTML = `
+    <div>
+      <h2>Across</h2>
+      ${acrossWords.map(w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span></p>`).join('')}
+    </div>
+    <div>
+      <h2>Down</h2>
+      ${downWords.map(w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span></p>`).join('')}
+    </div>
+  `;
+  p1.appendChild(clues);
+  pa.appendChild(p1);
+
+  /* ---------- PAGE 2 : answer key + explanations ---------- */
+  const p2 = document.createElement('div');
+  p2.className = 'print-page';
+  p2.innerHTML = `
+    <h1>Answer Key &amp; Explanations</h1>
+    <p class="psub">${PUZZLE.title} — ${PUZZLE.subtitle}</p>
+  `;
+
+  const g2 = document.createElement('div');
+  g2.className = 'p-grid p-grid-answers';
+  g2.style.gridTemplateColumns = `repeat(${COLS}, 6mm)`;
+  g2.style.gridAutoRows = '6mm';
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const cell = cells[keyOf(r, c)];
+      const d = document.createElement('div');
+      d.className = 'p-cell' + (cell ? '' : ' p-black');
+      if (cell) {
+        d.innerHTML = `<span class="p-num">${cell.number || ''}</span><span class="p-ltr">${cell.letter}</span>`;
+      }
+      g2.appendChild(d);
+    }
+  }
+  p2.appendChild(g2);
+
+  const ex = document.createElement('div');
+  ex.className = 'p-explain';
+  ex.innerHTML = PUZZLE.words
+    .slice()
+    .sort((a, b) => a.display - b.display)
+    .map(w => `
+      <p>
+        <b>${w.display} ${w.dir === 'across' ? 'ACROSS' : 'DOWN'} — ${w.answer}</b><br>
+        <i>${w.clue}</i>
+        <span class="p-exp"><b>${w.chapter}:</b> ${w.explain}</span>
+      </p>`)
+    .join('');
+  p2.appendChild(ex);
+  pa.appendChild(p2);
+}
+
+/* =========================================================
+   11. INIT
+   ========================================================= */
+buildGridDOM();
+buildClueLists();
+selectCell(5, 0, 'across');   // start on COMPASSION
+
+document.getElementById('btn-check').addEventListener('click', checkAll);
+document.getElementById('btn-letter').addEventListener('click', revealLetter);
+document.getElementById('btn-word').addEventListener('click', revealWord);
+document.getElementById('btn-all').addEventListener('click', revealAll);
+document.getElementById('btn-clear').addEventListener('click', clearAll);
+
+document.getElementById('btn-print').addEventListener('click', () => {
+  buildPrint();
+  setTimeout(() => window.print(), 80);
+});
+</script>
+</body>
+</html>
