@@ -2614,5 +2614,1053 @@
         ]
       }
     ]
+  },
+  {
+    "id": "value-vocabulary-beginner-everyday-kindness",
+    "title": "Value Education - Beginner: Everyday Kindness",
+    "subtitle": "Value Education | Beginner Vocabulary | Level 1 of 4",
+    "subject": "Value Education",
+    "difficulty": "beginner",
+    "difficultyRank": 1,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "TRUST",
+        "chapter": "Everyday Kindness",
+        "clue": "Believing that someone will be honest and dependable.",
+        "explain": "We build trust by keeping our word and acting honestly.",
+        "hints": [
+          "Think about how this value helps people live well together.",
+          "The answer starts with T and has 5 letters.",
+          "Complete this pattern: TR___."
+        ],
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "SMILE",
+        "chapter": "Everyday Kindness",
+        "clue": "A friendly expression made by raising the corners of the mouth.",
+        "explain": "A welcoming smile can help a new pupil feel included.",
+        "hints": [
+          "This facial expression can show someone they are welcome.",
+          "The answer starts with S and has 5 letters.",
+          "Complete this pattern: SM___."
+        ],
+        "row": 0,
+        "col": 3,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "THANKS",
+        "chapter": "Everyday Kindness",
+        "clue": "A word used to express gratitude for someone's kindness.",
+        "explain": "Saying thanks acknowledges another person's effort or generosity.",
+        "hints": [
+          "You say this after someone helps you.",
+          "The answer starts with T and has 6 letters.",
+          "Complete this pattern: TH____."
+        ],
+        "row": 2,
+        "col": 1,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "HELP",
+        "chapter": "Everyday Kindness",
+        "clue": "To give someone support with a difficulty or task.",
+        "explain": "Offering useful support is a simple way to show kindness.",
+        "hints": [
+          "Think about making another person's task easier.",
+          "The answer starts with H and has 4 letters.",
+          "Complete this pattern: HE__."
+        ],
+        "row": 3,
+        "col": 1,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "CARE",
+        "chapter": "Everyday Kindness",
+        "clue": "To show concern for another person's well-being.",
+        "explain": "We care when we notice someone's needs and try to support them.",
+        "hints": [
+          "This action shows that someone matters to you.",
+          "The answer starts with C and has 4 letters.",
+          "Complete this pattern: CA__."
+        ],
+        "row": 6,
+        "col": 3,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "KIND",
+        "chapter": "Everyday Kindness",
+        "clue": "Helpful and gentle towards other people.",
+        "explain": "A kind person considers how their behaviour affects others.",
+        "hints": [
+          "Think of a person who helps rather than hurts.",
+          "The answer starts with K and has 4 letters.",
+          "Complete this pattern: KI__."
+        ],
+        "row": 6,
+        "col": 5,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "SHARING",
+        "chapter": "Everyday Kindness",
+        "clue": "Letting someone else use or enjoy what you have.",
+        "explain": "Sharing can make games and activities fairer and more welcoming.",
+        "hints": [
+          "Think about how this value helps people live well together.",
+          "The answer starts with S and has 7 letters.",
+          "Complete this pattern: SH_____."
+        ],
+        "row": 7,
+        "col": 1,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "FRIEND",
+        "chapter": "Everyday Kindness",
+        "clue": "Someone with whom you share affection and trust.",
+        "explain": "A good friend listens, supports you, and treats you respectfully.",
+        "hints": [
+          "Think of someone who stands by you and enjoys your company.",
+          "The answer starts with F and has 6 letters.",
+          "Complete this pattern: FR____."
+        ],
+        "row": 9,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-beginner-making-good-choices",
+    "title": "Value Education - Beginner: Making Good Choices",
+    "subtitle": "Value Education | Beginner Vocabulary | Level 1 of 4",
+    "subject": "Value Education",
+    "difficulty": "beginner",
+    "difficultyRank": 1,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "SAFE",
+        "chapter": "Making Good Choices",
+        "clue": "Protected from danger or harm.",
+        "explain": "Responsible behaviour helps keep ourselves and other people safe.",
+        "hints": [
+          "This describes a place where people are not in danger.",
+          "The answer starts with S and has 4 letters.",
+          "Complete this pattern: SA__."
+        ],
+        "row": 0,
+        "col": 3,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "FAIR",
+        "chapter": "Making Good Choices",
+        "clue": "Treating people without favouritism or cheating.",
+        "explain": "A fair player follows shared rules and respects other players.",
+        "hints": [
+          "This describes giving everyone an honest chance.",
+          "The answer starts with F and has 4 letters.",
+          "Complete this pattern: FA__."
+        ],
+        "row": 2,
+        "col": 3,
+        "dir": "across",
+        "n": 2
+      },
+      {
+        "answer": "RULE",
+        "chapter": "Making Good Choices",
+        "clue": "A shared guideline for expected behaviour.",
+        "explain": "A classroom rule can help everyone use a space responsibly.",
+        "hints": [
+          "Think of an instruction that applies to everyone in a game.",
+          "The answer starts with R and has 4 letters.",
+          "Complete this pattern: RU__."
+        ],
+        "row": 2,
+        "col": 6,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "TRUE",
+        "chapter": "Making Good Choices",
+        "clue": "Accurate rather than false, as an honest statement should be.",
+        "explain": "Being honest means making statements that are true.",
+        "hints": [
+          "This is the opposite of false.",
+          "The answer starts with T and has 4 letters.",
+          "Complete this pattern: TR__."
+        ],
+        "row": 3,
+        "col": 0,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "DUTY",
+        "chapter": "Making Good Choices",
+        "clue": "A responsibility you are expected to fulfil.",
+        "explain": "Doing our duty means taking our responsibilities seriously.",
+        "hints": [
+          "Think about how this value helps people live well together.",
+          "The answer starts with D and has 4 letters.",
+          "Complete this pattern: DU__."
+        ],
+        "row": 3,
+        "col": 8,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "GOOD",
+        "chapter": "Making Good Choices",
+        "clue": "Morally right or beneficial to others.",
+        "explain": "A good choice considers both our own needs and the effects on others.",
+        "hints": [
+          "This is the opposite of bad.",
+          "The answer starts with G and has 4 letters.",
+          "Complete this pattern: GO__."
+        ],
+        "row": 4,
+        "col": 4,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "HONEST",
+        "chapter": "Making Good Choices",
+        "clue": "Truthful and unwilling to cheat or deceive.",
+        "explain": "An honest person tells the truth even when hiding it would be easier.",
+        "hints": [
+          "This describes someone you can trust to tell the truth.",
+          "The answer starts with H and has 6 letters.",
+          "Complete this pattern: HO____."
+        ],
+        "row": 5,
+        "col": 3,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "KIND",
+        "chapter": "Making Good Choices",
+        "clue": "Helpful and gentle towards other people.",
+        "explain": "A kind person considers how their behaviour affects others.",
+        "hints": [
+          "Think of a person who helps rather than hurts.",
+          "The answer starts with K and has 4 letters.",
+          "Complete this pattern: KI__."
+        ],
+        "row": 7,
+        "col": 1,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-elementary-values-in-action",
+    "title": "Value Education - Elementary: Values in Action",
+    "subtitle": "Value Education | Elementary Vocabulary | Level 2 of 4",
+    "subject": "Value Education",
+    "difficulty": "elementary",
+    "difficultyRank": 2,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "HONESTY",
+        "chapter": "Values in Action",
+        "clue": "Reporting an exam totalling error that gave you extra marks shows _____.",
+        "explain": "Truthfulness matters even when correcting an error reduces a personal advantage.",
+        "hints": [
+          "Think about telling the truth even when it costs you an advantage.",
+          "The answer starts with H and has 7 letters.",
+          "Complete this pattern: HO_____."
+        ],
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "SHARING",
+        "chapter": "Values in Action",
+        "clue": "Letting someone else use or enjoy what you have.",
+        "explain": "Sharing can make games and activities fairer and more welcoming.",
+        "hints": [
+          "Think about how this value helps people live well together.",
+          "The answer starts with S and has 7 letters.",
+          "Complete this pattern: SH_____."
+        ],
+        "row": 0,
+        "col": 4,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "PATIENCE",
+        "chapter": "Values in Action",
+        "clue": "Remaining calm while waiting or facing a difficulty shows _____.",
+        "explain": "Patience helps us respond thoughtfully instead of reacting with anger.",
+        "hints": [
+          "Waiting calmly and trying again can help when progress is slow.",
+          "The answer starts with P and has 8 letters.",
+          "Complete this pattern: PA______."
+        ],
+        "row": 1,
+        "col": 10,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "PEACE",
+        "chapter": "Values in Action",
+        "clue": "A state of calm in which people are not fighting.",
+        "explain": "We support peace when we settle disagreements without hurting people.",
+        "hints": [
+          "Think about how this value helps people live well together.",
+          "The answer starts with P and has 5 letters.",
+          "Complete this pattern: PE___."
+        ],
+        "row": 2,
+        "col": 0,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "COURAGE",
+        "chapter": "Values in Action",
+        "clue": "Standing up for truth despite possible criticism requires _____.",
+        "explain": "Responsible action can take strength when the easy choice would conceal a problem.",
+        "hints": [
+          "Doing the right thing can require facing fear or criticism.",
+          "The answer starts with C and has 7 letters.",
+          "Complete this pattern: CO_____."
+        ],
+        "row": 2,
+        "col": 2,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "RESPECT",
+        "chapter": "Values in Action",
+        "clue": "Giving regard to another person despite differences shows _____.",
+        "explain": "People can differ in many ways while deserving equal consideration.",
+        "hints": [
+          "Treat another person's feelings and ideas as valuable.",
+          "The answer starts with R and has 7 letters.",
+          "Complete this pattern: RE_____."
+        ],
+        "row": 3,
+        "col": 4,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "CARING",
+        "chapter": "Values in Action",
+        "clue": "Feeling and showing concern for your family, friends, neighbours, animals and the environment is called ______.",
+        "explain": "A caring person helps others without expecting a reward, is thankful for what others do, thinks of other people's feelings and is kind to animals and the environment.",
+        "hints": [
+          "Think about showing that another person's well-being matters to you.",
+          "The answer starts with C and has 6 letters.",
+          "Complete this pattern: CA____."
+        ],
+        "row": 5,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "TEAMWORK",
+        "chapter": "Values in Action",
+        "clue": "Coordinated effort by people working for a common goal is _____.",
+        "explain": "A team considers the shared task as well as individual preferences.",
+        "hints": [
+          "People combine their efforts instead of trying to do everything alone.",
+          "The answer starts with T and has 8 letters.",
+          "Complete this pattern: TE______."
+        ],
+        "row": 8,
+        "col": 1,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-elementary-our-shared-world",
+    "title": "Value Education - Elementary: Our Shared World",
+    "subtitle": "Value Education | Elementary Vocabulary | Level 2 of 4",
+    "subject": "Value Education",
+    "difficulty": "elementary",
+    "difficultyRank": 2,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "DUTIES",
+        "chapter": "Our Shared World",
+        "clue": "Responsibilities that accompany our rights are also called _____.",
+        "explain": "Members of a community contribute by fulfilling their responsibilities.",
+        "hints": [
+          "These are responsibilities you are expected to fulfil; the answer is plural.",
+          "The answer starts with D and has 6 letters.",
+          "Complete this pattern: DU____."
+        ],
+        "row": 0,
+        "col": 5,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "COMMUNITY",
+        "chapter": "Our Shared World",
+        "clue": "The wider group of people around us, beyond our own household, is our _____.",
+        "explain": "Helping can extend to school, local organisations, and the people around us.",
+        "hints": [
+          "Think beyond your household to the people who live and work around you.",
+          "The answer starts with C and has 9 letters.",
+          "Complete this pattern: CO_______."
+        ],
+        "row": 1,
+        "col": 1,
+        "dir": "across",
+        "n": 2
+      },
+      {
+        "answer": "FREEDOM",
+        "chapter": "Our Shared World",
+        "clue": "The man releases the caged birds because he values the ability to live without confinement.",
+        "explain": "The story asks us to appreciate freedom and use it responsibly.",
+        "hints": [
+          "Think about the difference between a caged bird and one that can fly away.",
+          "The answer starts with F and has 7 letters.",
+          "Complete this pattern: FR_____."
+        ],
+        "row": 3,
+        "col": 0,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "RIGHTS",
+        "chapter": "Our Shared World",
+        "clue": "These entitlements must be used with consideration for other people.",
+        "explain": "Using our rights responsibly also means respecting the rights of others.",
+        "hints": [
+          "These entitlements come with responsibilities towards other people.",
+          "The answer starts with R and has 6 letters.",
+          "Complete this pattern: RI____."
+        ],
+        "row": 3,
+        "col": 4,
+        "dir": "across",
+        "n": 4
+      },
+      {
+        "answer": "HERITAGE",
+        "chapter": "Our Shared World",
+        "clue": "The cultural traditions inherited from earlier generations form our _____.",
+        "explain": "Celebrations provide opportunities to understand and value our cultural inheritance.",
+        "hints": [
+          "Traditions can pass from one generation to the next.",
+          "The answer starts with H and has 8 letters.",
+          "Complete this pattern: HE______."
+        ],
+        "row": 3,
+        "col": 7,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "CONSERVE",
+        "chapter": "Our Shared World",
+        "clue": "To protect water and electricity from unnecessary use is to _____ them.",
+        "explain": "Switching off unused appliances and closing taps helps save resources.",
+        "hints": [
+          "This action prevents useful supplies from being wasted.",
+          "The answer starts with C and has 8 letters.",
+          "Complete this pattern: CO______."
+        ],
+        "row": 5,
+        "col": 2,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "DIVERSITY",
+        "chapter": "Our Shared World",
+        "clue": "The variety of appearances, behaviours, and cultural traditions in a group is its _____.",
+        "explain": "Differences give us opportunities to learn about other people.",
+        "hints": [
+          "A group can contain many different traditions and experiences.",
+          "The answer starts with D and has 9 letters.",
+          "Complete this pattern: DI_______."
+        ],
+        "row": 7,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "NATURE",
+        "chapter": "Our Shared World",
+        "clue": "Forests, rivers, animals and air — it takes care of all our needs, so we must look after it.",
+        "explain": "Wild animals wander into cities when their forests are destroyed. We must protect forests, save wildlife, say no to polythene bags and keep our surroundings clean.",
+        "hints": [
+          "Think of forests, rivers, wildlife, and other parts of the living world.",
+          "The answer starts with N and has 6 letters.",
+          "Complete this pattern: NA____."
+        ],
+        "row": 10,
+        "col": 2,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-intermediate-understanding-others",
+    "title": "Value Education - Intermediate: Understanding Others",
+    "subtitle": "Value Education | Intermediate Vocabulary | Level 3 of 4",
+    "subject": "Value Education",
+    "difficulty": "intermediate",
+    "difficultyRank": 3,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "RESPONSIBILITY",
+        "chapter": "Understanding Others",
+        "clue": "Undertaking a task with purpose and fulfilling it carefully demonstrates _____.",
+        "explain": "Being responsible means making an effort to complete what you undertake.",
+        "hints": [
+          "Think about carrying out a task carefully and accepting its consequences.",
+          "The answer starts with R and has 14 letters.",
+          "Complete this pattern: RE____________."
+        ],
+        "row": 0,
+        "col": 12,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "ACCEPTANCE",
+        "chapter": "Understanding Others",
+        "clue": "Respecting people's beliefs and choices, even when different from ours, shows _____.",
+        "explain": "Recognising differences with respect helps people live together.",
+        "hints": [
+          "Think about welcoming people even when their choices differ from yours.",
+          "The answer starts with A and has 10 letters.",
+          "Complete this pattern: AC________."
+        ],
+        "row": 1,
+        "col": 0,
+        "dir": "across",
+        "n": 2
+      },
+      {
+        "answer": "EMPATHY",
+        "chapter": "Understanding Others",
+        "clue": "Listening to an older person's experiences to understand their feelings calls for _____.",
+        "explain": "Spending time with others can help us appreciate their perspectives.",
+        "hints": [
+          "Imagine how a situation feels from another person's point of view.",
+          "The answer starts with E and has 7 letters.",
+          "Complete this pattern: EM_____."
+        ],
+        "row": 1,
+        "col": 3,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "COOPERATION",
+        "chapter": "Understanding Others",
+        "clue": "Willingly combining efforts and helping other team members demonstrates _____.",
+        "explain": "Working with others supports achievement of the common goal.",
+        "hints": [
+          "People willingly help each other with a shared task.",
+          "The answer starts with C and has 11 letters.",
+          "Complete this pattern: CO_________."
+        ],
+        "row": 1,
+        "col": 8,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "COMPASSION",
+        "chapter": "Understanding Others",
+        "clue": "Concern for people facing hardship, together with a desire to help, is _____.",
+        "explain": "Practical support can turn concern for others into useful action.",
+        "hints": [
+          "Seeing someone suffer can move you to help them.",
+          "The answer starts with C and has 10 letters.",
+          "Complete this pattern: CO________."
+        ],
+        "row": 3,
+        "col": 0,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "FAIRNESS",
+        "chapter": "Understanding Others",
+        "clue": "Treating people without favouritism demonstrates _____.",
+        "explain": "Responsible decisions take other people into consideration rather than giving unfair advantages.",
+        "hints": [
+          "Think about avoiding favouritism when making a decision.",
+          "The answer starts with F and has 8 letters.",
+          "Complete this pattern: FA______."
+        ],
+        "row": 6,
+        "col": 5,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "EQUALITY",
+        "chapter": "Understanding Others",
+        "clue": "Treating people as equally worthy, rather than as superior or inferior, supports _____.",
+        "explain": "The activities encourage learners to notice and challenge unequal treatment.",
+        "hints": [
+          "No person is considered worth less than another.",
+          "The answer starts with E and has 8 letters.",
+          "Complete this pattern: EQ______."
+        ],
+        "row": 9,
+        "col": 3,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "TOLERANCE",
+        "chapter": "Understanding Others",
+        "clue": "Respectful acceptance of people with different customs or beliefs demonstrates _____.",
+        "explain": "The activities encourage getting along with people whose experiences differ from ours.",
+        "hints": [
+          "Different beliefs or customs do not have to lead to hostility.",
+          "The answer starts with T and has 9 letters.",
+          "Complete this pattern: TO_______."
+        ],
+        "row": 11,
+        "col": 2,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-intermediate-character-and-commitment",
+    "title": "Value Education - Intermediate: Character and Commitment",
+    "subtitle": "Value Education | Intermediate Vocabulary | Level 3 of 4",
+    "subject": "Value Education",
+    "difficulty": "intermediate",
+    "difficultyRank": 3,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "SELFCONTROL",
+        "chapter": "Character and Commitment",
+        "clue": "Regulating an impulse so that you can choose a thoughtful response shows _____.",
+        "explain": "Discipline involves choosing appropriate actions rather than simply following an impulse.",
+        "hints": [
+          "Pause and regulate an impulse before choosing how to act.",
+          "The answer starts with S and has 11 letters.",
+          "Complete this pattern: SE_________."
+        ],
+        "row": 0,
+        "col": 12,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "CONSIDERATE",
+        "chapter": "Character and Commitment",
+        "clue": "Thoughtful about other people's feelings and needs.",
+        "explain": "A considerate person notices how their actions might inconvenience or help others.",
+        "hints": [
+          "Think of taking another person's circumstances into account.",
+          "The answer starts with C and has 11 letters.",
+          "Complete this pattern: CO_________."
+        ],
+        "row": 1,
+        "col": 0,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "DISCIPLINE",
+        "chapter": "Character and Commitment",
+        "clue": "Structured behaviour that supports immediate tasks and long-term goals is _____.",
+        "explain": "Regular, responsible conduct helps people organise their work and relationships.",
+        "hints": [
+          "Regular habits and responsible conduct help keep your work organised.",
+          "The answer starts with D and has 10 letters.",
+          "Complete this pattern: DI________."
+        ],
+        "row": 1,
+        "col": 3,
+        "dir": "across",
+        "n": 3
+      },
+      {
+        "answer": "INTEGRITY",
+        "chapter": "Character and Commitment",
+        "clue": "Adhering to ethical principles even when a dishonest choice is easier demonstrates _____.",
+        "explain": "Integrity connects what we believe is right with how we act.",
+        "hints": [
+          "Your actions remain faithful to your moral principles, even without an audience.",
+          "The answer starts with I and has 9 letters.",
+          "Complete this pattern: IN_______."
+        ],
+        "row": 1,
+        "col": 4,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "GRATEFUL",
+        "chapter": "Character and Commitment",
+        "clue": "Feeling or showing appreciation for kindness or help.",
+        "explain": "Being grateful means recognising the support we receive from others.",
+        "hints": [
+          "Think of someone who appreciates a favour rather than taking it for granted.",
+          "The answer starts with G and has 8 letters.",
+          "Complete this pattern: GR______."
+        ],
+        "row": 3,
+        "col": 2,
+        "dir": "down",
+        "n": 5
+      },
+      {
+        "answer": "RELIABLE",
+        "chapter": "Character and Commitment",
+        "clue": "Dependable in fulfilling commitments and responsibilities.",
+        "explain": "A reliable person follows through so that others can count on them.",
+        "hints": [
+          "Think of someone who does what they have agreed to do.",
+          "The answer starts with R and has 8 letters.",
+          "Complete this pattern: RE______."
+        ],
+        "row": 3,
+        "col": 6,
+        "dir": "down",
+        "n": 6
+      },
+      {
+        "answer": "RESILIENT",
+        "chapter": "Character and Commitment",
+        "clue": "Able to recover from setbacks and continue constructively.",
+        "explain": "A resilient person can learn from a setback while continuing to act responsibly.",
+        "hints": [
+          "Think of recovering your strength after a difficulty.",
+          "The answer starts with R and has 9 letters.",
+          "Complete this pattern: RE_______."
+        ],
+        "row": 3,
+        "col": 10,
+        "dir": "down",
+        "n": 7
+      },
+      {
+        "answer": "DETERMINATION",
+        "chapter": "Character and Commitment",
+        "clue": "The firm resolve to keep working towards a goal is _____.",
+        "explain": "Achieving a demanding goal requires commitment even when progress is difficult.",
+        "hints": [
+          "A difficult goal does not make you abandon your resolve to reach it.",
+          "The answer starts with D and has 13 letters.",
+          "Complete this pattern: DE___________."
+        ],
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-advanced-ethical-judgement",
+    "title": "Value Education - Advanced: Ethical Judgement",
+    "subtitle": "Value Education | Advanced Vocabulary | Level 4 of 4",
+    "subject": "Value Education",
+    "difficulty": "advanced",
+    "difficultyRank": 4,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "MAGNANIMITY",
+        "chapter": "Ethical Judgement",
+        "clue": "Generosity of spirit, especially towards a rival or someone who has wronged you.",
+        "explain": "Magnanimity can mean treating an opponent graciously rather than seeking petty revenge.",
+        "hints": [
+          "Think of being generous-hearted after a disagreement or victory.",
+          "The answer starts with M and has 11 letters.",
+          "Complete this pattern: MA_________."
+        ],
+        "row": 0,
+        "col": 7,
+        "dir": "down",
+        "n": 1
+      },
+      {
+        "answer": "IMPARTIALITY",
+        "chapter": "Ethical Judgement",
+        "clue": "Judging fairly without favouring one side or person.",
+        "explain": "Impartiality asks us to consider relevant facts rather than friendship or personal preference.",
+        "hints": [
+          "Think of fairness when making a judgement.",
+          "The answer starts with I and has 12 letters.",
+          "Complete this pattern: IM__________."
+        ],
+        "row": 1,
+        "col": 0,
+        "dir": "across",
+        "n": 2
+      },
+      {
+        "answer": "BENEVOLENCE",
+        "chapter": "Ethical Judgement",
+        "clue": "The disposition to wish others well and act for their benefit.",
+        "explain": "Benevolence motivates thoughtful support for people rather than indifference to their needs.",
+        "hints": [
+          "Think of goodwill expressed through generous actions.",
+          "The answer starts with B and has 11 letters.",
+          "Complete this pattern: BE_________."
+        ],
+        "row": 3,
+        "col": 0,
+        "dir": "down",
+        "n": 3
+      },
+      {
+        "answer": "CIVILITY",
+        "chapter": "Ethical Judgement",
+        "clue": "Polite and respectful conduct, even when people disagree.",
+        "explain": "Civility allows disagreement without insults or contempt.",
+        "hints": [
+          "Think of courtesy maintained during a difficult discussion.",
+          "The answer starts with C and has 8 letters.",
+          "Complete this pattern: CI______."
+        ],
+        "row": 3,
+        "col": 5,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "SOLIDARITY",
+        "chapter": "Ethical Judgement",
+        "clue": "Mutual support among people united by a shared concern or purpose.",
+        "explain": "Solidarity encourages people to stand together when members of a group face hardship.",
+        "hints": [
+          "Think of standing alongside others rather than leaving them isolated.",
+          "The answer starts with S and has 10 letters.",
+          "Complete this pattern: SO________."
+        ],
+        "row": 4,
+        "col": 2,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "EQUANIMITY",
+        "chapter": "Ethical Judgement",
+        "clue": "Calmness and composure, especially in a difficult situation.",
+        "explain": "Equanimity can help us respond thoughtfully when emotions run high.",
+        "hints": [
+          "Think of maintaining an even temper under pressure.",
+          "The answer starts with E and has 10 letters.",
+          "Complete this pattern: EQ________."
+        ],
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "ALTRUISM",
+        "chapter": "Ethical Judgement",
+        "clue": "Concern for others' welfare without seeking personal reward.",
+        "explain": "Altruism involves helping because another person's needs matter, not for praise or profit.",
+        "hints": [
+          "Think of an unselfish motive for helping.",
+          "The answer starts with A and has 8 letters.",
+          "Complete this pattern: AL______."
+        ],
+        "row": 6,
+        "col": 3,
+        "dir": "down",
+        "n": 7
+      },
+      {
+        "answer": "CONSCIENTIOUS",
+        "chapter": "Ethical Judgement",
+        "clue": "Careful and guided by a strong sense of duty.",
+        "explain": "A conscientious person takes responsibilities seriously and completes work with care.",
+        "hints": [
+          "This adjective describes someone who acts according to their conscience.",
+          "The answer starts with C and has 13 letters.",
+          "Complete this pattern: CO___________."
+        ],
+        "row": 12,
+        "col": 0,
+        "dir": "across",
+        "n": 8
+      }
+    ]
+  },
+  {
+    "id": "value-vocabulary-advanced-responsibility-beyond-ourselves",
+    "title": "Value Education - Advanced: Responsibility Beyond Ourselves",
+    "subtitle": "Value Education | Advanced Vocabulary | Level 4 of 4",
+    "subject": "Value Education",
+    "difficulty": "advanced",
+    "difficultyRank": 4,
+    "instructions": "Read each clue about values, responsible behaviour, or care for others. Write one letter per box, without spaces. Select a word for progressive hints.",
+    "words": [
+      {
+        "answer": "ACCOUNTABILITY",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "Accepting responsibility for your decisions and their consequences is _____.",
+        "explain": "Responsible people recognise that their actions have effects on others.",
+        "hints": [
+          "Think about owning the effects of a decision instead of blaming someone else.",
+          "The answer starts with A and has 14 letters.",
+          "Complete this pattern: AC____________."
+        ],
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "n": 1
+      },
+      {
+        "answer": "CONSERVATION",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "Protecting natural resources and preventing their unnecessary loss is _____.",
+        "explain": "Environmental responsibility includes preserving resources and natural heritage.",
+        "hints": [
+          "Think about protecting useful natural supplies for the future.",
+          "The answer starts with C and has 12 letters.",
+          "Complete this pattern: CO__________."
+        ],
+        "row": 0,
+        "col": 1,
+        "dir": "down",
+        "n": 2
+      },
+      {
+        "answer": "INCLUSIVITY",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "The quality of welcoming and enabling participation by different people.",
+        "explain": "Inclusivity involves noticing and reducing barriers that leave others out.",
+        "hints": [
+          "Think of making space for everyone to participate.",
+          "The answer starts with I and has 11 letters.",
+          "Complete this pattern: IN_________."
+        ],
+        "row": 2,
+        "col": 0,
+        "dir": "across",
+        "n": 3
+      },
+      {
+        "answer": "RECIPROCITY",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "Mutual exchange of support, consideration, or benefits.",
+        "explain": "Reciprocity describes a relationship in which people respond to one another's support.",
+        "hints": [
+          "Think of give-and-take in a relationship.",
+          "The answer starts with R and has 11 letters.",
+          "Complete this pattern: RE_________."
+        ],
+        "row": 4,
+        "col": 13,
+        "dir": "down",
+        "n": 4
+      },
+      {
+        "answer": "TRANSPARENCY",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "Openness about actions and decisions so others can understand them.",
+        "explain": "Transparency supports trust by making decisions and their reasons clear.",
+        "hints": [
+          "Think of openness rather than concealment.",
+          "The answer starts with T and has 12 letters.",
+          "Complete this pattern: TR__________."
+        ],
+        "row": 6,
+        "col": 3,
+        "dir": "across",
+        "n": 5
+      },
+      {
+        "answer": "STEWARDSHIP",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "Responsible care and management of something entrusted to you.",
+        "explain": "Environmental stewardship involves looking after resources for others as well as ourselves.",
+        "hints": [
+          "Think of being a careful guardian of shared resources.",
+          "The answer starts with S and has 11 letters.",
+          "Complete this pattern: ST_________."
+        ],
+        "row": 8,
+        "col": 3,
+        "dir": "across",
+        "n": 6
+      },
+      {
+        "answer": "INTERDEPENDENCE",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "A relationship in which people or living systems depend on one another.",
+        "explain": "Recognising interdependence helps us understand how our choices can affect others and nature.",
+        "hints": [
+          "Think of mutual reliance rather than complete independence.",
+          "The answer starts with I and has 15 letters.",
+          "Complete this pattern: IN_____________."
+        ],
+        "row": 11,
+        "col": 0,
+        "dir": "across",
+        "n": 7
+      },
+      {
+        "answer": "SUSTAINABILITY",
+        "chapter": "Responsibility Beyond Ourselves",
+        "clue": "Making decisions that support the long-term well-being of people and nature promotes _____.",
+        "explain": "The activities connect environmental decisions with long-term ecological and social effects.",
+        "hints": [
+          "Consider whether today's choices support people and nature over the long term.",
+          "The answer starts with S and has 14 letters.",
+          "Complete this pattern: SU____________."
+        ],
+        "row": 13,
+        "col": 1,
+        "dir": "across",
+        "n": 8
+      }
+    ]
   }
 ]

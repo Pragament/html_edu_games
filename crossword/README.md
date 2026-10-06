@@ -49,3 +49,21 @@ explanations are paraphrases of the activities and themes.
 
 The three existing Classes III–V puzzles remain available. Serve the repository
 over HTTP to load the JSON and download PDF worksheets.
+
+## Value education vocabulary levels
+
+Eight additional value education puzzles offer two themes at each vocabulary level:
+
+| Difficulty | Themes |
+| --- | --- |
+| Beginner | Everyday Kindness; Making Good Choices |
+| Elementary | Values in Action; Our Shared World |
+| Intermediate | Understanding Others; Character and Commitment |
+| Advanced | Ethical Judgement; Responsibility Beyond Ourselves |
+
+Each puzzle has eight words, clues about values and responsible behaviour,
+explanations, and three progressive hints. These puzzles include `subject`
+(`Value Education`), `difficulty`, and `difficultyRank` (1–4). Vocabulary ranges
+from familiar words such as KIND and FAIR to ethical concepts such as ALTRUISM,
+IMPARTIALITY, and STEWARDSHIP. Difficulty describes an approximate vocabulary
+progression rather than an official proficiency or grade assessment.
