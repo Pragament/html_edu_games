@@ -78,6 +78,44 @@ const state = {
 };
 
 const cellEls = {};
+const letterInput = document.getElementById('letter-input');
+
+function positionLetterInput() {
+  if (!state.sel) return;
+  const cell = cellEls[keyOf(state.sel.row, state.sel.col)];
+  if (!cell) return;
+  Object.assign(letterInput.style, {
+    display: 'block', left: `${cell.offsetLeft}px`, top: `${cell.offsetTop}px`,
+    width: `${cell.offsetWidth}px`, height: `${cell.offsetHeight}px`
+  });
+  letterInput.setAttribute('aria-label', `Letter at row ${state.sel.row + 1}, column ${state.sel.col + 1}, ${state.sel.dir}`);
+}
+
+function openLetterKeyboard() {
+  positionLetterInput();
+  letterInput.value = ' ';
+  letterInput.focus({ preventScroll: true });
+  letterInput.setSelectionRange(1, 1);
+}
+
+function readLetterInput(event) {
+  if (event.isComposing) return;
+  if (event.inputType && event.inputType.startsWith('delete')) backspace();
+  else for (const letter of letterInput.value.toUpperCase().replace(/[^A-Z]/g, '')) typeLetter(letter);
+  // A space keeps deletion available on software keyboards even in an empty cell.
+  letterInput.value = ' ';
+  letterInput.setSelectionRange(1, 1);
+}
+
+letterInput.addEventListener('input', readLetterInput);
+letterInput.addEventListener('compositionend', readLetterInput);
+letterInput.addEventListener('beforeinput', event => {
+  if (event.inputType.startsWith('delete') && event.cancelable) {
+    event.preventDefault();
+    backspace();
+  }
+});
+window.addEventListener('resize', positionLetterInput);
 
 /* =========================================================
    5. RENDER THE INTERACTIVE GRID
@@ -114,6 +152,7 @@ function buildGridDOM() {
       g.appendChild(d);
     }
   }
+  g.appendChild(letterInput);
 }
 
 function updateCell(k) {
@@ -137,6 +176,7 @@ function paint() {
 
   const el = cellEls[keyOf(row, col)];
   if (el) el.classList.add('sel');
+  positionLetterInput();
 }
 
 /* =========================================================
@@ -151,7 +191,7 @@ function buildClueLists() {
       li.dataset.n = w.display;
       li.dataset.dir = w.dir;
       li.innerHTML = `<b>${w.display}.</b> ${w.clue} <span class="len">(${w.answer.length})</span>`;
-      li.addEventListener('click', () => selectWord(w));
+      li.addEventListener('click', () => { selectWord(w); openLetterKeyboard(); });
       ul.appendChild(li);
     });
   };
@@ -165,7 +205,10 @@ function highlightClue() {
   const w = wordAt(state.sel.row, state.sel.col, state.sel.dir);
   if (!w) return;
   const li = document.querySelector(`.clue-col li[data-n="${w.display}"][data-dir="${w.dir}"]`);
-  if (li) { li.classList.add('active'); li.scrollIntoView({ block: 'nearest' }); }
+  if (li) {
+    li.classList.add('active');
+    if (!window.matchMedia('(pointer: coarse)').matches) li.scrollIntoView({ block: 'nearest' });
+  }
 }
 
 /* =========================================================
@@ -196,9 +239,10 @@ function onCellClick(r, c) {
     // toggle direction
     const cell = cells[keyOf(r, c)];
     const other = s.dir === 'across' ? 'down' : 'across';
-    if (cell[other]) { s.dir = other; paint(); highlightClue(); return; }
+    if (cell[other]) { s.dir = other; paint(); highlightClue(); openLetterKeyboard(); return; }
   }
   selectCell(r, c);
+  openLetterKeyboard();
 }
 
 function typeLetter(ch) {
@@ -265,7 +309,7 @@ function moveTo(r, c, dir) {
    8. KEYBOARD
    ========================================================= */
 document.addEventListener('keydown', e => {
-  if (e.target.closest('select, input, textarea, button, a') || !state.sel) return;
+  if ((e.target !== letterInput && e.target.closest('select, input, textarea, button, a')) || !state.sel || e.isComposing) return;
   const { row, col, dir } = state.sel;
 
   if (e.key === 'ArrowRight')      { e.preventDefault(); moveTo(row, col + 1, 'across'); }
@@ -286,7 +330,7 @@ document.addEventListener('keydown', e => {
     i = e.shiftKey ? (i - 1 + all.length) % all.length : (i + 1) % all.length;
     selectWord(all[i]);
   }
-  else if (/^[a-zA-Z]$/.test(e.key)) { e.preventDefault(); typeLetter(e.key.toUpperCase()); }
+  else if (e.target !== letterInput && /^[a-zA-Z]$/.test(e.key)) { e.preventDefault(); typeLetter(e.key.toUpperCase()); }
 });
 
 /* =========================================================

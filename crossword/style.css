@@ -41,9 +41,11 @@ header.top p{margin:2px 0;color:var(--muted);font-size:14px}
 /* ---------- Grid ---------- */
 .grid-wrap{display:flex;justify-content:center}
 #grid{
+  position:relative;
   display:grid;gap:2px;background:var(--line2);border:2px solid var(--line2);
   border-radius:8px;padding:2px;width:100%;max-width:640px;outline:none;
 }
+#letter-input{position:absolute;display:none;opacity:.01;pointer-events:none;font-size:16px;border:0;padding:0;caret-color:transparent}
 .cell{
   position:relative;aspect-ratio:1/1;background:#f8fafc;border-radius:3px;
   display:flex;align-items:center;justify-content:center;
