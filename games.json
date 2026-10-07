@@ -12,5 +12,12 @@
     "description": "Find hidden values and good habits in puzzles for Classes III–XII, from beginner to advanced vocabulary.",
     "url": "word-search/index.html",
     "thumbnail": "word-search/thumbnail.svg"
+  },
+  {
+    "id": "word-scramble",
+    "title": "Value Education Word Scramble",
+    "description": "Rearrange letters to discover values and good habits, with descriptions and progressive hints for Classes III–XII.",
+    "url": "word-scramble/index.html",
+    "thumbnail": "word-scramble/thumbnail.svg"
   }
 ]
