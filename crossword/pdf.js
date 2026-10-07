@@ -38,12 +38,12 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     if (line) lines.push(line);
     return lines;
   }
-  function qrCode(url) {
+  function qrCode(url, top = margin) {
     const qr = qrcode(0, 'M');
     qr.addData(url); qr.make();
     const count = qr.getModuleCount(), size = 66;
     const module = size / (count + 8);
-    const left = width - margin - size, top = margin;
+    const left = width - margin - size;
     commands.push(`q 1 g ${left} ${height - top - size} ${size} ${size} re f Q`);
     // Four-module white quiet zone is included in the reserved area.
     for (let r = 0; r < count; r++) for (let c = 0; c < count; c++) {
@@ -51,7 +51,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     }
     text('Play online', left, top + size + 8, 8);
   }
-  function newPage(label, withQR = false) {
+  function newPage(label, withQR = false, besideGrid = false) {
     commands = []; pages.push(commands); y = margin + 16;
     if (watermark) {
       let size = Math.max(12, Math.min(96, Number(watermark.size) || 48));
@@ -76,6 +76,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
       });
       commands.push('Q');
     }
+    if (besideGrid) return;
     const headerWidth = contentWidth - (withQR ? 84 : 0);
     for (const line of wrap(label, 16, headerWidth)) { text(line, margin, y, 16, true); y += 20; }
     for (const line of wrap(puzzle.title, fontSize, headerWidth)) { text(line, margin, y); y += lineHeight; }
@@ -90,9 +91,9 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     }
     y += 5;
   }
-  function grid(answers) {
-    const cellSize = Math.min(answers ? 16 : 18, contentWidth / cols, 220 / rows);
-    const left = (width - cols * cellSize) / 2;
+  function grid(answers, layout = {}) {
+    const cellSize = Math.min(answers ? 16 : 18, (layout.availableWidth || contentWidth) / cols, 220 / rows);
+    const left = layout.left ?? (width - cols * cellSize) / 2;
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
       const cell = cells[`${r},${c}`];
       if (!cell) continue; // Unused spaces remain white, with no border or fill.
@@ -114,11 +115,36 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
       return lines;
     });
   }
-  newPage('Crossword Worksheet', true);
-  paragraph(puzzle.subtitle);
-  paragraph(getWorksheetInstructions(puzzle));
-  paragraph('Name: _______________________    Date: ______________');
-  grid(false);
+  newPage('Crossword Worksheet', false, true);
+  const gridWidth = contentWidth * 0.44;
+  y = margin;
+  grid(false, {left: margin, availableWidth: gridWidth});
+  const gridBottom = y;
+  const headerLeft = margin + gridWidth + gap;
+  const headerWidth = width - margin - headerLeft;
+  let headerY = margin + 16;
+  const titleWidth = headerWidth - (options.puzzleUrl ? 84 : 0);
+  for (const line of wrap('Crossword Worksheet', 16, titleWidth)) {
+    text(line, headerLeft, headerY, 16, true);
+    headerY += 20;
+  }
+  if (options.puzzleUrl) {
+    qrCode(options.puzzleUrl);
+    headerY = Math.max(headerY, margin + 86);
+  }
+  function headerParagraph(value) {
+    for (const line of wrap(value, fontSize, headerWidth)) {
+      text(line, headerLeft, headerY);
+      headerY += lineHeight;
+    }
+    headerY += 8;
+  }
+  headerParagraph(puzzle.title);
+  headerParagraph(puzzle.subtitle);
+  headerParagraph(getWorksheetInstructions(puzzle));
+  headerParagraph('Name: _______________________');
+  headerParagraph('Date: _______________________');
+  y = Math.max(gridBottom, headerY + 8);
   const clues = [clueBlocks('across'), clueBlocks('down')];
   const positions = [0, 0];
   const lineOffsets = [0, 0];
