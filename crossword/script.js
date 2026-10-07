@@ -241,6 +241,7 @@ function showNextHint() {
   const shown = state.hintCounts.get(word.n) || 0;
   state.hintCounts.set(word.n, Math.min(shown + 1, word.hints.length));
   updateWordHints();
+  savePuzzleProgress();
 }
 
 /* =========================================================
@@ -289,6 +290,7 @@ function typeLetter(ch) {
   updateCell(k);
   advance();
   updateStatus();
+  savePuzzleProgress();
 }
 
 function advance() {
@@ -328,6 +330,7 @@ function backspace() {
     }
   }
   updateStatus();
+  savePuzzleProgress();
 }
 
 function moveTo(r, c, dir) {
@@ -394,6 +397,7 @@ function revealLetter() {
   updateCell(k);
   advance();
   updateStatus();
+  savePuzzleProgress();
 }
 
 function clearAll() {
@@ -404,6 +408,7 @@ function clearAll() {
   state.revealed.clear();
   Object.keys(cellEls).forEach(updateCell);
   document.getElementById('status').textContent = '';
+  savePuzzleProgress();
 }
 
 function updateStatus(force, filled, correct, total) {
@@ -522,6 +527,54 @@ function buildPrint() {
 /* =========================================================
    11. INIT
    ========================================================= */
+const LAST_PUZZLE_KEY = 'crossword.lastPuzzle.v1';
+const progressKey = id => `crossword.progress.v1.${id}`;
+const puzzleSignature = puzzle => JSON.stringify(puzzle.words.map(w => [w.answer, w.row, w.col, w.dir]));
+
+function savePuzzleProgress() {
+  if (!PUZZLE) return;
+  try {
+    localStorage.setItem(progressKey(PUZZLE.id), JSON.stringify({
+      signature: puzzleSignature(PUZZLE), entries: state.entries, selection: state.sel,
+      revealed: [...state.revealed], hints: [...state.hintCounts]
+    }));
+    localStorage.setItem(LAST_PUZZLE_KEY, PUZZLE.id);
+  } catch {
+    // Playing still works when browser storage is unavailable.
+  }
+}
+
+function restorePuzzleProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(progressKey(PUZZLE.id)));
+    if (!saved || saved.signature !== puzzleSignature(PUZZLE)) return null;
+    if (saved.entries && typeof saved.entries === 'object') {
+      for (const [key, letter] of Object.entries(saved.entries)) {
+        if (Object.hasOwn(cells, key) && typeof letter === 'string' && /^[A-Z]$/.test(letter)) state.entries[key] = letter;
+      }
+    }
+    if (Array.isArray(saved.revealed)) {
+      for (const key of saved.revealed) {
+        if (Object.hasOwn(cells, key) && state.entries[key] === cells[key].letter) state.revealed.add(key);
+      }
+    }
+    if (Array.isArray(saved.hints)) {
+      for (const pair of saved.hints) {
+        if (!Array.isArray(pair) || pair.length !== 2) continue;
+        const [n, count] = pair;
+        const word = PUZZLE.words.find(w => w.n === n);
+        if (word && Number.isInteger(count) && count >= 0) state.hintCounts.set(n, Math.min(count, (word.hints || []).length));
+      }
+    }
+    const selected = saved.selection;
+    if (selected && Number.isInteger(selected.row) && Number.isInteger(selected.col)
+        && ['across', 'down'].includes(selected.dir) && wordAt(selected.row, selected.col, selected.dir)) return selected;
+  } catch {
+    // Ignore damaged or outdated progress.
+  }
+  return null;
+}
+
 function loadPuzzle(puzzle) {
   state.hintCounts.clear();
   PUZZLE = structuredClone(puzzle);
@@ -549,8 +602,13 @@ function loadPuzzle(puzzle) {
   document.getElementById('status').textContent = '';
   document.getElementById('print-area').replaceChildren();
   document.getElementById('pdf-status').textContent = '';
+  const selection = restorePuzzleProgress();
+  Object.keys(cellEls).forEach(updateCell);
   const first = acrossWords[0] || downWords[0];
-  selectWord(first);
+  if (selection) selectCell(selection.row, selection.col, selection.dir);
+  else selectWord(first);
+  updateStatus();
+  savePuzzleProgress();
 }
 
 async function loadPuzzles() {
@@ -567,13 +625,16 @@ async function loadPuzzles() {
     }
     selector.replaceChildren();
     puzzles.forEach((puzzle, index) => selector.add(new Option(puzzle.title, String(index))));
-    const initialIndex = Math.floor(Math.random() * puzzles.length);
+    let savedPuzzleId;
+    try { savedPuzzleId = localStorage.getItem(LAST_PUZZLE_KEY); } catch {}
+    const savedIndex = puzzles.findIndex(puzzle => puzzle.id === savedPuzzleId);
+    const initialIndex = savedIndex >= 0 ? savedIndex : Math.floor(Math.random() * puzzles.length);
     selector.value = String(initialIndex);
     loadPuzzle(puzzles[initialIndex]);
     selector.disabled = false;
     buttons.forEach(button => button.disabled = false);
     updateWordHints();
-    status.textContent = 'Changing puzzles starts a new grid.';
+    status.textContent = 'Progress is saved automatically on this browser.';
   } catch (error) {
     status.textContent = 'Puzzles could not be loaded. Please refresh and try again.';
     console.error(error);
@@ -594,9 +655,12 @@ document.getElementById('btn-print').addEventListener('click', () => {
   setTimeout(() => window.print(), 80);
 });
 
-document.getElementById('pdf-text-size').addEventListener('input', event => {
-  document.getElementById('pdf-text-size-value').textContent = `${event.target.value} pt`;
-});
+const pdfTextSizeIds = ['pdf-text-size', 'pdf-across-text-size', 'pdf-down-text-size', 'pdf-header-text-size'];
+for (const id of pdfTextSizeIds) {
+  document.getElementById(id).addEventListener('input', event => {
+    document.getElementById(`${id}-value`).textContent = `${event.target.value} pt`;
+  });
+}
 
 document.getElementById('pdf-watermark-text').addEventListener('input', event => {
   document.getElementById('pdf-watermark-enabled').checked = event.target.value.trim().length > 0;
@@ -610,7 +674,7 @@ for (const [name, suffix] of [['opacity', '%'], ['size', ' pt']]) {
 /* Keep the latest PDF preferences on this browser, replacing older settings. */
 const PDF_OPTIONS_KEY = 'crossword.pdfOptions.v1';
 const pdfOptionControls = [
-  'pdf-answers', 'pdf-text-size', 'pdf-across-side', 'pdf-watermark-enabled', 'pdf-watermark-text',
+  'pdf-answers', ...pdfTextSizeIds, 'pdf-across-side', 'pdf-watermark-enabled', 'pdf-watermark-text',
   'pdf-watermark-opacity', 'pdf-watermark-size', 'pdf-watermark-position',
   'pdf-watermark-alignment'
 ].map(id => document.getElementById(id));
@@ -631,7 +695,7 @@ function restorePDFOptions() {
     const options = JSON.parse(localStorage.getItem(PDF_OPTIONS_KEY));
     if (!options || typeof options !== 'object' || Array.isArray(options)) return;
     for (const control of pdfOptionControls) {
-      const value = options[control.id];
+      const value = options[control.id] ?? (pdfTextSizeIds.includes(control.id) ? options['pdf-text-size'] : undefined);
       if (control.type === 'checkbox') {
         if (typeof value === 'boolean') control.checked = value;
       } else if (control.type === 'range') {
@@ -649,7 +713,9 @@ function restorePDFOptions() {
   } catch {
     // Ignore malformed saved settings and use the existing defaults.
   }
-  document.getElementById('pdf-text-size-value').textContent = `${document.getElementById('pdf-text-size').value} pt`;
+  for (const id of pdfTextSizeIds) {
+    document.getElementById(`${id}-value`).textContent = `${document.getElementById(id).value} pt`;
+  }
   document.getElementById('pdf-watermark-opacity-value').textContent = `${document.getElementById('pdf-watermark-opacity').value}%`;
   document.getElementById('pdf-watermark-size-value').textContent = `${document.getElementById('pdf-watermark-size').value} pt`;
 }
@@ -669,6 +735,9 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
     const pdf = createCrosswordPDF(PUZZLE, cells, ROWS, COLS, {
       includeAnswers: document.getElementById('pdf-answers').checked,
       textSize: Number(document.getElementById('pdf-text-size').value),
+      acrossTextSize: Number(document.getElementById('pdf-across-text-size').value),
+      downTextSize: Number(document.getElementById('pdf-down-text-size').value),
+      headerTextSize: Number(document.getElementById('pdf-header-text-size').value),
       acrossSide: document.getElementById('pdf-across-side').value,
       puzzleUrl: new URL('/crossword', window.location.origin).href,
       watermark: document.getElementById('pdf-watermark-enabled').checked ? {

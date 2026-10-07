@@ -57,8 +57,14 @@
     <fieldset class="pdf-options">
       <legend>PDF options</legend>
       <label><input id="pdf-answers" type="checkbox" checked> Include answer key and explanations</label>
-      <label for="pdf-text-size">Text size: <output id="pdf-text-size-value" for="pdf-text-size">9 pt</output></label>
+      <label for="pdf-text-size">Answer key text size: <output id="pdf-text-size-value" for="pdf-text-size">9 pt</output></label>
       <input id="pdf-text-size" type="range" min="6" max="14" step="0.5" value="9">
+      <label for="pdf-across-text-size">Across clues text size: <output id="pdf-across-text-size-value" for="pdf-across-text-size">9 pt</output></label>
+      <input id="pdf-across-text-size" type="range" min="6" max="14" step="0.5" value="9">
+      <label for="pdf-down-text-size">Down clues text size: <output id="pdf-down-text-size-value" for="pdf-down-text-size">9 pt</output></label>
+      <input id="pdf-down-text-size" type="range" min="6" max="14" step="0.5" value="9">
+      <label for="pdf-header-text-size">Header beside grid text size: <output id="pdf-header-text-size-value" for="pdf-header-text-size">9 pt</output></label>
+      <input id="pdf-header-text-size" type="range" min="6" max="14" step="0.5" value="9">
       <p class="hint">Smaller text uses fewer pages. Larger text is easier to read.</p>
       <label for="pdf-across-side">Across clues on</label>
       <select id="pdf-across-side">

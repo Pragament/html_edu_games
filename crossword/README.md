@@ -6,7 +6,9 @@ row and column. Rows and columns start at zero; answers use uppercase letters
 without spaces. Display numbering is generated from the starting positions.
 Each word also has a `hints` array ordered from a conceptual clue to progressively
 stronger letter hints. The interactive page reveals one hint at a time for the
-selected word and remembers progress until the puzzle changes or is cleared.
+selected word. Letters and hint progress are saved automatically per puzzle in
+this browser. Refresh restores the last selected puzzle and its progress; switching
+puzzles restores their saved entries. Clear removes the current puzzle’s progress.
 PDF downloads and printed worksheets include all hints beneath each clue and
 omit instructions that refer to selecting a word on the interactive page.
 Each word's JSON `explain` text appears after its hints, including when the
@@ -82,3 +84,8 @@ explanations, and three progressive hints. These puzzles include `subject`
 from familiar words such as KIND and FAIR to ethical concepts such as ALTRUISM,
 IMPARTIALITY, and STEWARDSHIP. Difficulty describes an approximate vocabulary
 progression rather than an official proficiency or grade assessment.
+
+PDF text sizes can be set independently for Across clues, Down clues, the header
+beside the grid, and the answer key (6–14 pt). Hints and explanations follow their
+clue section’s size. These preferences are restored from browser storage; older
+single-size preferences initialize all four controls.
