@@ -464,7 +464,7 @@ function buildPrint() {
   // clues
   const clues = document.createElement('div');
   clues.className = 'p-clues';
-  const printClue = w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span>${(w.hints || []).map((hint, index) => `<span class="p-hint"><b>Hint ${index + 1}:</b> ${hint}</span>`).join('')}</p>`;
+  const printClue = w => `<p><b>${w.display}.</b> ${w.clue} <span class="p-len">(${w.answer.length})</span>${(w.hints || []).map((hint, index) => `<span class="p-hint"><b>Hint ${index + 1}:</b> ${hint}</span>`).join('')}${w.explain ? `<span class="p-hint"><b>Explanation:</b> ${w.explain}</span>` : ''}</p>`;
   clues.innerHTML = `
     <div>
       <h2>Across</h2>

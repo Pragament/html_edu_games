@@ -110,6 +110,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
       for (const [index, hint] of (word.hints || []).entries()) {
         lines.push(...wrap(`Hint ${index + 1}: ${hint}`, fontSize, columnWidth));
       }
+      if (word.explain) lines.push(...wrap(`Explanation: ${word.explain}`, fontSize, columnWidth));
       return lines;
     });
   }
@@ -120,6 +121,9 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   grid(false);
   const clues = [clueBlocks('across'), clueBlocks('down')];
   const positions = [0, 0];
+  const lineOffsets = [0, 0];
+  const continuationY = margin + 16 + 20 + wrap(puzzle.title).length * lineHeight + 10;
+  const fullColumnCapacity = Math.floor((height - margin - continuationY) / lineHeight) - 2;
   while (positions.some((position, col) => position < clues[col].length)) {
     const startY = y;
     if (height - margin - startY < lineHeight * 4) { newPage('Clues continued'); continue; }
@@ -130,13 +134,19 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
       top += lineHeight * 2;
       while (positions[col] < clues[col].length) {
         const block = clues[col][positions[col]];
-        if (top + block.length * lineHeight > height - margin) break;
-        for (const line of block) {
+        const capacity = Math.floor((height - margin - top) / lineHeight);
+        const remaining = block.length - lineOffsets[col];
+        if (capacity <= 0 || (remaining > capacity && block.length <= fullColumnCapacity && lineOffsets[col] === 0)) break;
+        const count = Math.min(remaining, capacity);
+        for (const line of block.slice(lineOffsets[col], lineOffsets[col] + count)) {
           text(line, margin + col * (columnWidth + gap), top);
           top += lineHeight;
         }
+        lineOffsets[col] += count;
+        if (lineOffsets[col] < block.length) break;
         top += lineHeight;
         positions[col]++;
+        lineOffsets[col] = 0;
       }
     }
     if (positions.some((position, col) => position < clues[col].length)) newPage('Clues continued');
