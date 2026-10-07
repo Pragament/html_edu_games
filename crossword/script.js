@@ -401,6 +401,7 @@ function revealLetter() {
 }
 
 function clearAll() {
+  if (!window.confirm('Clear all letters and hints for this puzzle? Your saved progress for this puzzle will be cleared.')) return;
   state.hintCounts.clear();
   updateWordHints();
   state.entries = {};
@@ -656,10 +657,13 @@ document.getElementById('btn-print').addEventListener('click', () => {
 });
 
 const pdfTextSizeIds = ['pdf-text-size', 'pdf-across-text-size', 'pdf-down-text-size', 'pdf-header-text-size'];
+function updatePDFTextSizeLabel(id) {
+  document.getElementById(`${id}-value`).value = `${document.getElementById(id).value} pt`;
+}
 for (const id of pdfTextSizeIds) {
-  document.getElementById(id).addEventListener('input', event => {
-    document.getElementById(`${id}-value`).textContent = `${event.target.value} pt`;
-  });
+  for (const eventName of ['input', 'change']) {
+    document.getElementById(id).addEventListener(eventName, () => updatePDFTextSizeLabel(id));
+  }
 }
 
 document.getElementById('pdf-watermark-text').addEventListener('input', event => {
@@ -714,7 +718,7 @@ function restorePDFOptions() {
     // Ignore malformed saved settings and use the existing defaults.
   }
   for (const id of pdfTextSizeIds) {
-    document.getElementById(`${id}-value`).textContent = `${document.getElementById(id).value} pt`;
+    updatePDFTextSizeLabel(id);
   }
   document.getElementById('pdf-watermark-opacity-value').textContent = `${document.getElementById('pdf-watermark-opacity').value}%`;
   document.getElementById('pdf-watermark-size-value').textContent = `${document.getElementById('pdf-watermark-size').value} pt`;
