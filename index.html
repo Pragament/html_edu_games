@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Educational Games</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Edu Games">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
   <style>
     :root { color-scheme: dark; font-family: "Segoe UI", system-ui, sans-serif; color: #e2e8f0; background: #0b1220; }
     * { box-sizing: border-box; }
@@ -21,6 +27,14 @@
     .details p { margin: 0 0 20px; color: #b6c3d8; line-height: 1.6; }
     .play { color: #93c5fd; font-weight: 600; }
     #status { color: #b6c3d8; line-height: 1.6; }
+    [hidden] { display: none !important; }
+    .install-panel { padding: 20px; margin-bottom: 28px; border: 1px solid #476480; border-radius: 14px; background: #15243b; }
+    .install-panel h2 { font-size: 20px; }
+    .install-panel p { color: #b6c3d8; line-height: 1.6; }
+    .install-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    button { font: inherit; color: #e2e8f0; background: #233d60; border: 1px solid #476480; padding: 10px 16px; border-radius: 8px; cursor: pointer; }
+    button:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+    #show-install { margin-top: 28px; }
   </style>
 </head>
 <body>
@@ -29,8 +43,14 @@
       <h1>Educational Games</h1>
       <p>Discover, play, and learn at your own pace.</p>
     </header>
+    <section id="install-panel" class="install-panel" aria-labelledby="install-title" hidden>
+      <h2 id="install-title">Add games to your home screen</h2>
+      <p id="install-instructions"></p>
+      <div class="install-actions"><button id="install-app" type="button" hidden>Add to home screen</button><button id="dismiss-install" type="button">Not now</button></div>
+    </section>
     <p id="status" role="status">Loading games…</p>
     <div id="games" class="games"></div>
+    <button id="show-install" type="button" hidden>Add to home screen</button>
     <noscript>Enable JavaScript to view the game list.</noscript>
   </main>
   <script>
@@ -76,5 +96,6 @@
     }
     loadGames();
   </script>
+  <script src="pwa.js"></script>
 </body>
 </html>
