@@ -678,7 +678,7 @@ for (const [name, suffix] of [['opacity', '%'], ['size', ' pt']]) {
 /* Keep the latest PDF preferences on this browser, replacing older settings. */
 const PDF_OPTIONS_KEY = 'crossword.pdfOptions.v1';
 const pdfOptionControls = [
-  'pdf-answers', ...pdfTextSizeIds, 'pdf-across-side', 'pdf-watermark-enabled', 'pdf-watermark-text',
+  'pdf-answers', ...pdfTextSizeIds, 'pdf-layout', 'pdf-across-side', 'pdf-watermark-enabled', 'pdf-watermark-text',
   'pdf-watermark-opacity', 'pdf-watermark-size', 'pdf-watermark-position',
   'pdf-watermark-alignment'
 ].map(id => document.getElementById(id));
@@ -721,6 +721,7 @@ function restorePDFOptions() {
 }
 
 function updatePDFOptionLabels() {
+  document.getElementById('pdf-across-side').disabled = document.getElementById('pdf-layout').value !== 'standard';
   for (const id of pdfTextSizeIds) {
     updatePDFTextSizeLabel(id);
   }
@@ -743,6 +744,7 @@ function resetPDFOptions() {
 document.getElementById('btn-reset-pdf-options').addEventListener('click', resetPDFOptions);
 
 restorePDFOptions();
+document.getElementById('pdf-layout').addEventListener('change', updatePDFOptionLabels);
 for (const eventName of ['input', 'change']) {
   document.querySelector('.pdf-options').addEventListener(eventName, event => {
     if (pdfOptionControls.includes(event.target)) savePDFOptions();
@@ -761,6 +763,7 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
       downTextSize: Number(document.getElementById('pdf-down-text-size').value),
       headerTextSize: Number(document.getElementById('pdf-header-text-size').value),
       acrossSide: document.getElementById('pdf-across-side').value,
+      layout: document.getElementById('pdf-layout').value,
       puzzleUrl: new URL('/crossword', window.location.origin).href,
       watermark: document.getElementById('pdf-watermark-enabled').checked ? {
         text: document.getElementById('pdf-watermark-text').value.trim(),

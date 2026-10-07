@@ -89,3 +89,7 @@ PDF text sizes can be set independently for Across clues, Down clues, the header
 beside the grid, and the answer key (6–14 pt). Hints and explanations follow their
 clue section’s size. These preferences are restored from browser storage; older
 single-size preferences initialize all four controls.
+
+The PDF page layout can place Across or Down in the full right half, with the
+header, puzzle grid, and other clue section stacked on the left. Overflow continues
+in the same columns on later pages. The original top-grid layout remains available.

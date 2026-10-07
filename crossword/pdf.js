@@ -41,12 +41,12 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     if (line) lines.push(line);
     return lines;
   }
-  function qrCode(url, top = margin) {
+  function qrCode(url, top = margin, right = width - margin) {
     const qr = qrcode(0, 'M');
     qr.addData(url); qr.make();
     const count = qr.getModuleCount(), size = 66;
     const module = size / (count + 8);
-    const left = width - margin - size;
+    const left = right - size;
     commands.push(`q 1 g ${left} ${height - top - size} ${size} ${size} re f Q`);
     // Four-module white quiet zone is included in the reserved area.
     for (let r = 0; r < count; r++) for (let c = 0; c < count; c++) {
@@ -121,13 +121,14 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
       return lines;
     });
   }
+  const splitLayout = ['right-across', 'right-down'].includes(options.layout);
   newPage('Crossword Worksheet', false, true);
-  const gridWidth = contentWidth * 0.44;
+  const gridWidth = splitLayout ? columnWidth : contentWidth * 0.44;
   y = margin;
-  grid(false, {left: margin, availableWidth: gridWidth});
+  if (!splitLayout) grid(false, {left: margin, availableWidth: gridWidth});
   const gridBottom = y;
-  const headerLeft = margin + gridWidth + gap;
-  const headerWidth = width - margin - headerLeft;
+  const headerLeft = splitLayout ? margin : margin + gridWidth + gap;
+  const headerWidth = splitLayout ? columnWidth : width - margin - headerLeft;
   let headerY = margin + 16;
   const titleWidth = headerWidth - (options.puzzleUrl ? 84 : 0);
   for (const line of wrap('Crossword Worksheet', headerSize * 16 / 9, titleWidth)) {
@@ -135,7 +136,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     headerY += headerSize * 20 / 9;
   }
   if (options.puzzleUrl) {
-    qrCode(options.puzzleUrl);
+    qrCode(options.puzzleUrl, margin, headerLeft + headerWidth);
     headerY = Math.max(headerY, margin + Math.max(86, 66 + wrap('Play online', headerSize, 66).length * headerSize * 1.25 + headerSize + 8));
   }
   function headerParagraph(value) {
@@ -151,20 +152,30 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   headerParagraph('Name: _______________________');
   headerParagraph('Date: _______________________');
   y = Math.max(gridBottom, headerY + 8);
-  const directions = options.acrossSide === 'right' ? ['down', 'across'] : ['across', 'down'];
+  if (splitLayout) grid(false, {left: margin, availableWidth: columnWidth});
+  const directions = splitLayout
+    ? (options.layout === 'right-across' ? ['down', 'across'] : ['across', 'down'])
+    : (options.acrossSide === 'right' ? ['down', 'across'] : ['across', 'down']);
   const clues = directions.map(clueBlocks);
   const positions = [0, 0];
   const lineOffsets = [0, 0];
-  const continuationY = margin + 16 + 20 + wrap(puzzle.title).length * lineHeight + 10;
+  const continuationY = splitLayout ? margin + Math.max(...directions.map(clueSize))
+    : margin + 16 + 20 + wrap(puzzle.title).length * lineHeight + 10;
+  let firstCluePage = true;
+  function nextCluePage() {
+    newPage('Clues continued', false, splitLayout);
+    if (splitLayout) y = continuationY;
+    firstCluePage = false;
+  }
 
   while (positions.some((position, col) => position < clues[col].length)) {
     const startY = y;
-    if (height - margin - startY < Math.max(...directions.map(clueSize)) * 1.25 * 4) { newPage('Clues continued'); continue; }
+    if (!splitLayout && height - margin - startY < Math.max(...directions.map(clueSize)) * 1.25 * 4) { nextCluePage(); continue; }
     for (let col = 0; col < 2; col++) {
       const fontSize = clueSize(directions[col]);
       const lineHeight = fontSize * 1.25;
       const fullColumnCapacity = Math.floor((height - margin - continuationY) / lineHeight) - 2;
-      let top = startY;
+      let top = splitLayout && firstCluePage && col === 1 ? margin + fontSize : startY;
       if (positions[col] >= clues[col].length) continue;
       text(directions[col].toUpperCase(), margin + col * (columnWidth + gap), top, fontSize, true);
       top += lineHeight * 2;
@@ -172,7 +183,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
         const block = clues[col][positions[col]];
         const capacity = Math.floor((height - margin - top) / lineHeight);
         const remaining = block.length - lineOffsets[col];
-        if (capacity <= 0 || (remaining > capacity && block.length <= fullColumnCapacity && lineOffsets[col] === 0)) break;
+        if (capacity <= 0 || (!splitLayout && remaining > capacity && block.length <= fullColumnCapacity && lineOffsets[col] === 0)) break;
         const count = Math.min(remaining, capacity);
         for (const line of block.slice(lineOffsets[col], lineOffsets[col] + count)) {
           text(line, margin + col * (columnWidth + gap), top, fontSize);
@@ -185,7 +196,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
         lineOffsets[col] = 0;
       }
     }
-    if (positions.some((position, col) => position < clues[col].length)) newPage('Clues continued');
+    if (positions.some((position, col) => position < clues[col].length)) nextCluePage();
   }
   if (options.includeAnswers !== false) {
     newPage('Answer Key & Explanations');
