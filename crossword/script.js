@@ -607,9 +607,64 @@ for (const [name, suffix] of [['opacity', '%'], ['size', ' pt']]) {
   });
 }
 
+/* Keep the latest PDF preferences on this browser, replacing older settings. */
+const PDF_OPTIONS_KEY = 'crossword.pdfOptions.v1';
+const pdfOptionControls = [
+  'pdf-answers', 'pdf-text-size', 'pdf-watermark-enabled', 'pdf-watermark-text',
+  'pdf-watermark-opacity', 'pdf-watermark-size', 'pdf-watermark-position',
+  'pdf-watermark-alignment'
+].map(id => document.getElementById(id));
+
+function savePDFOptions() {
+  const options = Object.fromEntries(pdfOptionControls.map(control => [
+    control.id, control.type === 'checkbox' ? control.checked : control.value
+  ]));
+  try {
+    localStorage.setItem(PDF_OPTIONS_KEY, JSON.stringify(options));
+  } catch {
+    // PDF controls remain usable when browser storage is unavailable.
+  }
+}
+
+function restorePDFOptions() {
+  try {
+    const options = JSON.parse(localStorage.getItem(PDF_OPTIONS_KEY));
+    if (!options || typeof options !== 'object' || Array.isArray(options)) return;
+    for (const control of pdfOptionControls) {
+      const value = options[control.id];
+      if (control.type === 'checkbox') {
+        if (typeof value === 'boolean') control.checked = value;
+      } else if (control.type === 'range') {
+        if (typeof value !== 'string' && typeof value !== 'number') continue;
+        const number = Number(value);
+        if (value === '' || !Number.isFinite(number)) continue;
+        const min = Number(control.min), max = Number(control.max), step = Number(control.step) || 1;
+        control.value = String(Math.min(max, Math.max(min, min + Math.round((number - min) / step) * step)));
+      } else if (control.tagName === 'SELECT') {
+        if ([...control.options].some(option => option.value === value)) control.value = value;
+      } else if (typeof value === 'string') {
+        control.value = value.slice(0, control.maxLength);
+      }
+    }
+  } catch {
+    // Ignore malformed saved settings and use the existing defaults.
+  }
+  document.getElementById('pdf-text-size-value').textContent = `${document.getElementById('pdf-text-size').value} pt`;
+  document.getElementById('pdf-watermark-opacity-value').textContent = `${document.getElementById('pdf-watermark-opacity').value}%`;
+  document.getElementById('pdf-watermark-size-value').textContent = `${document.getElementById('pdf-watermark-size').value} pt`;
+}
+
+restorePDFOptions();
+for (const eventName of ['input', 'change']) {
+  document.querySelector('.pdf-options').addEventListener(eventName, event => {
+    if (pdfOptionControls.includes(event.target)) savePDFOptions();
+  });
+}
+
 document.getElementById('btn-pdf').addEventListener('click', () => {
   if (!PUZZLE) return;
   const status = document.getElementById('pdf-status');
+  savePDFOptions();
   try {
     const pdf = createCrosswordPDF(PUZZLE, cells, ROWS, COLS, {
       includeAnswers: document.getElementById('pdf-answers').checked,

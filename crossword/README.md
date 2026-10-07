@@ -17,6 +17,9 @@ alignment. Long text wraps and fits inside the page. Watermarks are disabled
 by default and apply to downloaded PDFs.
 Watermark controls are always editable. Entering nonblank text enables inclusion;
 the checkbox can exclude the watermark while keeping its settings.
+The latest PDF options overwrite `crossword.pdfOptions.v1` in browser local
+storage and are restored on future visits, including disabled watermark text
+and settings. PDF downloads still work if local storage is unavailable.
 
 ## Classes VI–VIII
 
