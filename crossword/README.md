@@ -20,6 +20,8 @@ the checkbox can exclude the watermark while keeping its settings.
 The latest PDF options overwrite `crossword.pdfOptions.v1` in browser local
 storage and are restored on future visits, including disabled watermark text
 and settings. PDF downloads still work if local storage is unavailable.
+The Across clues can be placed on the left or right of the PDF, with Down clues
+on the opposite side. This preference is saved with the other PDF options.
 
 ## Classes VI–VIII
 

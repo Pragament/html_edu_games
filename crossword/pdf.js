@@ -145,7 +145,8 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   headerParagraph('Name: _______________________');
   headerParagraph('Date: _______________________');
   y = Math.max(gridBottom, headerY + 8);
-  const clues = [clueBlocks('across'), clueBlocks('down')];
+  const directions = options.acrossSide === 'right' ? ['down', 'across'] : ['across', 'down'];
+  const clues = directions.map(clueBlocks);
   const positions = [0, 0];
   const lineOffsets = [0, 0];
   const continuationY = margin + 16 + 20 + wrap(puzzle.title).length * lineHeight + 10;
@@ -156,7 +157,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
     for (let col = 0; col < 2; col++) {
       let top = startY;
       if (positions[col] >= clues[col].length) continue;
-      text(col === 0 ? 'ACROSS' : 'DOWN', margin + col * (columnWidth + gap), top, fontSize, true);
+      text(directions[col].toUpperCase(), margin + col * (columnWidth + gap), top, fontSize, true);
       top += lineHeight * 2;
       while (positions[col] < clues[col].length) {
         const block = clues[col][positions[col]];

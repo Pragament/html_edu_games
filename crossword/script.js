@@ -610,7 +610,7 @@ for (const [name, suffix] of [['opacity', '%'], ['size', ' pt']]) {
 /* Keep the latest PDF preferences on this browser, replacing older settings. */
 const PDF_OPTIONS_KEY = 'crossword.pdfOptions.v1';
 const pdfOptionControls = [
-  'pdf-answers', 'pdf-text-size', 'pdf-watermark-enabled', 'pdf-watermark-text',
+  'pdf-answers', 'pdf-text-size', 'pdf-across-side', 'pdf-watermark-enabled', 'pdf-watermark-text',
   'pdf-watermark-opacity', 'pdf-watermark-size', 'pdf-watermark-position',
   'pdf-watermark-alignment'
 ].map(id => document.getElementById(id));
@@ -669,6 +669,7 @@ document.getElementById('btn-pdf').addEventListener('click', () => {
     const pdf = createCrosswordPDF(PUZZLE, cells, ROWS, COLS, {
       includeAnswers: document.getElementById('pdf-answers').checked,
       textSize: Number(document.getElementById('pdf-text-size').value),
+      acrossSide: document.getElementById('pdf-across-side').value,
       puzzleUrl: new URL('/crossword', window.location.origin).href,
       watermark: document.getElementById('pdf-watermark-enabled').checked ? {
         text: document.getElementById('pdf-watermark-text').value.trim(),
