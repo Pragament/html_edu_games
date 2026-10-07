@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Value Education Word Search</title><link rel="stylesheet" href="style.css">
+<title>Value Education Word Search</title><link rel="stylesheet" href="style.css?v=20261007-word-context">
 </head>
 <body><main>
 <a class="home" href="../index.html">← All games</a>
 <header><p class="eyebrow">VALUE EDUCATION</p><h1>Word Search</h1><p id="subtitle">Find values and good habits hidden in the letters.</p></header>
-<div class="controls"><label for="puzzle-select">Puzzle</label><select id="puzzle-select" disabled></select><button id="new-grid" disabled>New grid</button></div>
+<div class="controls"><label for="puzzle-select">Puzzle</label><select id="puzzle-select" disabled></select><button id="new-grid" disabled>New grid</button><button id="download-pdf" disabled>Download PDF worksheet</button></div>
 <p class="instructions">Find words horizontally, vertically, or diagonally, forwards or backwards. Drag from the first letter to the last, or tap both ends. With a keyboard, focus a letter and press Enter or Space to choose each end.</p>
 <p id="status" role="status" aria-live="polite">Loading puzzles…</p>
-<div class="game"><section aria-label="Word search puzzle"><div id="grid" class="grid" aria-label="Letter grid"></div></section><aside><h2>Words to find <span id="count"></span></h2><ul id="words"></ul><p class="help">Select a word below to explore its clues, hints, and meaning.</p><section id="details" hidden><h3 id="word-title"></h3><p id="clue"></p><button id="hint">Show next hint</button><ol id="hints"></ol><p id="explanation"></p></section></aside></div>
+<div class="game"><section aria-label="Word search puzzle"><div id="grid" class="grid" aria-label="Letter grid"></div></section><aside><h2>Words to find <span id="count"></span></h2><ul id="words"></ul><p class="help">Select a word from the list to learn about the value it represents.</p><section id="details" hidden><h3 id="word-title"></h3><p id="word-context"></p><p id="explanation"></p></section></aside></div>
+<p id="pdf-status" role="status" aria-live="polite"></p>
 <noscript>Enable JavaScript to play this game.</noscript>
-</main><script src="game.js"></script></body></html>
+</main><script src="pdf.js"></script><script src="game.js?v=20261007-pdf"></script></body></html>
