@@ -7,7 +7,7 @@ function createCrosswordPDF(puzzle, cells, rows, cols, options = {}) {
   const width = 595.28, height = 841.89, margin = 30;
   const contentWidth = width - margin * 2, gap = 18;
   const columnWidth = (contentWidth - gap) / 2;
-  const fontSize = Math.max(8, Math.min(14, Number(options.textSize) || 9));
+  const fontSize = Math.max(6, Math.min(14, Number(options.textSize) || 9));
   const lineHeight = fontSize * 1.25;
   const pages = [];
   let commands, y;
