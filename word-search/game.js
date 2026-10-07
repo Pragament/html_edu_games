@@ -52,7 +52,10 @@ $('puzzle-select').addEventListener('change',e=>loadPuzzle(puzzles[Number(e.targ
 $('download-pdf').addEventListener('click', () => {
   if (!puzzle || !board) return;
   try {
-    const url = URL.createObjectURL(createWordSearchPDF(puzzle, board));
+    const url = URL.createObjectURL(createWordSearchPDF(puzzle, board, {
+      ...getWordSearchPDFOptions(),
+      puzzleUrl: new URL('/word-search', window.location.origin).href
+    }));
     const link = document.createElement('a');
     link.href = url;
     link.download = `${puzzle.id}-word-search.pdf`;

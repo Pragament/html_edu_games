@@ -14,5 +14,12 @@ restores the last puzzle. New grid requests confirmation before replacing progre
 Word search storage is independent of crossword progress and PDF preferences.
 
 Download PDF worksheet exports the current grid without found-word highlighting,
-a word list, and the original prompts and explanations. PDFs use A4 pages and
+the original prompts and explanations without a word list or answer headings.
+Students identify each value from its text and then find it in the grid. PDFs use A4 pages and
 black text on white for printing.
+
+The worksheet places its letter grid at top left and its header and QR code to the
+right. The QR links to `/word-search` on the current domain. Values to explore
+flows through two columns, with a 6–14 pt size slider. Optional watermarks support
+text, opacity, size, top/middle/bottom position, and left/center/right alignment.
+PDF preferences are saved independently in this browser and can be reset.
