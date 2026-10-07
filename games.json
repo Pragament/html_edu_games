@@ -5,5 +5,12 @@
     "description": "Explore value education for Classes III–XII, with vocabulary puzzles ranging from beginner to advanced.",
     "url": "crossword/index.html",
     "thumbnail": "crossword/thumbnail.svg"
+  },
+  {
+    "id": "word-search",
+    "title": "Value Education Word Search",
+    "description": "Find hidden values and good habits in puzzles for Classes III–XII, from beginner to advanced vocabulary.",
+    "url": "word-search/index.html",
+    "thumbnail": "word-search/thumbnail.svg"
   }
 ]
