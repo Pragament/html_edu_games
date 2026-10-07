@@ -142,9 +142,28 @@ $('reset').addEventListener('click', () => {
     let index = puzzles.findIndex(item => item.id === saved.last);
     if (index < 0) index = Math.floor(Math.random() * puzzles.length);
     $('puzzle-select').value = index; loadPuzzle(puzzles[index]);
-    $('puzzle-select').disabled = false; $('reset').disabled = false;
+    $('puzzle-select').disabled = false; $('reset').disabled = false; $('download-pdf').disabled = false;
   } catch (error) {
     $('status').textContent = 'Puzzles could not be loaded. Refresh to try again.';
     console.error(error);
   }
 })();
+
+$('download-pdf').addEventListener('click', () => {
+  if (!puzzle) return;
+  try {
+    const pdf = createWordScramblePDF(puzzle, entries, {
+      ...getWordScramblePDFOptions(),
+      puzzleUrl: new URL('/word-scramble', window.location.origin).href
+    });
+    const url = URL.createObjectURL(pdf);
+    const link = document.createElement('a');
+    link.href = url; link.download = `${puzzle.id}-word-scramble.pdf`;
+    document.body.appendChild(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+    $('pdf-status').textContent = 'PDF worksheet downloaded.';
+  } catch (error) {
+    $('pdf-status').textContent = 'The PDF could not be created. Please try again.';
+    console.error(error);
+  }
+});
