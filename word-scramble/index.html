@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Value Education Word Scramble</title><link rel="stylesheet" href="style.css?v=20261007-pdf"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Value Education Word Scramble</title><link rel="stylesheet" href="style.css?v=20261007-multi-pdf"></head>
 <body><main>
 <a class="home" href="../index.html">← All games</a>
 <header><p class="eyebrow">VALUE EDUCATION</p><h1>Word Scramble</h1><p id="subtitle">Unscramble the letters to discover values and good habits.</p></header>
@@ -10,6 +10,9 @@
 <div id="cards" class="cards"></div>
 <fieldset id="pdf-options" class="pdf-options">
 <legend>PDF options</legend>
+<fieldset class="pdf-puzzle-picker"><legend>Puzzles for the worksheet</legend>
+<p class="instructions">Choose one or more puzzles. The worksheet fits on one A4 page, reducing text size down to 6 pt when needed. Select fewer puzzles if they do not fit.</p>
+<div id="pdf-puzzles"></div></fieldset>
 <label for="pdf-text-size">Worksheet text size: <output id="pdf-text-size-value">9 pt</output></label>
 <input id="pdf-text-size" type="range" min="6" max="14" step="0.5" value="9">
 <label><input id="pdf-watermark-enabled" type="checkbox"> Include watermark in PDF</label>
@@ -28,4 +31,4 @@
 </fieldset>
 <p id="pdf-status" role="status" aria-live="polite"></p>
 <noscript>Enable JavaScript to play this game.</noscript>
-</main><script src="../crossword/vendor/qrcode.js"></script><script src="pdf.js"></script><script src="pdf-options.js"></script><script src="game.js?v=20261007-pdf"></script></body></html>
+</main><script src="../crossword/vendor/qrcode.js"></script><script src="pdf.js?v=20261007-single-page"></script><script src="pdf-options.js"></script><script src="game.js?v=20261007-multi-pdf"></script></body></html>

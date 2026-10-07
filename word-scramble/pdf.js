@@ -3,7 +3,7 @@ function createWordScramblePDF(puzzle, entries, options = {}) {
   const width = 595.28, height = 841.89, margin = 36;
   const available = width - 2 * margin;
   const gap = 18, columnWidth = (available - gap) / 2;
-  const valuesSize = Math.max(6, Math.min(14, Number(options.textSize) || 9));
+  let valuesSize = Math.max(6, Math.min(14, Number(options.textSize) || 9));
   const watermark = options.watermark && String(options.watermark.text || '').trim() ? options.watermark : null;
   const opacity = watermark ? Math.max(0, Math.min(1, Number(watermark.opacity ?? 0.12))) : 0;
   const pages = [];
@@ -86,14 +86,40 @@ function createWordScramblePDF(puzzle, entries, options = {}) {
     if (column === 0) { column = 1; top = startY; }
     else { page('Word Scramble continued'); column = 0; startY = y; top = y; }
   }
-  puzzle.words.forEach((word, index) => {
-    const lines = [
-      ...wrap(`${index + 1}. ${entries[index].scramble} (${word.answer.length} letters)`, valuesSize, columnWidth).map(value => ({value, bold: true})),
-      ...wrap(word.clue || '', valuesSize, columnWidth).map(value => ({value})),
+  function questionLines(word, index, fontSize) {
+    return [
+      ...wrap(`${index + 1}. ${entries[index].scramble} (${word.answer.length} letters)`, fontSize, columnWidth).map(value => ({value, bold: true})),
+      ...wrap(word.clue || '', fontSize, columnWidth).map(value => ({value})),
       {value: ''},
-      ...wrap('Answer: ' + '_'.repeat(word.answer.length), valuesSize, columnWidth).map(value => ({value})),
+      ...wrap('Answer: ' + '_'.repeat(word.answer.length), fontSize, columnWidth).map(value => ({value})),
       {value: ''}, {value: ''}
     ];
+  }
+  if (options.singlePage) {
+    let fitted;
+    for (let fontSize = valuesSize; fontSize >= 6; fontSize -= 0.5) {
+      const blocks = puzzle.words.map((word, index) => questionLines(word, index, fontSize));
+      const heights = blocks.map(lines => lines.length * fontSize * 1.3);
+      const total = heights.reduce((sum, value) => sum + value, 0);
+      let leftHeight = 0, split = 0, best = total;
+      for (let i = 0; i <= blocks.length; i++) {
+        const tallest = Math.max(leftHeight, total - leftHeight);
+        if (tallest <= best) { best = tallest; split = i; }
+        leftHeight += heights[i] || 0;
+      }
+      if (best <= height - margin - startY) { fitted = {blocks, split, fontSize}; break; }
+    }
+    if (!fitted) throw new Error('These puzzles contain too many words for one A4 page at 6 pt. Select fewer puzzles and download again.');
+    fitted.blocks.forEach((lines, index) => {
+      if (index === fitted.split) { column = 1; top = startY; }
+      for (const line of lines) {
+        text(line.value, margin + column * (columnWidth + gap), top, fitted.fontSize, line.bold);
+        top += fitted.fontSize * 1.3;
+      }
+    });
+  } else {
+  puzzle.words.forEach((word, index) => {
+    const lines = questionLines(word, index, valuesSize);
     if (top + lines.length * lineHeight > height - margin && lines.length * lineHeight <= height - margin - startY) nextColumn();
     for (const line of lines) {
       if (top + lineHeight > height - margin) nextColumn();
@@ -101,6 +127,7 @@ function createWordScramblePDF(puzzle, entries, options = {}) {
       top += lineHeight;
     }
   });
+  }
   if (pages.length > 1) pages.forEach((pageCommands, i) => {
     commands = pageCommands; text(`Page ${i + 1}`, margin, height - 18, 8);
   });

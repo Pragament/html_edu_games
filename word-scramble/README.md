@@ -18,3 +18,9 @@ in two columns with blank answer lines, name/date fields, and a QR link to
 PDF controls provide 6–14 pt text size and optional watermark text, opacity, size,
 position, and alignment. Preferences save independently and can be reset.
 Single-page worksheets omit page numbering.
+
+The PDF puzzle checklist combines selected sets into one A4 page. It defaults to
+the current game puzzle until the checklist is edited. The export fits complete
+questions into two balanced columns, reducing the chosen text size to at least
+6 pt. Selections too large to fit show an instruction to choose fewer puzzles;
+questions are never omitted. The checklist does not change game progress.

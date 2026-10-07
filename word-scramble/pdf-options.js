@@ -1,5 +1,5 @@
 /* PDF preferences are independent of crossword and game progress. */
-const wordScramblePDFControls = [...document.querySelectorAll('#pdf-options input, #pdf-options select')];
+const wordScramblePDFControls = [...document.querySelectorAll('#pdf-options > input, #pdf-options > label input, #pdf-options > select')];
 const wordScramblePDFKey = 'wordScramble.pdfOptions.v1';
 function refreshWordScramblePDFLabels() {
   for (const [id, suffix] of [['pdf-text-size', ' pt'], ['pdf-watermark-opacity', '%'], ['pdf-watermark-size', ' pt']]) {

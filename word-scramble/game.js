@@ -22,6 +22,7 @@ function isValidScramble(value, answer) {
 const $ = id => document.getElementById(id);
 const STORAGE = 'wordScramble.progress.v1';
 let saved = {}, puzzles = [], puzzle, entries = [];
+let pdfSelectionTouched = false;
 try {
   const data = JSON.parse(localStorage.getItem(STORAGE));
   if (data && typeof data === 'object' && !Array.isArray(data)) saved = data;
@@ -123,6 +124,7 @@ function loadPuzzle(selected, reset = false) {
   $('subtitle').textContent = puzzle.subtitle;
   $('cards').replaceChildren(...puzzle.words.map(renderCard));
   updateProgress(); saveProgress();
+  if (!pdfSelectionTouched) for (const checkbox of $('pdf-puzzles').querySelectorAll('input')) checkbox.checked = checkbox.value === puzzle.id;
 }
 $('puzzle-select').addEventListener('change', event => loadPuzzle(puzzles[Number(event.target.value)]));
 $('reset').addEventListener('click', () => {
@@ -138,6 +140,12 @@ $('reset').addEventListener('click', () => {
       const option = document.createElement('option'); option.value = index;
       option.textContent = `${item.title.replace(/Crossword/gi, 'Word Scramble')} — ${item.subtitle}`;
       $('puzzle-select').appendChild(option);
+      const label = document.createElement('label');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox'; checkbox.value = item.id;
+      checkbox.addEventListener('change', () => { pdfSelectionTouched = true; });
+      label.append(checkbox, document.createTextNode(option.textContent));
+      $('pdf-puzzles').appendChild(label);
     }
     let index = puzzles.findIndex(item => item.id === saved.last);
     if (index < 0) index = Math.floor(Math.random() * puzzles.length);
@@ -152,18 +160,30 @@ $('reset').addEventListener('click', () => {
 $('download-pdf').addEventListener('click', () => {
   if (!puzzle) return;
   try {
-    const pdf = createWordScramblePDF(puzzle, entries, {
+    const selectedIds = new Set([...$('pdf-puzzles').querySelectorAll('input:checked')].map(control => control.value));
+    const selected = puzzles.filter(item => selectedIds.has(item.id));
+    if (!selected.length) { $('pdf-status').textContent = 'Select at least one puzzle for the worksheet.'; return; }
+    const combined = {title: selected.length === 1 ? selected[0].title : 'Combined Value Education Puzzles',
+      subtitle: `${selected.length} puzzle${selected.length === 1 ? '' : 's'} / ${selected.reduce((sum, item) => sum + item.words.length, 0)} words`,
+      words: selected.flatMap(item => item.words)};
+    const combinedEntries = selected.flatMap(item => item.id === puzzle.id ? entries : item.words.map((word, index) => {
+      const previous = saved[item.id];
+      const stored = previous?.signature === JSON.stringify(item.words.map(w => w.answer)) ? previous.entries?.[index] : null;
+      return {scramble: isValidScramble(stored?.scramble, word.answer) ? stored.scramble : shuffleAnswer(word.answer)};
+    }));
+    const pdf = createWordScramblePDF(combined, combinedEntries, {
+      singlePage: true,
       ...getWordScramblePDFOptions(),
       puzzleUrl: new URL('/word-scramble', window.location.origin).href
     });
     const url = URL.createObjectURL(pdf);
     const link = document.createElement('a');
-    link.href = url; link.download = `${puzzle.id}-word-scramble.pdf`;
+    link.href = url; link.download = `${selected.length === 1 ? selected[0].id : 'combined'}-word-scramble.pdf`;
     document.body.appendChild(link); link.click(); link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 60000);
     $('pdf-status').textContent = 'PDF worksheet downloaded.';
   } catch (error) {
-    $('pdf-status').textContent = 'The PDF could not be created. Please try again.';
+    $('pdf-status').textContent = error.message || 'The PDF could not be created. Please try again.';
     console.error(error);
   }
 });
