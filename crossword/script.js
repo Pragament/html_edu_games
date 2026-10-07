@@ -717,12 +717,30 @@ function restorePDFOptions() {
   } catch {
     // Ignore malformed saved settings and use the existing defaults.
   }
+  updatePDFOptionLabels();
+}
+
+function updatePDFOptionLabels() {
   for (const id of pdfTextSizeIds) {
     updatePDFTextSizeLabel(id);
   }
   document.getElementById('pdf-watermark-opacity-value').textContent = `${document.getElementById('pdf-watermark-opacity').value}%`;
   document.getElementById('pdf-watermark-size-value').textContent = `${document.getElementById('pdf-watermark-size').value} pt`;
 }
+
+function resetPDFOptions() {
+  for (const control of pdfOptionControls) {
+    if (control.type === 'checkbox') control.checked = control.defaultChecked;
+    else if (control.tagName === 'SELECT') {
+      control.value = ([...control.options].find(option => option.defaultSelected) || control.options[0]).value;
+    } else control.value = control.defaultValue;
+  }
+  updatePDFOptionLabels();
+  savePDFOptions();
+  document.getElementById('pdf-status').textContent = 'PDF options reset to defaults.';
+}
+
+document.getElementById('btn-reset-pdf-options').addEventListener('click', resetPDFOptions);
 
 restorePDFOptions();
 for (const eventName of ['input', 'change']) {
