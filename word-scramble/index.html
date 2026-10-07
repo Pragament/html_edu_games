@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Value Education Word Scramble</title><link rel="stylesheet" href="style.css?v=20261007-multi-pdf"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Value Education Word Scramble</title><link rel="stylesheet" href="style.css?v=20261007-random-count"></head>
 <body><main>
 <a class="home" href="../index.html">← All games</a>
 <header><p class="eyebrow">VALUE EDUCATION</p><h1>Word Scramble</h1><p id="subtitle">Unscramble the letters to discover values and good habits.</p></header>
-<div class="controls"><label for="puzzle-select">Puzzle</label><select id="puzzle-select" disabled></select><button id="reset" type="button" disabled>Start again</button><button id="download-pdf" type="button" disabled>Download PDF worksheet</button></div>
+<fieldset class="puzzle-picker"><legend>Puzzles for online play and PDF</legend>
+<p class="instructions">Select puzzles and a word count, then create a random set. The PDF uses the same words and scrambled letters as the online game.</p>
+<div id="puzzle-choices"></div>
+<div class="controls"><label for="word-count">Number of words</label><input id="word-count" type="number" min="1" step="1" value="10" disabled><span id="available-count"></span><button id="generate" type="button" disabled>Create random set</button></div>
+</fieldset>
+<div class="controls"><button id="reset" type="button" disabled>Start again</button><button id="download-pdf" type="button" disabled>Download PDF worksheet</button></div>
 <p class="instructions">Read the description, rearrange the letters, and type the value or good habit. Use hints one at a time if you need help. Press Enter or Check answer to check your word.</p>
 <div class="progress"><p id="status" role="status" aria-live="polite">Loading puzzles…</p><progress id="progress" max="1" value="0" aria-label="Words solved"></progress></div>
 <div id="cards" class="cards"></div>
 <fieldset id="pdf-options" class="pdf-options">
 <legend>PDF options</legend>
-<fieldset class="pdf-puzzle-picker"><legend>Puzzles for the worksheet</legend>
-<p class="instructions">Choose one or more puzzles. The worksheet fits on one A4 page, reducing text size down to 6 pt when needed. Select fewer puzzles if they do not fit.</p>
-<div id="pdf-puzzles"></div></fieldset>
+<p class="help">The worksheet fits on one A4 page, reducing text size down to 6 pt when needed. Choose fewer words if they do not fit.</p>
 <label for="pdf-text-size">Worksheet text size: <output id="pdf-text-size-value">9 pt</output></label>
 <input id="pdf-text-size" type="range" min="6" max="14" step="0.5" value="9">
 <label><input id="pdf-watermark-enabled" type="checkbox"> Include watermark in PDF</label>
@@ -31,4 +34,4 @@
 </fieldset>
 <p id="pdf-status" role="status" aria-live="polite"></p>
 <noscript>Enable JavaScript to play this game.</noscript>
-</main><script src="../crossword/vendor/qrcode.js"></script><script src="pdf.js?v=20261007-single-page"></script><script src="pdf-options.js"></script><script src="game.js?v=20261007-multi-pdf"></script></body></html>
+</main><script src="../crossword/vendor/qrcode.js"></script><script src="pdf.js?v=20261007-single-page"></script><script src="pdf-options.js"></script><script src="game.js?v=20261007-random-count"></script></body></html>

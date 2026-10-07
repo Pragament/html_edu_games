@@ -109,7 +109,7 @@ function createWordScramblePDF(puzzle, entries, options = {}) {
       }
       if (best <= height - margin - startY) { fitted = {blocks, split, fontSize}; break; }
     }
-    if (!fitted) throw new Error('These puzzles contain too many words for one A4 page at 6 pt. Select fewer puzzles and download again.');
+    if (!fitted) throw new Error('These puzzles contain too many words for one A4 page at 6 pt. Choose fewer words, create a new set, and download again.');
     fitted.blocks.forEach((lines, index) => {
       if (index === fitted.split) { column = 1; top = startY; }
       for (const line of lines) {

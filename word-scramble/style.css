@@ -2,4 +2,6 @@
 
 .pdf-options{max-width:540px;margin-top:28px;padding:20px;border:1px solid #365071;border-radius:12px;display:grid;gap:12px}.pdf-options legend{padding:0 8px;font-weight:700}.pdf-options input[type="text"]{font:inherit;padding:10px;border:1px solid #365071;border-radius:8px;background:#15243b;color:#e5edf9;width:100%}.pdf-options input[type="range"]{width:100%;accent-color:#75e3ce}.pdf-options input[type="checkbox"]{width:20px;height:20px;vertical-align:middle;accent-color:#75e3ce}.pdf-options select{min-width:0;width:100%}.pdf-options .help{margin:0;font-size:14px}
 
-.pdf-puzzle-picker{border:1px solid #40516f;border-radius:8px;padding:12px;min-width:0}.pdf-puzzle-picker p{font-size:13px;margin-top:0}#pdf-puzzles{display:grid;gap:12px;max-height:250px;overflow:auto}#pdf-puzzles label{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5}#pdf-puzzles input{flex:none;margin-top:2px}
+.puzzle-picker{border:1px solid #40516f;border-radius:8px;padding:12px;min-width:0}.puzzle-picker p{font-size:13px;margin-top:0}#puzzle-choices{display:grid;gap:12px;max-height:250px;overflow:auto}#puzzle-choices label{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5}#puzzle-choices input{flex:none;margin-top:2px}
+
+.puzzle-picker{margin-top:24px}.puzzle-picker input[type="checkbox"]{width:20px;height:20px;accent-color:#c69fff}.controls input[type="number"]{width:100px}.puzzle-picker legend{padding:0 8px;font-weight:700}#available-count{font-size:14px;color:#b5c1d5}
