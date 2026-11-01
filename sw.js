@@ -1,6 +1,14 @@
 /* Network first keeps the games and shared puzzle data current; cached copies work offline. */
-const CACHE = 'edu-games-v1';
+const CACHE = 'edu-games-v7';
 const ASSETS = [
+  "./little-keys/index.html",
+  "./little-keys/style.css",
+  "./little-keys/game.js",
+  "./little-keys/tones.js",
+  "./little-keys/notation.js",
+  "./little-keys/variations.js",
+  "./little-keys/layouts.js",
+  "./little-keys/thumbnail.svg",
   "./",
   "./index.html",
   "./games.json",

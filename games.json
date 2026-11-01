@@ -19,5 +19,12 @@
     "description": "Rearrange letters to discover values and good habits, with descriptions and progressive hints for Classes III–XII.",
     "url": "word-scramble/index.html",
     "thumbnail": "word-scramble/thumbnail.svg"
+  },
+  {
+    "id": "little-keys",
+    "title": "Little Keys",
+    "description": "A playful first piano adventure. Learn C, D and E, explore pitch, and play two familiar melodies with guided rhythm practice.",
+    "url": "little-keys/index.html",
+    "thumbnail": "little-keys/thumbnail.svg"
   }
 ]
