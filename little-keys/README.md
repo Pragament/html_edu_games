@@ -43,3 +43,27 @@ G/A/B fingering: thumb (1) on G, index (2) on A, middle (3) on B. PC A/S/D play 
 G/A/B accompaniment transposes to G and D bass/major chords (D major = D–F♯–A). Completion is tracked separately for each song, layout, and difficulty; previous completion records are preserved as C/D/E results.
 
 Select any staff note to inspect its matching notation explanation without moving the practice index. Tab to a note and press Enter or Space for keyboard access. Selection pauses a running demonstration; playing or restarting restores the live guide.
+
+## Recorder starter guide
+
+A soprano recorder guide follows the demonstrated note, app key input, or clicked staff note. Original SVG diagrams show back thumb hole 0 and front holes 1–7; filled holes are covered. B covers 0+1, A covers 0+1+2, and G covers 0+1+2+3. The guide includes left/right hand placement and gentle tonguing instructions, with a link to Yamaha's recorder charts. These beginner fingerings are for recorder, not concert flute or bansuri. Other notes and upper-octave variations explicitly direct the learner to the full chart.
+
+“Start recorder melody” selects song practice, G/A/B layout, Level 1, High pitch, and the synthesized Flute tone. Soprano recorder sounds an octave above written music. This is a visual fingering aid and synthesized demonstration; app timing feedback still measures on-screen/PC keys, not a real recorder or microphone.
+
+## Harmonica guide
+
+The harmonica guide uses a standard Richter-tuned 10-hole diatonic in C, following HOHNER's tuning chart. It shows all 10 holes with blow/draw pitches and highlights the current cell. Tabs use + for blow and − for draw: C5 = +4, D5 = −4, E5 = +5. This matches the reference's 4+, plain 4 (draw), and 5+ convention with an explicit draw sign. G/A/B layout uses +6 / −6 / −7. Upper-register tabs are provided where playable without bends; unsupported notes receive a clear message.
+
+Both melodies have phrase-by-phrase lyric tabs synchronized with listening, app keys, and staff-note selection. “Start harmonica melody” selects C/D/E, Level 2 rhythm, and High pitch to align the synthesized melody with holes 4–5. The selected instrument tone remains available. Instructions cover hole orientation, isolated single notes, gentle blow/draw breath, and repeated-note articulation. Other harmonica types/tunings require their own charts. No real harmonica sound is detected, and piano accompaniment controls do not represent harmonica technique.
+
+## Percussion guide
+
+The percussion guide separates pitched mallet melody from unpitched snare rhythm. Note-labelled bars follow the current note, octave cue, and selected staff note; clicking a bar previews a ringing Santoor-based mallet sound without scoring or advancing practice. “Start mallet melody” selects C/D/E song practice at Level 2 with that tone. Hand suggestions alternate R/L by melody note and are educational suggestions rather than mandatory sticking.
+
+Three original beginner four-beat snare patterns are available: R L R L, R L rest L, and R rest rest L. They teach right/left strokes, quarter rests, relaxed grip and rebound. Hear pattern demonstrates two bars after a four-beat visual count-in. Practice two bars scores pad clicks or J (left) / K (right) against the selected tempo with a 25% beat tolerance; it checks hand choice, ignores duplicate scoring, and counts untouched rests as correct. Snare uses a short synthesized noise burst. Stop, navigation/reset, pitch/tempo changes, and leaving the page stop an exercise. It is independent from melody progress and does not listen to real instruments.
+
+## Phone landscape play screen
+
+Tap “Play screen” in the header for a viewport-filling piano view. The compact layout keeps the real staff, note strip, keyboard, hold feedback, sound/listen controls, and next-step button. Lesson guides and setup controls return with “Exit / settings”; progress stays intact. Advanced accompaniment and octave/touch controls remain available in the compact view.
+
+The button requests native browser fullscreen and attempts landscape orientation lock when supported. If either API is unavailable or denied, the compact CSS view still works; rotate the phone manually. Viewport-height units, safe-area padding, and short-landscape rules accommodate mobile browser chrome and notches. Exit restores the prior scroll position and focus. Escape exits the compact view when delivered by the browser; the visible Exit button is always available. Some browsers consume Escape to leave native fullscreen first, keeping the compact view active.

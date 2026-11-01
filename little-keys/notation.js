@@ -11,6 +11,7 @@ function noteShape(duration){
 function explainNotation(note,duration,listening=false,position=index){
  document.querySelectorAll('.staff-note.inspected').forEach(item=>{item.classList.remove('inspected');item.setAttribute('aria-pressed','false');});
  const step=stepAt(position),octave=step?.octave||0,hold=duration*requiredHold(step);
+ showRecorder(note,octave);showHarmonica(note,octave,position);showPercussion(note,octave,position);
  $('notation-heading').textContent=listening?'Listen & notice':'Your next note';
  if(!note){$('notation-expected').textContent=mode==='free'?'Explore any note. There is no expected note in free play.':'Sequence complete! Restart to practice reading again.';$('notation-explanation').textContent='A note’s height tells you its pitch. Its shape tells you how many beats to hold.';return;}
  $('notation-expected').textContent=`${note.replace('#','♯')}${step?Number($('pitch').value)+octave:''} · ${duration} ${duration===1?'beat':'beats'} · ${(duration*beatMs()/1000).toFixed(2)} seconds`;
