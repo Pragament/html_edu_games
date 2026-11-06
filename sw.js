@@ -1,6 +1,12 @@
 /* Network first keeps the games and shared puzzle data current; cached copies work offline. */
-const CACHE = 'edu-games-v11';
+const SENTENCE_ARENA_VERSION = '1.2.0';
+const CACHE = `edu-games-v13-sentence-${SENTENCE_ARENA_VERSION}`;
 const ASSETS = [
+  "./sentence-arena/index.html",
+  `./sentence-arena/style.css?v=${SENTENCE_ARENA_VERSION}`,
+  `./sentence-arena/game.js?v=${SENTENCE_ARENA_VERSION}`,
+  `./sentence-arena/questions.json?v=${SENTENCE_ARENA_VERSION}`,
+  "./sentence-arena/thumbnail.svg",
   "./little-keys/index.html",
   "./little-keys/style.css",
   "./little-keys/game.js",
@@ -52,10 +58,11 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || url.origin !== self.location.origin || !url.href.startsWith(self.registration.scope)) return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
-    // Script version query strings share a cache entry with the precached asset.
-    const cacheKey = new Request(url.origin + url.pathname);
+    // Sentence Arena versions have separate entries; other games retain their existing keys.
+    const arenaPath = new URL('./sentence-arena/', self.registration.scope).pathname;
+    const cacheKey = new Request(url.pathname.startsWith(arenaPath) ? url.href : url.origin + url.pathname);
     try {
-      const response = await fetch(event.request);
+      const response = await fetch(event.request, {cache: 'no-cache'});
       if (response.ok) {
         try { await cache.put(cacheKey, response.clone()); } catch {}
       }

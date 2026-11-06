@@ -1,0 +1,29 @@
+# Sentence Arena
+
+Run `python3 -m http.server 8765` from the repository root, then open http://localhost:8765/sentence-arena/. Four fixed colored columns provide independent touch controls, player names, progress, timers and scores. Use a landscape panel with four or more touch points, preferably 1920×1080 or larger. Small screens scroll horizontally.
+
+## Independent play and scoring
+
+Teachers choose questions per player, an optional time limit per question, and whole-number points before starting. Defaults: correct +10, wrong -2, skipped -1. Correct points must be zero or positive; wrong/skipped points must be zero or negative. Zero disables a penalty. Both HTML input limits and start-time validation enforce these rules. The points legend is visible before and during play; settings are frozen for the active game.
+
+Every player receives the same number of questions and an independent queue. Normalized answers are distinct across all assigned questions, so players cannot encounter the same answer even when progressing at different speeds. If filters offer too few questions, the game reduces the count equally for everyone; fewer than four distinct answers disables Start. Question type and topic can differ when mixed filters are selected.
+
+Check answer submits one final attempt. Correct/wrong points apply once; then the player's own Next question button becomes available immediately. An empty selection asks the player to answer or skip rather than deducting points. Skip applies the skipped score and moves directly to the next question. Timeouts count as skipped and show Next question. Other players continue without interruption. Memory rounds hide the model after six seconds; this counts toward the question's time limit.
+
+The game ends automatically after everyone resolves their last question. Rankings use highest score first, then shortest elapsed completion time from the common start; exact score/time ties share first place. A player's completion time stops when their last question is resolved, without waiting for peers. Time includes reading, memory display, feedback viewing, and teacher review if enabled. End game counts all remaining unanswered questions as skipped exactly once, then shows standings. This avoids ending early to escape penalties.
+
+Teacher-reviewed Sentence Chain, Creative Sentence and Random Word Sentence activities have a separate optional filter section and are excluded unless their individual boxes are selected. Tags/categories never opt them in. Their word/length check does not award points: the teacher marks a submitted answer correct or wrong using the configured scoring. Missing required words or insufficient length is a wrong answer. Touch word buttons allow independent concurrent creation; optional typing uses the system keyboard's single focus.
+
+Scores and names are session-only. No accounts, uploads, analytics or schedule.
+
+## Content
+
+`questions.json` has 40 mode definitions and 242 editable questions. Question fields include `id`, `mode`, `grades`, `topic`, `tags`, `kind`, `prompt`, `answer`, `explanation`; optional fields include `options`, `letters`, `chunks`, `prefix`, `memory`, and `required`. Related modes share tile, letter, chunk, choice, recall or teacher-reviewed mechanics. Relay continues a supplied subject independently per player; chain continues a supplied link.
+
+Reference themes come from the six supplied ELITE Grade 1–2 and Grade 3–5 lesson plans. Their schedules and teacher instructions are reference content only. Most exercises are newly authored around school, family/friends, nature, healthy living, teamwork and communication; some reuse frames with different names. Passive voice, reported speech and conditionals are Grade 4–5 extensions. Existing `../crossword/puzzles.json` remains unchanged because its vocabulary-clue schema does not fit sentence exercises.
+
+## Versions and checks
+
+Current version: **1.2.0**. Update the version meta tag, visible badge and CSS/JS query strings in `index.html`, and `SENTENCE_ARENA_VERSION` in root `sw.js` for each release. JSON URLs derive their version from the meta tag. The worker derives its cache name and precache URLs from its version constant and preserves Arena query strings in cache keys. HTTP requests revalidate cached responses; the root worker registers with `updateViaCache: 'none'`. A waiting worker activates after older controlled tabs close, avoiding unexpected mid-game reloads.
+
+Run `node sentence-arena/check.cjs` for content, independent progression, score/penalty validation, timeouts, end-game accounting, ranking, teacher-review selection, and version consistency checks. Run `node --check sentence-arena/game.js` and `node --check sw.js` for syntax checks. Physical simultaneous touch support still needs testing on the target TV.

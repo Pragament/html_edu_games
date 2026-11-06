@@ -26,5 +26,12 @@
     "description": "A playful first piano adventure. Learn C, D and E, explore pitch, and play two familiar melodies with guided rhythm practice.",
     "url": "little-keys/index.html",
     "thumbnail": "little-keys/thumbnail.svg"
+  },
+  {
+    "id": "sentence-arena",
+    "title": "Sentence Arena · 4 Players",
+    "description": "Build sentences together on a multi-touch panel. 40 game types, individual scores, and filters for Grades 1–5, categories, topics and tags.",
+    "url": "sentence-arena/index.html",
+    "thumbnail": "sentence-arena/thumbnail.svg"
   }
 ]
