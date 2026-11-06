@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b1220"><title>Spelling Detectives · Value Education</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<a class="home" href="../index.html">← All games</a>
+<header><p class="eyebrow">VALUE EDUCATION · VOCABULARY</p><h1>Spelling Detectives</h1><p>Spot the mistake. Solve the spelling. Discover the value.</p></header>
+<section class="setup" aria-labelledby="setup-title"><h2 id="setup-title">Set up your case</h2>
+<div class="settings"><label>Puzzle<select id="puzzle" disabled></select></label><label>Players<select id="mode"><option value="1">Solo detective</option><option value="2">2 teams</option><option value="3">3 teams</option><option value="4">4 teams</option></select></label><label>Number of words<input id="count" type="number" min="1" max="10" step="1" value="10"></label></div>
+<p id="pool-info" class="muted"></p><button id="start" type="button" disabled>Start new game</button>
+<p class="muted">Solo or together on one device. Teams take turns with a different word. Each correct answer earns 10 points; an incorrect answer or a passed word earns 0. Each word gets one attempt. For equal turns, choose a word count divisible by the number of teams. Spaces and letter case do not matter.</p></section>
+<p id="status" role="status" aria-live="polite">Loading puzzles…</p>
+<section id="game" hidden aria-labelledby="turn"><div id="scores" class="scores" aria-label="Scores"></div>
+<div class="case"><div class="case-top"><p id="position"></p><p id="turn"></p></div><progress id="progress" value="0" max="1" aria-label="Questions completed"></progress>
+<h2 id="question-title">Find and fix the spelling mistake</h2><p id="misspelling" class="misspelling" aria-label="Misspelled word"></p><p id="description"></p>
+<form id="answer-form"><label for="answer">Correct spelling</label><div class="answer-row"><input id="answer" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" aria-describedby="feedback"><button id="check" type="submit">Check spelling</button><button id="pass" type="button" class="secondary">Pass</button></div></form>
+<p id="feedback" role="status" aria-live="polite"></p><p id="explanation" class="explanation" hidden></p><button id="next" type="button" hidden>Next word</button>
+</div></section>
+<section id="results" class="case" hidden aria-labelledby="result-title"><p class="eyebrow">CASE CLOSED</p><h2 id="result-title" tabindex="-1">Investigation complete</h2><p id="result-summary"></p><div id="final-scores" class="scores"></div><h3>Case notes</h3><ol id="review"></ol><button id="again" type="button">Play another round</button></section>
+<noscript>Enable JavaScript to play this game.</noscript>
+</main><script src="game.js"></script></body></html>

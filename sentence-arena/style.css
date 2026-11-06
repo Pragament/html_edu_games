@@ -12,3 +12,11 @@
 .settings input[type=number]{width:85px;min-height:48px;padding:8px;color:inherit;background:#0e1a2c;border:1px solid #617795;border-radius:8px}.points-legend{border:1px solid #607b91;border-radius:10px;padding:10px 14px;color:#bde9dd!important;font-size:16px!important}.player-progress{display:flex;justify-content:space-between;gap:8px;color:var(--accent);font-weight:700}.board{align-self:start}.board .actions button{min-width:100%;}.board .feedback{min-height:60px}
 
 .board .actions button{min-width:40%}.board .actions button:last-child{flex-basis:100%}.board .prompt{min-height:90px}.board .feedback{min-height:36px}
+
+/* Use a normal block as the scrollport: fieldset overflow is unreliable on touch panels. */
+#filters>fieldset{min-width:0;max-height:none;overflow:visible}
+.filter-options{max-height:210px;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable;padding:2px}
+.filter-options label,.filter-options input{touch-action:pan-y}
+.filter-options label{user-select:none;-webkit-user-select:none}
+.filter-options:focus-visible{outline:3px solid #99ecd5;outline-offset:3px}
+.review-filters .filter-options{max-height:none}

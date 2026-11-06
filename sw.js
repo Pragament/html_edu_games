@@ -1,5 +1,5 @@
 /* Network first keeps the games and shared puzzle data current; cached copies work offline. */
-const SENTENCE_ARENA_VERSION = '1.2.0';
+const SENTENCE_ARENA_VERSION = '1.2.1';
 const CACHE = `edu-games-v13-sentence-${SENTENCE_ARENA_VERSION}`;
 const ASSETS = [
   "./sentence-arena/index.html",
@@ -45,7 +45,11 @@ const ASSETS = [
   "./word-scramble/pdf.js",
   "./word-scramble/pdf-options.js",
   "./word-scramble/style.css",
-  "./word-scramble/thumbnail.svg"
+  "./word-scramble/thumbnail.svg",
+  "./spelling-detectives/index.html",
+  "./spelling-detectives/style.css",
+  "./spelling-detectives/game.js",
+  "./spelling-detectives/thumbnail.svg"
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(url => new Request(url, {cache: 'reload'})))));

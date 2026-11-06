@@ -21,6 +21,13 @@
     "thumbnail": "word-scramble/thumbnail.svg"
   },
   {
+    "id": "spelling-detectives",
+    "title": "Spelling Detectives",
+    "description": "Spot and correct misspelled value words. Play solo or take turns with 2–4 teams on one device.",
+    "url": "spelling-detectives/index.html",
+    "thumbnail": "spelling-detectives/thumbnail.svg"
+  },
+  {
     "id": "little-keys",
     "title": "Little Keys",
     "description": "A playful first piano adventure. Learn C, D and E, explore pitch, and play two familiar melodies with guided rhythm practice.",

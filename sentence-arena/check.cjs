@@ -6,7 +6,7 @@ class Element{constructor(){this.children=[];this.listeners={};this.classList={t
 for(const id of ['filters','start','status','rounds','duration','setup','results','play','mode','round-title','next','round-help','boards','timer','end','clear','fullscreen','pool-count','points-correct','points-wrong','points-skipped','points-legend','setup-legend']){const el=new Element();el.id=id;}
 nodes.get('rounds').value='10';nodes.get('duration').value='0';
 let now=100000;
-const context=vm.createContext({Date:{now:()=>now},document:{querySelector:()=>({content:'1.2.0'}),getElementById:id=>nodes.get(id),createElement:()=>new Element(),createTextNode:s=>s,querySelectorAll:()=>[]},fetch:()=>new Promise(()=>{}),setTimeout:()=>1,clearTimeout(){},setInterval:()=>1,clearInterval(){},console});
+const context=vm.createContext({Date:{now:()=>now},document:{querySelector:()=>({content:'1.2.1'}),getElementById:id=>nodes.get(id),createElement:()=>new Element(),createTextNode:s=>s,querySelectorAll:()=>[]},fetch:()=>new Promise(()=>{}),setTimeout:()=>1,clearTimeout(){},setInterval:()=>1,clearInterval(){},console});
 vm.runInContext(fs.readFileSync(__dirname+'/game.js','utf8'),context);
 const run=s=>vm.runInContext(s,context);
 context.data=data;run('bank=data');

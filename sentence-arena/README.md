@@ -24,6 +24,8 @@ Reference themes come from the six supplied ELITE Grade 1–2 and Grade 3–5 le
 
 ## Versions and checks
 
-Current version: **1.2.0**. Update the version meta tag, visible badge and CSS/JS query strings in `index.html`, and `SENTENCE_ARENA_VERSION` in root `sw.js` for each release. JSON URLs derive their version from the meta tag. The worker derives its cache name and precache URLs from its version constant and preserves Arena query strings in cache keys. HTTP requests revalidate cached responses; the root worker registers with `updateViaCache: 'none'`. A waiting worker activates after older controlled tabs close, avoiding unexpected mid-game reloads.
+Current version: **1.2.1**. Update the version meta tag, visible badge and CSS/JS query strings in `index.html`, and `SENTENCE_ARENA_VERSION` in root `sw.js` for each release. JSON URLs derive their version from the meta tag. The worker derives its cache name and precache URLs from its version constant and preserves Arena query strings in cache keys. HTTP requests revalidate cached responses; the root worker registers with `updateViaCache: 'none'`. A waiting worker activates after older controlled tabs close, avoiding unexpected mid-game reloads.
 
 Run `node sentence-arena/check.cjs` for content, independent progression, score/penalty validation, timeouts, end-game accounting, ranking, teacher-review selection, and version consistency checks. Run `node --check sentence-arena/game.js` and `node --check sw.js` for syntax checks. Physical simultaneous touch support still needs testing on the target TV.
+
+Filter checkboxes sit inside dedicated `.filter-options` scroll regions rather than scrolling the fieldset itself. Vertical touch panning and contained overscroll keep swipes within a list, including at its boundaries; swipe outside the lists to scroll the page. The regions are keyboard-focusable.
