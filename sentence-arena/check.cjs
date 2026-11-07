@@ -6,7 +6,7 @@ class Element{constructor(){this.children=[];this.listeners={};this.classList={t
 for(const id of ['filters','start','status','rounds','duration','setup','results','play','mode','round-title','next','round-help','boards','timer','end','clear','fullscreen','pool-count','points-correct','points-wrong','points-skipped','points-legend','setup-legend']){const el=new Element();el.id=id;}
 nodes.get('rounds').value='10';nodes.get('duration').value='0';
 let now=100000;
-const context=vm.createContext({Date:{now:()=>now},document:{querySelector:()=>({content:'1.3.1-2026.11.07'}),getElementById:id=>nodes.get(id),createElement:()=>new Element(),createTextNode:s=>s,querySelectorAll:()=>[]},fetch:()=>new Promise(()=>{}),setTimeout:()=>1,clearTimeout(){},setInterval:()=>1,clearInterval(){},console});
+const context=vm.createContext({Date:{now:()=>now},document:{querySelector:()=>({content:'1.3.2-2026.11.07'}),getElementById:id=>nodes.get(id),createElement:()=>new Element(),createTextNode:s=>s,querySelectorAll:()=>[]},fetch:()=>new Promise(()=>{}),setTimeout:()=>1,clearTimeout(){},setInterval:()=>1,clearInterval(){},console});
 vm.runInContext(fs.readFileSync(__dirname+'/game.js','utf8'),context);
 const run=s=>vm.runInContext(s,context);
 context.data=data;run('bank=data');
@@ -73,3 +73,8 @@ console.log('Passed: correct-answer panels, skip review without auto-advance, on
 
 run('start();players.forEach((p,i)=>{p.queue=p.queue.slice(0,1);showPlayer(i);});[0,1,2,3].forEach(i=>skipPlayer(i));');assert.equal(run('active'),false);const reviews=nodes.get('results').children.filter(el=>el.className==='answer-review');assert.equal(reviews.length,4);assert(reviews.every(el=>el.open===true));assert(reviews.every(el=>el.children[1].children[1].children[1].textContent));
 console.log('Passed: final-question auto-finish shows all four answer reviews expanded.');
+
+run('start();resolve(0,"correct");resolve(1,"wrong");skipPlayer(2);resolve(3,"skipped","Time is up.");');
+for(const [i,outcome,label]of [[0,'correct','CORRECT!'],[1,'wrong','INCORRECT'],[2,'skipped','SKIPPED'],[3,'skipped','TIME’S UP']]){const banner=nodes.get('outcome-'+i);assert.equal(banner.hidden,false);assert.equal(banner.className,'outcome-banner outcome-'+outcome);assert(banner.textContent.includes(label));}
+run('nextPlayer(0)');assert.equal(nodes.get('outcome-0').hidden,true);assert.equal(nodes.get('outcome-1').hidden,false);run('finish(true)');assert(nodes.get('results').children.some(el=>el.className==='last-answers'));
+console.log('Passed: distinct correct/incorrect/skipped/timeout banners, independent reset, final-outcome summary.');

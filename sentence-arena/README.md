@@ -24,7 +24,7 @@ Reference themes come from the six supplied ELITE Grade 1–2 and Grade 3–5 le
 
 ## Versions and checks
 
-Current version: **1.3.1-2026.11.07**. Update the version meta tag, visible badge and CSS/JS query strings in `index.html`, and `SENTENCE_ARENA_VERSION` in root `sw.js` for each release, using `major.minor.patch-YYYY.MM.DD` with the release date. Keep the date fixed for a release rather than changing it on every page load. JSON URLs derive their version from the meta tag. The worker derives its cache name and precache URLs from its version constant and preserves Arena query strings in cache keys. HTTP requests revalidate cached responses; the root worker registers with `updateViaCache: 'none'`. A waiting worker activates after older controlled tabs close, avoiding unexpected mid-game reloads.
+Current version: **1.3.2-2026.11.07**. Update the version meta tag, visible badge and CSS/JS query strings in `index.html`, and `SENTENCE_ARENA_VERSION` in root `sw.js` for each release, using `major.minor.patch-YYYY.MM.DD` with the release date. Keep the date fixed for a release rather than changing it on every page load. JSON URLs derive their version from the meta tag. The worker derives its cache name and precache URLs from its version constant and preserves Arena query strings in cache keys. HTTP requests revalidate cached responses; the root worker registers with `updateViaCache: 'none'`. A waiting worker activates after older controlled tabs close, avoiding unexpected mid-game reloads.
 
 Run `node sentence-arena/check.cjs` for content, independent progression, score/penalty validation, timeouts, end-game accounting, ranking, teacher-review selection, and version consistency checks. Run `node --check sentence-arena/game.js` and `node --check sw.js` for syntax checks. Physical simultaneous touch support still needs testing on the target TV.
 
@@ -45,3 +45,5 @@ Accepted alternative sentences are validated through the same scoring path as th
 Long boards have independent contained scroll areas on wide panels, so revealing hints does not force another student’s column to scroll. Hardware multi-touch still requires testing on the target panel. Matching uses task metadata, not a claim of proven psychometric equivalence; teacher piloting is still recommended.
 
 Incorrect and skipped questions remain in each player’s expandable answer review on the results screen, including the final question and questions skipped when the teacher ends early.
+
+Answer outcomes have large labelled banners with distinct icons and colors: green correct, red incorrect, amber skipped/time’s up. Only the answering player’s column scrolls back to its banner. Banners reset on the next question; results retain each player’s last outcome even when the last answer immediately ends the game.
