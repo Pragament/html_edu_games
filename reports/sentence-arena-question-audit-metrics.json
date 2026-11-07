@@ -1,0 +1,489 @@
+{
+  "sha256": "b8441a4e3ec3f9e2f83703d51f33dde1249a66bffb997e410416cf7252ae1042",
+  "questions": 230,
+  "uniqueIds": 230,
+  "kinds": {
+    "tiles": 63,
+    "choice": 148,
+    "creative": 19
+  },
+  "topics": {
+    "School": 9,
+    "Healthy living": 4,
+    "Family and friends": 1,
+    "Teamwork": 3,
+    "Nature": 9,
+    "Communication": 1,
+    "Mathematics": 31,
+    "Science": 88,
+    "Social Studies": 50,
+    "English": 34
+  },
+  "modes": [
+    {
+      "id": "1",
+      "name": "Word Scramble",
+      "category": "Vocabulary",
+      "questions": 21,
+      "distinctAnswers": 21,
+      "canRunAlone": true
+    },
+    {
+      "id": "2",
+      "name": "Jumbled Sentence",
+      "category": "Sentence building",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "3",
+      "name": "Sentence Building",
+      "category": "Sentence building",
+      "questions": 0,
+      "distinctAnswers": 0,
+      "canRunAlone": false
+    },
+    {
+      "id": "4",
+      "name": "Fill in the Blanks",
+      "category": "Grammar",
+      "questions": 116,
+      "distinctAnswers": 112,
+      "canRunAlone": true
+    },
+    {
+      "id": "5",
+      "name": "Subject\u2013Verb\u2013Object",
+      "category": "Grammar",
+      "questions": 2,
+      "distinctAnswers": 2,
+      "canRunAlone": false
+    },
+    {
+      "id": "6",
+      "name": "Sentence Matching",
+      "category": "Sentence building",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "7",
+      "name": "Question Formation",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "8",
+      "name": "Negative Sentence",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "9",
+      "name": "Tense Formation",
+      "category": "Grammar",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "10",
+      "name": "Sentence Completion",
+      "category": "Sentence building",
+      "questions": 5,
+      "distinctAnswers": 5,
+      "canRunAlone": true
+    },
+    {
+      "id": "11",
+      "name": "Word Arrangement",
+      "category": "Sentence building",
+      "questions": 2,
+      "distinctAnswers": 2,
+      "canRunAlone": false
+    },
+    {
+      "id": "12",
+      "name": "Sentence Correction",
+      "category": "Grammar",
+      "questions": 4,
+      "distinctAnswers": 4,
+      "canRunAlone": true
+    },
+    {
+      "id": "13",
+      "name": "Sentence Expansion",
+      "category": "Sentence building",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "14",
+      "name": "Sentence Transformation",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "15",
+      "name": "Sentence Chain",
+      "category": "Creative expression",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "16",
+      "name": "Sentence Puzzle",
+      "category": "Sentence building",
+      "questions": 0,
+      "distinctAnswers": 0,
+      "canRunAlone": false
+    },
+    {
+      "id": "17",
+      "name": "WH-Question",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "18",
+      "name": "Conjunction",
+      "category": "Grammar",
+      "questions": 4,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "19",
+      "name": "Creative Sentence",
+      "category": "Creative expression",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "20",
+      "name": "Random Word Sentence",
+      "category": "Creative expression",
+      "questions": 15,
+      "distinctAnswers": 15,
+      "canRunAlone": true
+    },
+    {
+      "id": "21",
+      "name": "Sentence Reordering",
+      "category": "Sentence building",
+      "questions": 2,
+      "distinctAnswers": 2,
+      "canRunAlone": false
+    },
+    {
+      "id": "22",
+      "name": "Grammar Challenge",
+      "category": "Grammar",
+      "questions": 2,
+      "distinctAnswers": 2,
+      "canRunAlone": false
+    },
+    {
+      "id": "23",
+      "name": "Sentence Making Race",
+      "category": "Sentence building",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "24",
+      "name": "Missing Word",
+      "category": "Grammar",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "25",
+      "name": "Sentence Combination",
+      "category": "Sentence building",
+      "questions": 0,
+      "distinctAnswers": 0,
+      "canRunAlone": false
+    },
+    {
+      "id": "26",
+      "name": "Sentence Unscramble",
+      "category": "Sentence building",
+      "questions": 0,
+      "distinctAnswers": 0,
+      "canRunAlone": false
+    },
+    {
+      "id": "27",
+      "name": "Conditional Sentence",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "28",
+      "name": "Preposition Sentence",
+      "category": "Grammar",
+      "questions": 4,
+      "distinctAnswers": 4,
+      "canRunAlone": true
+    },
+    {
+      "id": "29",
+      "name": "Adjective Sentence",
+      "category": "Grammar",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "30",
+      "name": "Adverb Sentence",
+      "category": "Grammar",
+      "questions": 0,
+      "distinctAnswers": 0,
+      "canRunAlone": false
+    },
+    {
+      "id": "31",
+      "name": "Pronoun Sentence",
+      "category": "Grammar",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "32",
+      "name": "Sentence Type Identification",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "33",
+      "name": "Active and Passive Voice",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "34",
+      "name": "Direct and Indirect Speech",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "35",
+      "name": "Sentence Pattern",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "36",
+      "name": "Sentence Ladder",
+      "category": "Creative expression",
+      "questions": 2,
+      "distinctAnswers": 2,
+      "canRunAlone": false
+    },
+    {
+      "id": "37",
+      "name": "Sentence Relay",
+      "category": "Creative expression",
+      "questions": 1,
+      "distinctAnswers": 1,
+      "canRunAlone": false
+    },
+    {
+      "id": "38",
+      "name": "Sentence Memory",
+      "category": "Sentence building",
+      "questions": 2,
+      "distinctAnswers": 2,
+      "canRunAlone": false
+    },
+    {
+      "id": "39",
+      "name": "Sentence Logic",
+      "category": "Grammar",
+      "questions": 3,
+      "distinctAnswers": 3,
+      "canRunAlone": false
+    },
+    {
+      "id": "40",
+      "name": "Sentence Construction Challenges",
+      "category": "Sentence building",
+      "questions": 0,
+      "distinctAnswers": 0,
+      "canRunAlone": false
+    }
+  ],
+  "grades": [
+    {
+      "grade": 1,
+      "total": 15,
+      "choice": 6,
+      "tiles": 8,
+      "creative": 1,
+      "automaticDistinctAnswers": 13,
+      "maxQuestionsPerPlayer": 3
+    },
+    {
+      "grade": 2,
+      "total": 34,
+      "choice": 13,
+      "tiles": 15,
+      "creative": 6,
+      "automaticDistinctAnswers": 26,
+      "maxQuestionsPerPlayer": 6
+    },
+    {
+      "grade": 3,
+      "total": 80,
+      "choice": 39,
+      "tiles": 28,
+      "creative": 13,
+      "automaticDistinctAnswers": 65,
+      "maxQuestionsPerPlayer": 16
+    },
+    {
+      "grade": 4,
+      "total": 116,
+      "choice": 67,
+      "tiles": 33,
+      "creative": 16,
+      "automaticDistinctAnswers": 97,
+      "maxQuestionsPerPlayer": 24
+    },
+    {
+      "grade": 5,
+      "total": 146,
+      "choice": 85,
+      "tiles": 44,
+      "creative": 17,
+      "automaticDistinctAnswers": 124,
+      "maxQuestionsPerPlayer": 31
+    },
+    {
+      "grade": 6,
+      "total": 128,
+      "choice": 85,
+      "tiles": 33,
+      "creative": 10,
+      "automaticDistinctAnswers": 114,
+      "maxQuestionsPerPlayer": 28
+    },
+    {
+      "grade": 7,
+      "total": 104,
+      "choice": 73,
+      "tiles": 25,
+      "creative": 6,
+      "automaticDistinctAnswers": 94,
+      "maxQuestionsPerPlayer": 23
+    },
+    {
+      "grade": 8,
+      "total": 102,
+      "choice": 79,
+      "tiles": 19,
+      "creative": 4,
+      "automaticDistinctAnswers": 92,
+      "maxQuestionsPerPlayer": 23
+    },
+    {
+      "grade": 9,
+      "total": 66,
+      "choice": 58,
+      "tiles": 6,
+      "creative": 2,
+      "automaticDistinctAnswers": 59,
+      "maxQuestionsPerPlayer": 14
+    },
+    {
+      "grade": 10,
+      "total": 45,
+      "choice": 41,
+      "tiles": 4,
+      "creative": 0,
+      "automaticDistinctAnswers": 42,
+      "maxQuestionsPerPlayer": 10
+    }
+  ],
+  "duplicateAnswerGroups": {
+    "riya has a book": [
+      "q001",
+      "q015"
+    ],
+    "because": [
+      "q020",
+      "q366"
+    ],
+    "beautiful": [
+      "q029",
+      "q327"
+    ],
+    "constitution": [
+      "q305",
+      "q413"
+    ],
+    "migration": [
+      "q315",
+      "q423"
+    ],
+    "literacy": [
+      "q319",
+      "q414"
+    ],
+    "secularism": [
+      "q320",
+      "q428"
+    ],
+    "resilience": [
+      "q338",
+      "q426"
+    ],
+    "a triangle has three sides": [
+      "q351",
+      "q391"
+    ],
+    "the scientist observed the reaction carefully": [
+      "q357",
+      "q403"
+    ]
+  },
+  "missingLearningFields": {
+    "skill": 230,
+    "difficulty": 230,
+    "hints": 230,
+    "acceptedAnswers": 230,
+    "optionFeedback": 230,
+    "challengeGroup": 230,
+    "prerequisites": 230,
+    "followUpIds": 230,
+    "source": 230
+  }
+}

@@ -1,0 +1,16 @@
+# Learning improvements implemented
+
+Release: **1.3.0-2026.11.07**. This supersedes the implementation concerns in the historical question-bank audit; that audit's counts and hash still describe its original snapshot.
+
+- Corrected the flagged phonics, evolution, median, microorganism and boiling explanations, ambiguous conjunction/definition/preposition prompts, reported-speech perspective, and unclear expansion/arrangement instructions.
+- Added accepted alternative orders for q382, q404, q356, q357 and q412. The scoring path now checks all accepted answers, with regression tests that construct alternative sentences from the supplied tiles. Punctuation and capitalisation remain unscored.
+- Enriched 230 existing questions and added 480 authored exercises, giving **710 records**: 423 tile tasks, 232 choice tasks and 55 teacher-reviewed creation tasks. Each of the 40 modes has at least one matched quartet with all metadata filters unrestricted.
+- Added twelve new questions per mode in three grade bands. Previously empty core modes now contain twelve exercises each. Older construction tasks include expanded noun phrases and time clauses; existing academic vocabulary is retained.
+- Added English skill, English difficulty and subject-familiarity filters, independently of grade/topic. Subject definition questions are labelled vocabulary-in-context rather than agreement. Difficulty labels and grade bands are editorial starting points, not formal proficiency levels or curriculum certification.
+- Replaced arbitrary groups of four with matched sets sharing mode, skill, English difficulty, subject familiarity and an approximate workload band. Canonical and accepted answer keys cannot overlap across the assigned game. A selected filter combination must leave a complete quartet. Menu choices show matched-set counts and are disabled when unavailable; actual question count is shown before play. Independent next/skip/scoring behaviour remains.
+- Added progressive hints and distractor-specific feedback. Hints preserve selected tiles/text and do not deduct points; time spent on hints remains part of completion time. Results count hints used. Teacher-reviewed types still require explicit opt-in.
+- Added independent contained scrolling for longer player columns so hints do not move neighbouring columns.
+
+Validation: the expanded Node checks pass for model solutions, matched-group invariants, grade capacity, alternative answer scoring, hint progression, selected-option feedback, filtering/disabled modes, independent progression, penalties, timer behaviour, rankings and version consistency. The data enrichment script was run twice to confirm it is reproducible. Browser review verified Grade 10 parallel construction tasks, Grade 1 agreement tasks, progressive hints, and targeted wrong-answer feedback in the four-column layout.
+
+Limits: expected-time bands have not been calibrated with students; hardware simultaneous touch still needs a panel test. Accepted alternatives are explicitly curated, not an unrestricted grammar judge. Related follow-up IDs are present for future revision flows, but automatic adaptive revision is not implemented. Narrow topic/grade combinations may correctly disable a mode even though the overall bank has matched sets.

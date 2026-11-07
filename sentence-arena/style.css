@@ -20,3 +20,7 @@
 .filter-options label{user-select:none;-webkit-user-select:none}
 .filter-options:focus-visible{outline:3px solid #99ecd5;outline-offset:3px}
 .review-filters .filter-options{max-height:none}
+
+.filter-options .unavailable{opacity:.5}.hint-panel{border-left:3px solid var(--accent);padding:8px 10px;margin-bottom:12px}.hint-panel p{font-size:15px;line-height:1.45}.hint-panel button{font-size:15px;min-height:44px}
+
+@media(min-width:1000px){#boards{align-items:start}.board{max-height:calc(100dvh - 340px);overflow-y:auto;overscroll-behavior-y:contain;touch-action:pan-y;scrollbar-gutter:stable}.board .player-head{position:sticky;top:0;z-index:1;background:#132238;padding:4px 0}.board .actions{position:sticky;bottom:0;background:#132238;padding:6px 0}}

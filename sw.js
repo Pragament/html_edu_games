@@ -1,5 +1,5 @@
 /* Network first keeps the games and shared puzzle data current; cached copies work offline. */
-const SENTENCE_ARENA_VERSION = '1.2.1';
+const SENTENCE_ARENA_VERSION = '1.3.0-2026.11.07';
 const CACHE = `edu-games-v13-sentence-${SENTENCE_ARENA_VERSION}`;
 const ASSETS = [
   "./sentence-arena/index.html",
